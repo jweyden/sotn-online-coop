@@ -7,7 +7,7 @@ using System.Text.Json;
 static class Recipes
 {
     public sealed record Piece(int At, int Len, string? Disc, string? Path, int From, string? Make);
-    public sealed record Recipe(string File, int Size, string Sha1Blank, string Sha1, List<Piece> Fill);
+    public sealed record Recipe(string File, int Size, string Sha1Blank, string Sha1, Dictionary<string, int> Symbols, List<Piece> Fill);
 
     public static Recipe Load(string path)
     {
@@ -19,8 +19,10 @@ static class Recipes
             p.TryGetProperty("path", out var pa) ? pa.GetString() : null,
             p.TryGetProperty("from", out var f) ? f.GetInt32() : 0,
             p.TryGetProperty("make", out var mk) ? mk.GetString() : null)).ToList();
+        var symbols = r.TryGetProperty("symbols", out var sy)
+            ? sy.EnumerateObject().ToDictionary(s => s.Name, s => s.Value.GetInt32()) : [];
         return new Recipe(r.GetProperty("file").GetString()!, r.GetProperty("size").GetInt32(),
-            r.GetProperty("sha1_blank").GetString()!, r.GetProperty("sha1").GetString()!, fill);
+            r.GetProperty("sha1_blank").GetString()!, r.GetProperty("sha1").GetString()!, symbols, fill);
     }
 
     // made: the converters' bytes by symbol, or null (left blank). Returns how many bytes

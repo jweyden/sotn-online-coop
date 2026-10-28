@@ -3,6 +3,11 @@
  "size": 133072,
  "sha1_blank": "7c577efa0bf20d1ceb5f503797f2ee63dcbecefe",
  "sha1": "322e02c72f5de11002d4ae4e4b308750fcf333a1",
+ "symbols": {
+  "richter_sprites": 32,
+  "spritebank0": 2496,
+  "g_Ric2Palette": 3348
+ },
  "fill": [
   {
    "at": 32,

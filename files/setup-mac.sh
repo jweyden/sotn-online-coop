@@ -7,19 +7,16 @@ set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"          # files/
 KIT="$(dirname "$HERE")"                       # the folder the player unzipped
 GAME="$HERE/SymphonyRecomp"
-DECOMP="$HERE/sotn-decomp"
 PS1_DIR="$KIT/1 - PlayStation game"
 PSP_DIR="$KIT/2 - PSP game"
 SAT_DIR="$KIT/3 - Saturn game"
 CUE_NAME="Castlevania - Symphony of the Night (USA).cue"   # the name the engine's config expects
 SR_COMMIT="$(awk '$1=="SymphonyRecomp"{print $2}' "$HERE/engine/base-commit.txt")"
 R1_COMMIT="$(awk '$1=="RecompOne"{print $2}' "$HERE/engine/base-commit.txt")"
-DECOMP_COMMIT="$(awk '$1=="sotn-decomp"{print $2}' "$HERE/engine/base-commit.txt")"
 # the exact releases the characters are built from (SHA-1 of Track 1 / the .iso)
 PS1_SHA=f967119e006695a59a6442237f9fc7c7811cf7bf   # US, SLUS-00067
 PSP_SHA=25bb86c2c86f29e8a9d09ee0ae2a45fc6252befb   # The Dracula X Chronicles, EU, ULES-00841
 SAT_SHA=ebf3209692dcc4df8d4448bbcada9ab9266549d0   # Akumajou Dracula X, JP, T-9527G
-BUILDER=sotn-coop-builder
 
 say() { printf '\n\033[1;36m==>\033[0m %s\n' "$1"; }
 die() { printf '\n\033[1;31mStopped:\033[0m %s\n' "$1" >&2; exit 1; }
@@ -82,18 +79,6 @@ if ! xcode-select -p >/dev/null 2>&1; then
     die "Your Mac needs Apple's free command line tools first.
 A window should have popped up: click Install and wait for it to finish (a few minutes).
 Then double-click Setup again."
-fi
-
-if ! command -v docker >/dev/null 2>&1 && [ -x /Applications/Docker.app/Contents/Resources/bin/docker ]; then
-    export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
-fi
-command -v docker >/dev/null 2>&1 || { open "https://www.docker.com/products/docker-desktop/" 2>/dev/null || true; die "This needs Docker Desktop (free), which builds the PSP and Saturn characters.
-Its download page should have opened: install it, start it once, then double-click Setup again."; }
-if ! docker info >/dev/null 2>&1; then
-    say "Starting Docker Desktop"
-    open -a Docker 2>/dev/null || true
-    for _ in $(seq 1 60); do docker info >/dev/null 2>&1 && break; sleep 2; done
-    docker info >/dev/null 2>&1 || die "Docker Desktop didn't start. Start it yourself (it's in Applications), wait until it says it's running, then double-click Setup again."
 fi
 
 export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$PATH"
@@ -159,37 +144,14 @@ else
     printf '{\n  "CdPath": "%s"\n}\n' "$CUE_ABS" > settings.json
 fi
 
-# ---- the characters, from your PSP and Saturn games (in Docker: friend/builder)
-if [ "$(git -C "$DECOMP" rev-parse HEAD 2>/dev/null || true)" != "$DECOMP_COMMIT" ]; then
-    say "Downloading sotn-decomp (the decompiled game the characters are built on)"
-    mkdir -p "$DECOMP"
-    [ -d "$DECOMP/.git" ] || git -C "$DECOMP" init -q
-    git -C "$DECOMP" fetch -q --depth 1 https://github.com/Xeeynamo/sotn-decomp.git "$DECOMP_COMMIT"
-    git -C "$DECOMP" checkout -q -f FETCH_HEAD
-fi
-say "Preparing the character builder (the first time downloads its tools: a few minutes)"
-docker build -q -t "$BUILDER" "$HERE/builder" >/dev/null
-say "Building the characters from your PSP and Saturn games (the first time takes a while; let it run)"
-docker run --rm \
-    --mount "type=bind,source=$HERE,target=/work" \
-    --mount "type=bind,source=$PS1_T1,target=/discs/ps1.bin,readonly" \
-    --mount "type=bind,source=$PSP_ISO,target=/discs/psp.iso,readonly" \
-    --mount "type=bind,source=$SAT_T1,target=/discs/saturn.bin,readonly" \
-    --mount "type=volume,source=sotn-coop-go,target=/go/pkg" \
-    --mount "type=volume,source=sotn-coop-cargo,target=/usr/local/cargo/registry" \
-    "$BUILDER" sh /work/builder/build-characters.sh
-
-say "Putting the characters into the game"
-CH="$HERE/characters"
-for d in maria mariasat richter2 charsel psp; do mkdir -p "disc/$d" && cp "$CH/$d/"* "disc/$d/"; done
-dotnet build -v q RecompOne/RecompOne.Recompiler/RecompOne.Recompiler.csproj >/dev/null
-for c in maria mariasat richter2; do
-    dotnet run --no-build --project RecompOne/RecompOne.Recompiler -- \
-        --generate-function-file -elf "disc/$c/$c.elf" -out "config/funcmaps/$c.json" >/dev/null
-done
-docker run --rm --mount "type=bind,source=$HERE,target=/work" \
-    --mount "type=bind,source=$GAME/config/funcmaps,target=/funcmaps" \
-    "$BUILDER" python3 -I /work/tools/funcmap-prefix.py /funcmaps
+# ---- the characters, from your PSP and Saturn games: the kit's character builder
+# (files/extractor) puts your discs' data into their programs (files/characters/blank,
+# built with none), and makes their sprites, effects, sounds and the Saturn select screen
+say "Building the characters from your PSP and Saturn games"
+dotnet build -v q -c Release -o "$HERE/extractor/bin/out" "$HERE/extractor/extractor.csproj" >/dev/null
+dotnet "$HERE/extractor/bin/out/sotn-extract.dll" characters "$HERE/decomp-mods/recipes" "$HERE/characters/blank" disc \
+    --ps1 "$PS1_T1" --psp "$PSP_ISO" --saturn "$SAT_T1" || die "The characters didn't build. Double-click Setup again to retry; if it keeps failing, report it with this window's text."
+cp "$HERE/characters/funcmaps/"*.json config/funcmaps/
 
 # ---- the mod
 say "Installing the Online Co-op mod"

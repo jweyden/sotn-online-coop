@@ -134,10 +134,10 @@ if (-not (Test-Path $Game)) {
     }
     # the characters built from the PSP and Saturn games (Setup's character builder)
     $missing = @()
-    foreach ($f in "maria\MARIA.BIN", "maria\SD_RIH.VB", "psp\sd_alk.spk", "mariasat\MARIASAT.BIN", "mariasat\MARIASAT.SPR", "richter2\RICHTER2.BIN", "charsel\CHARSEL.BIN") {
+    foreach ($f in "maria\MARIA.BIN", "maria\SD_RIH.VB", "psp\sd_alk.spk", "mariasat\MARIASAT.BIN", "mariasat\MARIASAT.SPR", "mariasat\MARIASAT.FX", "mariasat\MARIASAT.SND", "richter2\RICHTER2.SPR", "richter2\RICHTER2.BIN", "charsel\CHARSEL.BIN") {
         if (-not (Test-Path (Join-Path $disc $f))) { $missing += $f }
     }
-    if ($missing) { Bad "characters not built yet ($($missing -join ', ')): put your PSP game in '2 - PSP game' and your Saturn game in '3 - Saturn game', start Docker Desktop, and run 'Setup (Windows)'" }
+    if ($missing) { Bad "characters not built yet ($($missing -join ', ')): put your PSP game in '2 - PSP game' and your Saturn game in '3 - Saturn game', and run 'Setup (Windows)'" }
     else { Ok "all characters built (PSP Maria, Saturn Maria, long-coat Richter, the select screen, PSP voices)" }
 
     Head "The Online Co-op mod"

@@ -14,9 +14,6 @@ WHAT YOU NEED
 -------------
 
   - A Mac (2020 or newer is best) or a Windows 10/11 PC, with about 15 GB free.
-  - Docker Desktop (free): it builds the PSP and Saturn characters from your discs.
-      https://www.docker.com/products/docker-desktop/
-    Install it and start it once before running Setup (Windows: keep the WSL 2 option).
   - Your OWN copies of all three versions of the game, dumped to files. This package
     doesn't include any of them. They must be exactly these releases:
 
@@ -31,7 +28,7 @@ WHAT YOU NEED
   - An internet connection.
 
 
-SETUP (once, about 30-60 minutes, mostly waiting)
+SETUP (once, about 20-40 minutes, mostly waiting)
 -------------------------------------------------
 
 1. Unzip this folder somewhere you'll keep it (Desktop or Documents is fine).
@@ -41,9 +38,7 @@ SETUP (once, about 30-60 minutes, mostly waiting)
        2 - PSP game             the .iso
        3 - Saturn game          the .cue and .bin files
 
-3. Make sure Docker Desktop is running.
-
-4. Double-click Setup:
+3. Double-click Setup:
      Mac:      "Setup (Mac)"
                The first time, macOS says it can't check the file: right-click it
                (or Control-click), choose Open, then click Open.

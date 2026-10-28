@@ -1,0 +1,650 @@
+{
+  "functions": [
+    {
+      "address": "0x8015CF20",
+      "name": "DoesRichterHudMatch",
+      "size": 140
+    },
+    {
+      "address": "0x8015CFAC",
+      "name": "MarPsxMain",
+      "size": 324
+    },
+    {
+      "address": "0x8015D0F0",
+      "name": "MarPsxInit",
+      "size": 400
+    },
+    {
+      "address": "0x8015D280",
+      "name": "PadReadPSP",
+      "size": 8
+    },
+    {
+      "address": "0x8015D288",
+      "name": "func_psp_090E4C58",
+      "size": 8
+    },
+    {
+      "address": "0x8015D290",
+      "name": "func_psp_090E4C18",
+      "size": 8
+    },
+    {
+      "address": "0x8015D298",
+      "name": "func_psp_090E4C68",
+      "size": 8
+    },
+    {
+      "address": "0x8015D2A0",
+      "name": "mar_func_800FE8F0",
+      "size": 8
+    },
+    {
+      "address": "0x8015D2A8",
+      "name": "func_psp_091040A0",
+      "size": 120
+    },
+    {
+      "address": "0x8015D320",
+      "name": "func_psp_0892667C",
+      "size": 248
+    },
+    {
+      "address": "0x8015D418",
+      "name": "mar_PlaySfx",
+      "size": 20
+    },
+    {
+      "address": "0x8015D42C",
+      "name": "MarPlaySfx",
+      "size": 36
+    },
+    {
+      "address": "0x8015D450",
+      "name": "func_psp_089285A0",
+      "size": 124
+    },
+    {
+      "address": "0x8015D4CC",
+      "name": "mar_AllocPrimitives",
+      "size": 20
+    },
+    {
+      "address": "0x8015D4E0",
+      "name": "MarLoadPalettes",
+      "size": 676
+    },
+    {
+      "address": "0x8015D784",
+      "name": "LoadCrashSummonResouces",
+      "size": 452
+    },
+    {
+      "address": "0x8015D948",
+      "name": "MarLoadGraphics",
+      "size": 40
+    },
+    {
+      "address": "0x8015D970",
+      "name": "MARIA_Load",
+      "size": 180
+    },
+    {
+      "address": "0x8015DA30",
+      "name": "MarEntityDummy",
+      "size": 8
+    },
+    {
+      "address": "0x8015DA38",
+      "name": "mar_func_80165DD8",
+      "size": 276
+    },
+    {
+      "address": "0x8015DB4C",
+      "name": "func_pspeu_092BFF78",
+      "size": 36
+    },
+    {
+      "address": "0x8015DB70",
+      "name": "MarEntityFactory",
+      "size": 1268
+    },
+    {
+      "address": "0x8015E064",
+      "name": "func_maria_801623E0",
+      "size": 512
+    },
+    {
+      "address": "0x8015E264",
+      "name": "func_maria_80162604",
+      "size": 608
+    },
+    {
+      "address": "0x8015E4C4",
+      "name": "MarEntitySmokePuff",
+      "size": 1212
+    },
+    {
+      "address": "0x8015E980",
+      "name": "MarEntityTeleport",
+      "size": 2436
+    },
+    {
+      "address": "0x8015F304",
+      "name": "MarEntityHitByCutBlood",
+      "size": 2332
+    },
+    {
+      "address": "0x8015FC20",
+      "name": "MarEntityApplyMariaPowerAnim",
+      "size": 1028
+    },
+    {
+      "address": "0x80160024",
+      "name": "MarEntityShrinkingPowerUpRing",
+      "size": 2312
+    },
+    {
+      "address": "0x8016092C",
+      "name": "MarEntityHitByLightning",
+      "size": 1768
+    },
+    {
+      "address": "0x80161014",
+      "name": "MarEntityHitByIce",
+      "size": 2220
+    },
+    {
+      "address": "0x801618C0",
+      "name": "func_pspeu_092BEB40",
+      "size": 2564
+    },
+    {
+      "address": "0x801622C4",
+      "name": "EntityMariaCrashSummon",
+      "size": 572
+    },
+    {
+      "address": "0x80162500",
+      "name": "MarEntityNotImplemented4",
+      "size": 8
+    },
+    {
+      "address": "0x80162508",
+      "name": "EntityMariaOwl",
+      "size": 1292
+    },
+    {
+      "address": "0x80162A14",
+      "name": "func_pspeu_092BFD30",
+      "size": 340
+    },
+    {
+      "address": "0x80162B68",
+      "name": "MarEntityPlayerBlinkWhite",
+      "size": 5060
+    },
+    {
+      "address": "0x80163F2C",
+      "name": "func_maria_8015F9F0",
+      "size": 116
+    },
+    {
+      "address": "0x80163FA0",
+      "name": "func_maria_8015FA5C",
+      "size": 68
+    },
+    {
+      "address": "0x80163FE4",
+      "name": "MarSetSubweaponParams",
+      "size": 256
+    },
+    {
+      "address": "0x801640E4",
+      "name": "MarEntitySlideKick",
+      "size": 216
+    },
+    {
+      "address": "0x801641BC",
+      "name": "MarEntityBladeDash",
+      "size": 212
+    },
+    {
+      "address": "0x80164290",
+      "name": "func_maria_80160F0C",
+      "size": 164
+    },
+    {
+      "address": "0x80164334",
+      "name": "MarCheckSubweapon",
+      "size": 192
+    },
+    {
+      "address": "0x801643F4",
+      "name": "MarUpdatePlayerEntities",
+      "size": 848
+    },
+    {
+      "address": "0x80164744",
+      "name": "MarCreateEntFactoryFromEntity",
+      "size": 244
+    },
+    {
+      "address": "0x80164838",
+      "name": "func_maria_80161C2C",
+      "size": 724
+    },
+    {
+      "address": "0x80164B0C",
+      "name": "MarSetWeaponParams",
+      "size": 224
+    },
+    {
+      "address": "0x80164BEC",
+      "name": "func_maria_80162E9C",
+      "size": 100
+    },
+    {
+      "address": "0x80164C50",
+      "name": "SetOpacity",
+      "size": 48
+    },
+    {
+      "address": "0x80164C80",
+      "name": "func_pspeu_092BEAB0",
+      "size": 164
+    },
+    {
+      "address": "0x80164D24",
+      "name": "SpawnCrashSummon",
+      "size": 152
+    },
+    {
+      "address": "0x80164DBC",
+      "name": "func_pspeu_092BFEB0",
+      "size": 220
+    },
+    {
+      "address": "0x80164EA0",
+      "name": "MarCheckInput",
+      "size": 1760
+    },
+    {
+      "address": "0x80165580",
+      "name": "MarGetPlayerSensor",
+      "size": 60
+    },
+    {
+      "address": "0x801655BC",
+      "name": "MarCheckFloor",
+      "size": 1628
+    },
+    {
+      "address": "0x80165C18",
+      "name": "MarCheckCeiling",
+      "size": 1444
+    },
+    {
+      "address": "0x801661BC",
+      "name": "MarCheckWallRight",
+      "size": 580
+    },
+    {
+      "address": "0x80166400",
+      "name": "MarCheckWallLeft",
+      "size": 628
+    },
+    {
+      "address": "0x80166680",
+      "name": "MarDebugOff",
+      "size": 12
+    },
+    {
+      "address": "0x8016668C",
+      "name": "MarDebug",
+      "size": 616
+    },
+    {
+      "address": "0x80166900",
+      "name": "mar_CheckStageCollision",
+      "size": 1280
+    },
+    {
+      "address": "0x80166E00",
+      "name": "mar_DestroyEntity",
+      "size": 80
+    },
+    {
+      "address": "0x80166E50",
+      "name": "MarInit",
+      "size": 888
+    },
+    {
+      "address": "0x801671C8",
+      "name": "MarMain",
+      "size": 4152
+    },
+    {
+      "address": "0x80168200",
+      "name": "MarSetDebug",
+      "size": 8
+    },
+    {
+      "address": "0x80168208",
+      "name": "MarSetInit",
+      "size": 64
+    },
+    {
+      "address": "0x80168248",
+      "name": "MarSetCrouch",
+      "size": 164
+    },
+    {
+      "address": "0x801682EC",
+      "name": "MarSetStand",
+      "size": 144
+    },
+    {
+      "address": "0x8016837C",
+      "name": "MarSetWalk",
+      "size": 144
+    },
+    {
+      "address": "0x8016840C",
+      "name": "MarSetFall",
+      "size": 244
+    },
+    {
+      "address": "0x80168500",
+      "name": "MarSetJump",
+      "size": 292
+    },
+    {
+      "address": "0x80168624",
+      "name": "MarSetDoubleJump",
+      "size": 124
+    },
+    {
+      "address": "0x801686A0",
+      "name": "MarSetRun",
+      "size": 164
+    },
+    {
+      "address": "0x80168744",
+      "name": "MarSetHighJump",
+      "size": 116
+    },
+    {
+      "address": "0x801687B8",
+      "name": "MarDoSubweapon",
+      "size": 556
+    },
+    {
+      "address": "0x801689E4",
+      "name": "MarDoAttack",
+      "size": 372
+    },
+    {
+      "address": "0x80168B58",
+      "name": "MarDoCrash",
+      "size": 632
+    },
+    {
+      "address": "0x80168DD0",
+      "name": "MarSetSlide",
+      "size": 132
+    },
+    {
+      "address": "0x80168E54",
+      "name": "MarSetBladeDash",
+      "size": 124
+    },
+    {
+      "address": "0x80168ED0",
+      "name": "mar_func_80159C04",
+      "size": 212
+    },
+    {
+      "address": "0x80168FA4",
+      "name": "mar_func_80158B04",
+      "size": 208
+    },
+    {
+      "address": "0x80169074",
+      "name": "func_8015BB80.isra.0",
+      "size": 204
+    },
+    {
+      "address": "0x80169140",
+      "name": "MarStepStand",
+      "size": 516
+    },
+    {
+      "address": "0x80169344",
+      "name": "MarStepWalk",
+      "size": 148
+    },
+    {
+      "address": "0x801693D8",
+      "name": "MarStepJump",
+      "size": 1152
+    },
+    {
+      "address": "0x80169858",
+      "name": "MarStepFall",
+      "size": 152
+    },
+    {
+      "address": "0x801698F0",
+      "name": "MarStepCrouch",
+      "size": 1080
+    },
+    {
+      "address": "0x80169D28",
+      "name": "MarStepDead",
+      "size": 1444
+    },
+    {
+      "address": "0x8016A2CC",
+      "name": "MarStepHit",
+      "size": 2440
+    },
+    {
+      "address": "0x8016AC54",
+      "name": "MarStepBossGrab",
+      "size": 432
+    },
+    {
+      "address": "0x8016AE04",
+      "name": "func_pspeu_092B0C70",
+      "size": 80
+    },
+    {
+      "address": "0x8016AE54",
+      "name": "MarStepCardinalCrash",
+      "size": 68
+    },
+    {
+      "address": "0x8016AE98",
+      "name": "MarStepCatCrash",
+      "size": 68
+    },
+    {
+      "address": "0x8016AEDC",
+      "name": "MarStepTurtleCrash",
+      "size": 68
+    },
+    {
+      "address": "0x8016AF20",
+      "name": "MarStepDragonCrash",
+      "size": 68
+    },
+    {
+      "address": "0x8016AF64",
+      "name": "MarStepCardinalAttack",
+      "size": 76
+    },
+    {
+      "address": "0x8016AFB0",
+      "name": "MarStepSlide",
+      "size": 464
+    },
+    {
+      "address": "0x8016B180",
+      "name": "MarStepRun",
+      "size": 444
+    },
+    {
+      "address": "0x8016B33C",
+      "name": "MarStepTeleport",
+      "size": 384
+    },
+    {
+      "address": "0x8016B4BC",
+      "name": "MarStepBladeDash",
+      "size": 436
+    },
+    {
+      "address": "0x8016B670",
+      "name": "MarStepHighJump",
+      "size": 436
+    },
+    {
+      "address": "0x8016B830",
+      "name": "IsTargetValid",
+      "size": 104
+    },
+    {
+      "address": "0x8016B898",
+      "name": "CheckFieldCollisionForCat.isra.0",
+      "size": 712
+    },
+    {
+      "address": "0x8016BB60",
+      "name": "EntityMariaDollAttack",
+      "size": 836
+    },
+    {
+      "address": "0x8016BEA4",
+      "name": "EntityMariaDollActivate",
+      "size": 400
+    },
+    {
+      "address": "0x8016C034",
+      "name": "EntityMariaCatAttack",
+      "size": 1372
+    },
+    {
+      "address": "0x8016C590",
+      "name": "EntityMariaCatCrash",
+      "size": 816
+    },
+    {
+      "address": "0x8016C8C0",
+      "name": "EntityMariaCatCrashAttack",
+      "size": 436
+    },
+    {
+      "address": "0x8016CA74",
+      "name": "EntityMariaDragonAttack",
+      "size": 640
+    },
+    {
+      "address": "0x8016CCF4",
+      "name": "EntityMariaDragonCrash",
+      "size": 1720
+    },
+    {
+      "address": "0x8016D3AC",
+      "name": "EntityMariaDragonCrashBodyPart",
+      "size": 1380
+    },
+    {
+      "address": "0x8016D910",
+      "name": "EntityMariaCardinalAttack",
+      "size": 620
+    },
+    {
+      "address": "0x8016DB7C",
+      "name": "EntityMariaCardinalCrash",
+      "size": 680
+    },
+    {
+      "address": "0x8016DE24",
+      "name": "EntityMariaCardinalCrashFireball",
+      "size": 2332
+    },
+    {
+      "address": "0x8016E740",
+      "name": "EntityMariaTurtleAttack",
+      "size": 400
+    },
+    {
+      "address": "0x8016E8D0",
+      "name": "EntityMariaTurtleCrash",
+      "size": 964
+    },
+    {
+      "address": "0x8016EC94",
+      "name": "EntityMariaTurtleCrashVortex",
+      "size": 844
+    },
+    {
+      "address": "0x8016EFE0",
+      "name": "InitMariaAfterImage",
+      "size": 400
+    },
+    {
+      "address": "0x8016F170",
+      "name": "DrawMariaAfterImage",
+      "size": 604
+    },
+    {
+      "address": "0x8016F3CC",
+      "name": "MarSetStep",
+      "size": 20
+    },
+    {
+      "address": "0x8016F3E0",
+      "name": "MarSetAnimation",
+      "size": 24
+    },
+    {
+      "address": "0x8016F3F8",
+      "name": "MarDecelerateX",
+      "size": 68
+    },
+    {
+      "address": "0x8016F43C",
+      "name": "MarCheckFacing",
+      "size": 136
+    },
+    {
+      "address": "0x8016F4C4",
+      "name": "MarSetSpeedX",
+      "size": 40
+    },
+    {
+      "address": "0x8016F4EC",
+      "name": "func_maria_8015CAAC",
+      "size": 40
+    },
+    {
+      "address": "0x8016F514",
+      "name": "MarSetInvincibilityFrames",
+      "size": 76
+    },
+    {
+      "address": "0x8016F560",
+      "name": "MarDisableAfterImage",
+      "size": 176
+    },
+    {
+      "address": "0x8016F610",
+      "name": "func_maria_8015CC28",
+      "size": 12
+    }
+  ],
+  "labels": []
+}

@@ -1,0 +1,930 @@
+{
+  "functions": [
+    {
+      "address": "0x80141A70",
+      "name": "mas_RicEntitySubwpnReboundStone",
+      "size": 3580
+    },
+    {
+      "address": "0x8014286C",
+      "name": "mas_RicEntitySubwpnThrownVibhuti",
+      "size": 1272
+    },
+    {
+      "address": "0x80142D64",
+      "name": "mas_RicEntitySubwpnAgunea",
+      "size": 1536
+    },
+    {
+      "address": "0x80143364",
+      "name": "mas_RicEntityAguneaHitEnemy",
+      "size": 1796
+    },
+    {
+      "address": "0x80143A68",
+      "name": "mas_RicEntityVibhutiCrashCloud",
+      "size": 472
+    },
+    {
+      "address": "0x80143C40",
+      "name": "mas_RicEntityCrashVibhuti",
+      "size": 1020
+    },
+    {
+      "address": "0x8014403C",
+      "name": "mas_RicEntityCrashReboundStoneParticles",
+      "size": 156
+    },
+    {
+      "address": "0x801440E0",
+      "name": "mas_func_8016D9C4",
+      "size": 1360
+    },
+    {
+      "address": "0x80144630",
+      "name": "mas_RicEntityCrashReboundStoneExplosion",
+      "size": 1056
+    },
+    {
+      "address": "0x80144A50",
+      "name": "mas_RicEntityCrashReboundStone",
+      "size": 404
+    },
+    {
+      "address": "0x80144BE4",
+      "name": "mas_RicEntityCrashBibleBeam",
+      "size": 1464
+    },
+    {
+      "address": "0x8014519C",
+      "name": "mas_RicEntityCrashBible",
+      "size": 2060
+    },
+    {
+      "address": "0x801459A8",
+      "name": "mas_func_8016F198",
+      "size": 1460
+    },
+    {
+      "address": "0x80145F5C",
+      "name": "mas_RicEntityCrashStopwatchDoneSparkle",
+      "size": 3552
+    },
+    {
+      "address": "0x80146D3C",
+      "name": "mas_RicEntityStopwatchCrashLightning",
+      "size": 156
+    },
+    {
+      "address": "0x80146DD8",
+      "name": "mas_RicEntityCrashStopwatch",
+      "size": 280
+    },
+    {
+      "address": "0x80146EF0",
+      "name": "mas_RicEntityAguneaLightning",
+      "size": 1872
+    },
+    {
+      "address": "0x80147640",
+      "name": "mas_RicEntityAguneaCircle",
+      "size": 1880
+    },
+    {
+      "address": "0x80147D98",
+      "name": "mas_RicEntitySubwpnStopwatchCircle",
+      "size": 848
+    },
+    {
+      "address": "0x801480E8",
+      "name": "mas_RicEntitySubwpnStopwatch",
+      "size": 4772
+    },
+    {
+      "address": "0x8014938C",
+      "name": "mas_RicEntitySubwpnBibleTrail",
+      "size": 544
+    },
+    {
+      "address": "0x801495AC",
+      "name": "mas_RicEntitySubwpnBible",
+      "size": 1324
+    },
+    {
+      "address": "0x80149AE0",
+      "name": "MarApplyAttackDef",
+      "size": 328
+    },
+    {
+      "address": "0x80149C28",
+      "name": "MarAtPlayer",
+      "size": 124
+    },
+    {
+      "address": "0x80149CA4",
+      "name": "MarFamiliarFollow",
+      "size": 448
+    },
+    {
+      "address": "0x80149E64",
+      "name": "MarFxSet",
+      "size": 84
+    },
+    {
+      "address": "0x80149EB8",
+      "name": "MarSetAttackParams",
+      "size": 8
+    },
+    {
+      "address": "0x80149EC0",
+      "name": "MarEntityAttack",
+      "size": 700
+    },
+    {
+      "address": "0x8014A17C",
+      "name": "MarEntityKick",
+      "size": 248
+    },
+    {
+      "address": "0x8014A274",
+      "name": "MarEntityDiveKick",
+      "size": 204
+    },
+    {
+      "address": "0x8014A340",
+      "name": "MarEntity82",
+      "size": 560
+    },
+    {
+      "address": "0x8014A570",
+      "name": "MarEntity83",
+      "size": 656
+    },
+    {
+      "address": "0x8014A800",
+      "name": "MarEntity72",
+      "size": 736
+    },
+    {
+      "address": "0x8014AAE0",
+      "name": "MarEntity73",
+      "size": 1156
+    },
+    {
+      "address": "0x8014AF64",
+      "name": "MarEntity74",
+      "size": 1000
+    },
+    {
+      "address": "0x8014B34C",
+      "name": "MarEntity75",
+      "size": 676
+    },
+    {
+      "address": "0x8014B5F0",
+      "name": "MarEntity78",
+      "size": 472
+    },
+    {
+      "address": "0x8014B7C8",
+      "name": "MarEntity76",
+      "size": 336
+    },
+    {
+      "address": "0x8014B918",
+      "name": "MarEntity79",
+      "size": 1688
+    },
+    {
+      "address": "0x8014BFB0",
+      "name": "MarEntity80",
+      "size": 504
+    },
+    {
+      "address": "0x8014C1A8",
+      "name": "MarEntity77",
+      "size": 3184
+    },
+    {
+      "address": "0x8014CE18",
+      "name": "MarEntity81",
+      "size": 332
+    },
+    {
+      "address": "0x8014CF64",
+      "name": "MarEntity88",
+      "size": 312
+    },
+    {
+      "address": "0x8014D09C",
+      "name": "MarEntity89",
+      "size": 860
+    },
+    {
+      "address": "0x8014D3F8",
+      "name": "MarEntity91",
+      "size": 220
+    },
+    {
+      "address": "0x8014D4D4",
+      "name": "MarEntity22",
+      "size": 708
+    },
+    {
+      "address": "0x8014D798",
+      "name": "MarEntity85",
+      "size": 700
+    },
+    {
+      "address": "0x8014DA54",
+      "name": "MarEntity86",
+      "size": 8
+    },
+    {
+      "address": "0x8014DA5C",
+      "name": "MarEntity87",
+      "size": 8
+    },
+    {
+      "address": "0x8014DA64",
+      "name": "MarEntity90",
+      "size": 8
+    },
+    {
+      "address": "0x8014DA6C",
+      "name": "MarEntity92",
+      "size": 8
+    },
+    {
+      "address": "0x8014DA80",
+      "name": "MarMotionFinish",
+      "size": 244
+    },
+    {
+      "address": "0x8014DB74",
+      "name": "mas_MarLoadPalettes",
+      "size": 412
+    },
+    {
+      "address": "0x8014DD10",
+      "name": "MarFramePalette",
+      "size": 432
+    },
+    {
+      "address": "0x8014DEC0",
+      "name": "MarRegenMp",
+      "size": 76
+    },
+    {
+      "address": "0x8014DF0C",
+      "name": "MarChargeLevel",
+      "size": 60
+    },
+    {
+      "address": "0x8014DF48",
+      "name": "MarCharge",
+      "size": 480
+    },
+    {
+      "address": "0x8014E128",
+      "name": "MarCheckCommands",
+      "size": 2644
+    },
+    {
+      "address": "0x8014EB7C",
+      "name": "MarSfx",
+      "size": 260
+    },
+    {
+      "address": "0x8014EC80",
+      "name": "MarStepCommand",
+      "size": 192
+    },
+    {
+      "address": "0x8014ED40",
+      "name": "MarMapSfx",
+      "size": 28
+    },
+    {
+      "address": "0x8014ED60",
+      "name": "mas_RicEntityDummy",
+      "size": 8
+    },
+    {
+      "address": "0x8014ED68",
+      "name": "mas_func_80165DD8",
+      "size": 276
+    },
+    {
+      "address": "0x8014EE7C",
+      "name": "mas_RicEntityFactory",
+      "size": 1420
+    },
+    {
+      "address": "0x8014F408",
+      "name": "mas_func_801623E0",
+      "size": 512
+    },
+    {
+      "address": "0x8014F608",
+      "name": "mas_func_80162604",
+      "size": 608
+    },
+    {
+      "address": "0x8014F868",
+      "name": "mas_RicEntityMariaPowers",
+      "size": 1064
+    },
+    {
+      "address": "0x8014FC90",
+      "name": "mas_func_801641A0",
+      "size": 672
+    },
+    {
+      "address": "0x8014FF30",
+      "name": "mas_RicEntityHitByDark",
+      "size": 400
+    },
+    {
+      "address": "0x801500C0",
+      "name": "mas_RicEntitySmokePuff",
+      "size": 1212
+    },
+    {
+      "address": "0x8015057C",
+      "name": "mas_RicEntityHitByCutBlood",
+      "size": 2332
+    },
+    {
+      "address": "0x80150E98",
+      "name": "mas_RicEntityShrinkingPowerUpRing",
+      "size": 2312
+    },
+    {
+      "address": "0x801517A0",
+      "name": "mas_RicEntityHitByLightning",
+      "size": 1768
+    },
+    {
+      "address": "0x80151E88",
+      "name": "mas_RicEntityHitByIce",
+      "size": 2220
+    },
+    {
+      "address": "0x80152734",
+      "name": "RicCreateEntFactoryFromEntity.part.0",
+      "size": 244
+    },
+    {
+      "address": "0x80152828",
+      "name": "mas_func_80161C2C",
+      "size": 724
+    },
+    {
+      "address": "0x80152AFC",
+      "name": "mas_RicEntityMaria",
+      "size": 532
+    },
+    {
+      "address": "0x80152D10",
+      "name": "mas_func_80161EF8",
+      "size": 268
+    },
+    {
+      "address": "0x80152E1C",
+      "name": "mas_RicEntityNotImplemented4",
+      "size": 8
+    },
+    {
+      "address": "0x80152E24",
+      "name": "mas_RicEntityPlayerBlinkWhite",
+      "size": 5060
+    },
+    {
+      "address": "0x801541E8",
+      "name": "mas_func_8015F9F0",
+      "size": 116
+    },
+    {
+      "address": "0x8015425C",
+      "name": "mas_func_8015FA5C",
+      "size": 68
+    },
+    {
+      "address": "0x801542A0",
+      "name": "mas_RicSetSubweaponParams",
+      "size": 292
+    },
+    {
+      "address": "0x801543C4",
+      "name": "mas_RicEntitySlideKick",
+      "size": 216
+    },
+    {
+      "address": "0x8015449C",
+      "name": "mas_func_80160D2C",
+      "size": 308
+    },
+    {
+      "address": "0x801545D0",
+      "name": "mas_RicEntityBladeDash",
+      "size": 212
+    },
+    {
+      "address": "0x801546A4",
+      "name": "mas_func_80160F0C",
+      "size": 164
+    },
+    {
+      "address": "0x80154748",
+      "name": "mas_RicCheckSubweapon",
+      "size": 192
+    },
+    {
+      "address": "0x80154808",
+      "name": "mas_func_8015FDB0",
+      "size": 292
+    },
+    {
+      "address": "0x8015492C",
+      "name": "mas_RicEntityHitByHoly",
+      "size": 784
+    },
+    {
+      "address": "0x80154C3C",
+      "name": "mas_RicEntityTeleport",
+      "size": 2164
+    },
+    {
+      "address": "0x801554B0",
+      "name": "mas_RicUpdatePlayerEntities",
+      "size": 848
+    },
+    {
+      "address": "0x80155800",
+      "name": "mas_RicCreateEntFactoryFromEntity",
+      "size": 32
+    },
+    {
+      "address": "0x80155820",
+      "name": "mas_RicEntityApplyMariaPowerAnim",
+      "size": 1028
+    },
+    {
+      "address": "0x80155C24",
+      "name": "mas_func_80162E9C",
+      "size": 100
+    },
+    {
+      "address": "0x80155C90",
+      "name": "mas_RicCheckInput",
+      "size": 1984
+    },
+    {
+      "address": "0x80156450",
+      "name": "mas_func_8015E484",
+      "size": 736
+    },
+    {
+      "address": "0x80156730",
+      "name": "mas_RicGetPlayerSensor",
+      "size": 60
+    },
+    {
+      "address": "0x8015676C",
+      "name": "mas_RicCheckFloor",
+      "size": 1588
+    },
+    {
+      "address": "0x80156DA0",
+      "name": "mas_RicCheckCeiling",
+      "size": 1444
+    },
+    {
+      "address": "0x80157344",
+      "name": "mas_RicCheckWallRight",
+      "size": 580
+    },
+    {
+      "address": "0x80157588",
+      "name": "mas_RicCheckWallLeft",
+      "size": 628
+    },
+    {
+      "address": "0x80157800",
+      "name": "mas_RicEntityCrashCrossBeam",
+      "size": 2084
+    },
+    {
+      "address": "0x80158030",
+      "name": "mas_RicDebugOff",
+      "size": 12
+    },
+    {
+      "address": "0x8015803C",
+      "name": "mas_RicDebug",
+      "size": 616
+    },
+    {
+      "address": "0x801582B0",
+      "name": "mas_CheckStageCollision",
+      "size": 1252
+    },
+    {
+      "address": "0x80158794",
+      "name": "mas_DestroyEntity",
+      "size": 80
+    },
+    {
+      "address": "0x801587E4",
+      "name": "mas_RicInit",
+      "size": 924
+    },
+    {
+      "address": "0x80158B80",
+      "name": "mas_RicMain",
+      "size": 4000
+    },
+    {
+      "address": "0x80159B20",
+      "name": "mas_RicSetDebug",
+      "size": 8
+    },
+    {
+      "address": "0x80159B28",
+      "name": "mas_RicSetInit",
+      "size": 64
+    },
+    {
+      "address": "0x80159B68",
+      "name": "mas_RicSetCrouch",
+      "size": 168
+    },
+    {
+      "address": "0x80159C10",
+      "name": "mas_RicSetStand",
+      "size": 116
+    },
+    {
+      "address": "0x80159C84",
+      "name": "mas_RicSetWalk",
+      "size": 124
+    },
+    {
+      "address": "0x80159D00",
+      "name": "mas_RicSetRun",
+      "size": 140
+    },
+    {
+      "address": "0x80159D8C",
+      "name": "mas_RicSetFall",
+      "size": 228
+    },
+    {
+      "address": "0x80159E70",
+      "name": "mas_RicSetJump",
+      "size": 224
+    },
+    {
+      "address": "0x80159F50",
+      "name": "mas_MarSetDoubleJump",
+      "size": 228
+    },
+    {
+      "address": "0x8015A034",
+      "name": "mas_RicSetHighJump",
+      "size": 192
+    },
+    {
+      "address": "0x8015A0F4",
+      "name": "mas_RicDoSubweapon",
+      "size": 616
+    },
+    {
+      "address": "0x8015A35C",
+      "name": "mas_RicDoAttack",
+      "size": 744
+    },
+    {
+      "address": "0x8015A644",
+      "name": "mas_RicDoCrash",
+      "size": 8
+    },
+    {
+      "address": "0x8015A64C",
+      "name": "mas_RicSetDeadPrologue",
+      "size": 8
+    },
+    {
+      "address": "0x8015A654",
+      "name": "mas_RicSetSlide",
+      "size": 136
+    },
+    {
+      "address": "0x8015A6DC",
+      "name": "mas_RicSetSlideKick",
+      "size": 148
+    },
+    {
+      "address": "0x8015A770",
+      "name": "MarSubweaponButton",
+      "size": 308
+    },
+    {
+      "address": "0x8015A8A4",
+      "name": "MarSetBackSlide",
+      "size": 104
+    },
+    {
+      "address": "0x8015A90C",
+      "name": "mas_RicSetBladeDash",
+      "size": 132
+    },
+    {
+      "address": "0x8015A990",
+      "name": "MarSetCommand",
+      "size": 424
+    },
+    {
+      "address": "0x8015AB40",
+      "name": "mas_func_80159C04",
+      "size": 172
+    },
+    {
+      "address": "0x8015ABEC",
+      "name": "mas_func_80158B04",
+      "size": 216
+    },
+    {
+      "address": "0x8015ACC4",
+      "name": "MarJumpSteer",
+      "size": 292
+    },
+    {
+      "address": "0x8015ADE8",
+      "name": "mas_func_8015BB80",
+      "size": 204
+    },
+    {
+      "address": "0x8015AEB4",
+      "name": "mas_RicStepStand",
+      "size": 1104
+    },
+    {
+      "address": "0x8015B304",
+      "name": "mas_RicStepWalk",
+      "size": 120
+    },
+    {
+      "address": "0x8015B37C",
+      "name": "mas_RicStepRun",
+      "size": 280
+    },
+    {
+      "address": "0x8015B494",
+      "name": "mas_RicStepJump",
+      "size": 920
+    },
+    {
+      "address": "0x8015B82C",
+      "name": "mas_RicStepFall",
+      "size": 152
+    },
+    {
+      "address": "0x8015B8C4",
+      "name": "mas_RicStepCrouch",
+      "size": 1016
+    },
+    {
+      "address": "0x8015BCBC",
+      "name": "mas_RicStepDead",
+      "size": 1468
+    },
+    {
+      "address": "0x8015C278",
+      "name": "mas_RicStepHit",
+      "size": 2632
+    },
+    {
+      "address": "0x8015CCC0",
+      "name": "mas_RicStepBossGrab",
+      "size": 432
+    },
+    {
+      "address": "0x8015CE70",
+      "name": "mas_RicStepStandInAir",
+      "size": 172
+    },
+    {
+      "address": "0x8015CF1C",
+      "name": "mas_RicStepEnableFlameWhip",
+      "size": 264
+    },
+    {
+      "address": "0x8015D024",
+      "name": "mas_RicStepHydrostorm",
+      "size": 120
+    },
+    {
+      "address": "0x8015D09C",
+      "name": "mas_RicStepGenericSubwpnCrash",
+      "size": 124
+    },
+    {
+      "address": "0x8015D118",
+      "name": "mas_RicStepThrowDaggers",
+      "size": 272
+    },
+    {
+      "address": "0x8015D228",
+      "name": "mas_RicStepDeadPrologue",
+      "size": 1200
+    },
+    {
+      "address": "0x8015D6D8",
+      "name": "mas_RicStepSlide",
+      "size": 528
+    },
+    {
+      "address": "0x8015D8E8",
+      "name": "mas_RicStepTeleport",
+      "size": 384
+    },
+    {
+      "address": "0x8015DA68",
+      "name": "mas_RicStepSlideKick",
+      "size": 712
+    },
+    {
+      "address": "0x8015DD30",
+      "name": "mas_RicStepBladeDash",
+      "size": 360
+    },
+    {
+      "address": "0x8015DE98",
+      "name": "mas_RicStepHighJump",
+      "size": 456
+    },
+    {
+      "address": "0x8015E060",
+      "name": "mas_RicEntitySubwpnCrashCross",
+      "size": 1420
+    },
+    {
+      "address": "0x8015E5EC",
+      "name": "mas_RicEntityRevivalColumn",
+      "size": 816
+    },
+    {
+      "address": "0x8015E91C",
+      "name": "mas_RicEntitySubwpnCross",
+      "size": 1508
+    },
+    {
+      "address": "0x8015EF00",
+      "name": "mas_func_80169C10",
+      "size": 340
+    },
+    {
+      "address": "0x8015F054",
+      "name": "mas_RicEntitySubwpnCrossTrail",
+      "size": 332
+    },
+    {
+      "address": "0x8015F1A0",
+      "name": "mas_RicEntitySubwpnCrashCrossParticles",
+      "size": 804
+    },
+    {
+      "address": "0x8015F4D0",
+      "name": "mas_RicEntityNotImplemented1",
+      "size": 8
+    },
+    {
+      "address": "0x8015F4D8",
+      "name": "mas_RicEntityNotImplemented2",
+      "size": 8
+    },
+    {
+      "address": "0x8015F4E0",
+      "name": "mas_RicEntityNotImplemented3",
+      "size": 8
+    },
+    {
+      "address": "0x8015F4E8",
+      "name": "mas_RicEntitySubwpnHolyWaterBreakGlass",
+      "size": 1048
+    },
+    {
+      "address": "0x8015F900",
+      "name": "mas_RicEntityCrashHydroStorm",
+      "size": 1056
+    },
+    {
+      "address": "0x8015FD20",
+      "name": "mas_RicCheckHolyWaterCollision",
+      "size": 404
+    },
+    {
+      "address": "0x8015FEB4",
+      "name": "mas_func_8016840C",
+      "size": 192
+    },
+    {
+      "address": "0x8015FF74",
+      "name": "mas_RicEntitySubwpnHolyWater",
+      "size": 1368
+    },
+    {
+      "address": "0x801604CC",
+      "name": "mas_RicEntitySubwpnHolyWaterFlame",
+      "size": 1404
+    },
+    {
+      "address": "0x80160A50",
+      "name": "mas_RicEntitySubwpnThrownAxe",
+      "size": 1852
+    },
+    {
+      "address": "0x8016118C",
+      "name": "mas_RicEntityCrashAxe",
+      "size": 1912
+    },
+    {
+      "address": "0x80161904",
+      "name": "mas_RicEntitySubwpnKnife",
+      "size": 2308
+    },
+    {
+      "address": "0x80162210",
+      "name": "mas_InitRicAfterImage",
+      "size": 400
+    },
+    {
+      "address": "0x801623A0",
+      "name": "mas_DrawRicAfterImage",
+      "size": 604
+    },
+    {
+      "address": "0x801625FC",
+      "name": "mas_RicSetStep",
+      "size": 20
+    },
+    {
+      "address": "0x80162610",
+      "name": "mas_RicSetAnimation",
+      "size": 24
+    },
+    {
+      "address": "0x80162628",
+      "name": "mas_RicDecelerateX",
+      "size": 68
+    },
+    {
+      "address": "0x8016266C",
+      "name": "mas_RicCheckFacing",
+      "size": 136
+    },
+    {
+      "address": "0x801626F4",
+      "name": "mas_RicSetSpeedX",
+      "size": 40
+    },
+    {
+      "address": "0x8016271C",
+      "name": "mas_func_8015CAAC",
+      "size": 36
+    },
+    {
+      "address": "0x80162740",
+      "name": "mas_RicSetInvincibilityFrames",
+      "size": 140
+    },
+    {
+      "address": "0x801627CC",
+      "name": "mas_DisableAfterImage",
+      "size": 176
+    },
+    {
+      "address": "0x8016287C",
+      "name": "mas_func_8015CC28",
+      "size": 12
+    },
+    {
+      "address": "0x80162890",
+      "name": "mas_RicEntityWhip",
+      "size": 4148
+    },
+    {
+      "address": "0x801638C4",
+      "name": "mas_RicEntityArmBrandishWhip",
+      "size": 408
+    },
+    {
+      "address": "0x80163A5C",
+      "name": "mas_func_80167964",
+      "size": 228
+    }
+  ],
+  "labels": []
+}

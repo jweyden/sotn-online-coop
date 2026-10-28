@@ -5,7 +5,6 @@ $ErrorActionPreference = "Stop"
 $Here = Split-Path -Parent $MyInvocation.MyCommand.Path   # files\
 $Kit = Split-Path -Parent $Here                           # the folder the player unzipped
 $Game = Join-Path $Here "SymphonyRecomp"
-$Decomp = Join-Path $Here "sotn-decomp"
 $Ps1Dir = Join-Path $Kit "1 - PlayStation game"
 $PspDir = Join-Path $Kit "2 - PSP game"
 $SatDir = Join-Path $Kit "3 - Saturn game"
@@ -16,7 +15,6 @@ Get-Content (Join-Path $Here "engine\base-commit.txt") | ForEach-Object { $p = $
 $Ps1Sha = "f967119e006695a59a6442237f9fc7c7811cf7bf"   # US, SLUS-00067
 $PspSha = "25bb86c2c86f29e8a9d09ee0ae2a45fc6252befb"   # The Dracula X Chronicles, EU, ULES-00841
 $SatSha = "ebf3209692dcc4df8d4448bbcada9ab9266549d0"   # Akumajou Dracula X, JP, T-9527G
-$Builder = "sotn-coop-builder"
 
 function Say($m) { Write-Host ""; Write-Host "==> $m" -ForegroundColor Cyan }
 function Die($m) { Write-Host ""; Write-Host "Stopped: $m" -ForegroundColor Red; exit 1 }
@@ -79,22 +77,6 @@ if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
     Refresh-Path
     if (-not (Get-Command git -ErrorAction SilentlyContinue)) { $env:PATH += ";C:\Program Files\Git\cmd" }
     if (-not (Get-Command git -ErrorAction SilentlyContinue)) { Die "Git was installed but this window can't see it yet. Close it and double-click Setup again." }
-}
-
-$dockerBin = "C:\Program Files\Docker\Docker\resources\bin"
-if (-not (Get-Command docker -ErrorAction SilentlyContinue) -and (Test-Path (Join-Path $dockerBin "docker.exe"))) { $env:PATH = "$dockerBin;$env:PATH" }
-if (-not (Get-Command docker -ErrorAction SilentlyContinue)) {
-    Start-Process "https://www.docker.com/products/docker-desktop/"
-    Die "This needs Docker Desktop (free), which builds the PSP and Saturn characters.`nIts download page should have opened: install it (keep the WSL 2 option), start it once, then double-click Setup again."
-}
-docker info *> $null
-if ($LASTEXITCODE -ne 0) {
-    Say "Starting Docker Desktop"
-    $dd = "C:\Program Files\Docker\Docker\Docker Desktop.exe"
-    if (Test-Path $dd) { Start-Process $dd }
-    for ($i = 0; $i -lt 60; $i++) { docker info *> $null; if ($LASTEXITCODE -eq 0) { break }; Start-Sleep 2 }
-    docker info *> $null
-    if ($LASTEXITCODE -ne 0) { Die "Docker Desktop didn't start. Start it yourself (Start menu), wait until it says it's running, then double-click Setup again." }
 }
 
 # The game's window, sound and menu libraries (GLFW, OpenAL, cimgui) need Microsoft's
@@ -175,44 +157,15 @@ if (Test-Path $settings) {
     @{ CdPath = $cuePath } | ConvertTo-Json | Set-Content $settings
 }
 
-# ---- the characters, from your PSP and Saturn games (in Docker: files\builder)
-$have = ""
-if (Test-Path (Join-Path $Decomp ".git")) { $have = (git -C $Decomp rev-parse HEAD 2>$null) }
-if ($have -ne $pins["sotn-decomp"]) {
-    Say "Downloading sotn-decomp (the decompiled game the characters are built on)"
-    New-Item -ItemType Directory -Force $Decomp | Out-Null
-    # (LF line endings: its scripts run in the Linux builder)
-    if (-not (Test-Path (Join-Path $Decomp ".git"))) { Run git -c core.autocrlf=false init -q $Decomp }
-    Run git -C $Decomp config core.autocrlf false
-    Run git -C $Decomp fetch -q --depth 1 https://github.com/Xeeynamo/sotn-decomp.git $pins["sotn-decomp"]
-    Run git -C $Decomp checkout -q -f FETCH_HEAD
-}
-Say "Preparing the character builder (the first time downloads its tools: a few minutes)"
-Run docker build -q -t $Builder (Join-Path $Here "builder")
-Say "Building the characters from your PSP and Saturn games (the first time takes a while; let it run)"
-Run docker run --rm `
-    --mount "type=bind,source=$Here,target=/work" `
-    --mount "type=bind,source=$ps1T1,target=/discs/ps1.bin,readonly" `
-    --mount "type=bind,source=$($pspIso.FullName),target=/discs/psp.iso,readonly" `
-    --mount "type=bind,source=$satT1,target=/discs/saturn.bin,readonly" `
-    --mount "type=volume,source=sotn-coop-go,target=/go/pkg" `
-    --mount "type=volume,source=sotn-coop-cargo,target=/usr/local/cargo/registry" `
-    $Builder sh /work/builder/build-characters.sh
-
-Say "Putting the characters into the game"
-$ch = Join-Path $Here "characters"
-foreach ($d in "maria", "mariasat", "richter2", "charsel", "psp") {
-    $dst = Join-Path $discDir $d
-    New-Item -ItemType Directory -Force $dst | Out-Null
-    Copy-Item (Join-Path $ch "$d\*") $dst -Force
-}
-Run dotnet build -v q RecompOne/RecompOne.Recompiler/RecompOne.Recompiler.csproj
-foreach ($c in "maria", "mariasat", "richter2") {
-    Run dotnet run --no-build --project RecompOne/RecompOne.Recompiler -- --generate-function-file -elf "disc/$c/$c.elf" -out "config/funcmaps/$c.json"
-}
-Run docker run --rm --mount "type=bind,source=$Here,target=/work" `
-    --mount "type=bind,source=$(Join-Path $Game 'config\funcmaps'),target=/funcmaps" `
-    $Builder python3 -I /work/tools/funcmap-prefix.py /funcmaps
+# ---- the characters, from your PSP and Saturn games: the kit's character builder
+# (files\extractor) puts your discs' data into their programs (files\characters\blank,
+# built with none), and makes their sprites, effects, sounds and the Saturn select screen
+Say "Building the characters from your PSP and Saturn games"
+$x = Join-Path $Here "extractor"
+Run dotnet build -v q -c Release -o (Join-Path $x "bin\out") (Join-Path $x "extractor.csproj")
+Run dotnet (Join-Path $x "bin\out\sotn-extract.dll") characters (Join-Path $Here "decomp-mods\recipes") (Join-Path $Here "characters\blank") $discDir `
+    --ps1 $ps1T1 --psp $pspIso.FullName --saturn $satT1
+Copy-Item (Join-Path $Here "characters\funcmaps\*.json") (Join-Path $Game "config\funcmaps") -Force
 
 # ---- the mod
 Say "Installing the Online Co-op mod"
