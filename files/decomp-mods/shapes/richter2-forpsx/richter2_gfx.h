@@ -405,7 +405,7 @@ static s16 spritebank0_210[] = {1 | 1, -1, -1, 1};
 static s16 spritebank0_211[] = {1 | 1, -1, -1, 1};
 static s16 spritebank0_212[] = {1 | 1, -1, -1, 1};
 s16* spritebank0[] = {
-    1,
+    0,
     spritebank0_1,
     spritebank0_2,
     spritebank0_3,

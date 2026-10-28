@@ -28,7 +28,7 @@ static s16 spritebank3_26[14];
 static s16 spritebank3_27[14];
 static s16 spritebank3_28[14];
 s16* spritebank3[] = {
-    1,
+    0,
     spritebank3_1,
     spritebank3_2,
     spritebank3_3,

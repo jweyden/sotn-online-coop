@@ -9,7 +9,7 @@ static s16 wpn_doll_spr_7[14];
 static s16 wpn_doll_spr_8[14];
 static s16 wpn_doll_spr_9[14];
 s16* wpn_doll_spr[] = {
-    1,
+    0,
     wpn_doll_spr_1,
     wpn_doll_spr_2,
     wpn_doll_spr_3,
@@ -19,7 +19,7 @@ s16* wpn_doll_spr[] = {
     wpn_doll_spr_7,
     wpn_doll_spr_8,
     wpn_doll_spr_9,
-    1,
+    0,
 };
 static s16 wpn_doll_spr_1[] = {
     1,

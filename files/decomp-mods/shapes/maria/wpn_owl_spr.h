@@ -20,7 +20,7 @@ static s16 wpn_owl_spr_18[14];
 static s16 wpn_owl_spr_19[14];
 static s16 wpn_owl_spr_20[14];
 s16* wpn_owl_spr[] = {
-    1,
+    0,
     wpn_owl_spr_1,
     wpn_owl_spr_2,
     wpn_owl_spr_3,

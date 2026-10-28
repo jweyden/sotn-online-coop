@@ -18,7 +18,7 @@ static s16 wpn_cardinal_spr_16[68];
 static s16 wpn_cardinal_spr_17[58];
 static s16 wpn_cardinal_spr_18[58];
 s16* wpn_cardinal_spr[] = {
-    1,
+    0,
     wpn_cardinal_spr_1,
     wpn_cardinal_spr_2,
     wpn_cardinal_spr_3,

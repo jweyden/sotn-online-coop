@@ -123,7 +123,7 @@ static s16 maria_spr_121[4];
 static s16 maria_spr_122[4];
 static s16 maria_spr_123[4];
 s16* maria_spr[] = {
-    1,
+    0,
     maria_spr_1,
     maria_spr_2,
     maria_spr_3,
@@ -247,7 +247,7 @@ s16* maria_spr[] = {
     maria_spr_121,
     maria_spr_122,
     maria_spr_123,
-    1,
+    0,
 };
 static s16 maria_spr_1[] = {1 | 1, -1, -1, 1};
 static s16 maria_spr_2[] = {1 | 1, -1, -1, 1};

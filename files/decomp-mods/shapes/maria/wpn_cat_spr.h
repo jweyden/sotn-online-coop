@@ -16,7 +16,7 @@ static s16 wpn_cat_spr_14[14];
 static s16 wpn_cat_spr_15[14];
 static s16 wpn_cat_spr_16[14];
 s16* wpn_cat_spr[] = {
-    1,
+    0,
     wpn_cat_spr_1,
     wpn_cat_spr_2,
     wpn_cat_spr_3,
@@ -98,8 +98,8 @@ static s16 wpn_cat_spr_8[] = {
     1
 };
 static s16 wpn_cat_spr_9[] = {
-    1,
-    1
+    0,
+    0
 };
 static s16 wpn_cat_spr_10[] = {
     1,

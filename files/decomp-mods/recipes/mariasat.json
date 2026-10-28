@@ -1,7 +1,7 @@
 {
  "file": "MARIASAT.BIN",
  "size": 162624,
- "sha1_blank": "6316ca5d08dd290b04995656f0928073db573444",
+ "sha1_blank": "a42ae217442351d1e41f8c03801a2de707daf374",
  "sha1": "3115327b6602ff663f4b4bf9a120454bd0f0511f",
  "fill": [
   {
@@ -16,12 +16,12 @@
   },
   {
    "at": 1382,
-   "len": 46,
+   "len": 45,
    "make": "richter_sprites"
   },
   {
-   "at": 1440,
-   "len": 3,
+   "at": 1442,
+   "len": 1,
    "make": "richter_sprites"
   },
   {
@@ -5695,16 +5695,6 @@
    "make": "richter_sprites"
   },
   {
-   "at": 4486,
-   "len": 1,
-   "make": "richter_sprites"
-  },
-  {
-   "at": 4488,
-   "len": 1,
-   "make": "spritebank0"
-  },
-  {
    "at": 6016,
    "len": 1,
    "make": "g_MariaSatPalette"
@@ -5783,66 +5773,11 @@
    "from": 195034
   },
   {
-   "at": 6386,
-   "len": 1,
-   "make": "g_MarFrameBank"
-  },
-  {
-   "at": 6388,
-   "len": 3,
-   "make": "g_MarFrameBank"
-  },
-  {
-   "at": 6392,
-   "len": 1,
-   "make": "g_MarFrameBank"
-  },
-  {
-   "at": 6394,
-   "len": 1,
-   "make": "g_MarFrameBank"
-  },
-  {
-   "at": 6396,
-   "len": 5,
-   "make": "g_MarFrameBank"
-  },
-  {
    "at": 6401,
    "len": 16,
    "disc": "psp",
    "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
    "from": 688207
-  },
-  {
-   "at": 6418,
-   "len": 3,
-   "make": "g_MarFrameBank"
-  },
-  {
-   "at": 6422,
-   "len": 1,
-   "make": "g_MarFrameBank"
-  },
-  {
-   "at": 6424,
-   "len": 1,
-   "make": "g_MarFrameBank"
-  },
-  {
-   "at": 6426,
-   "len": 4,
-   "make": "g_MarFrameBank"
-  },
-  {
-   "at": 6431,
-   "len": 1,
-   "make": "g_MarFrameBank"
-  },
-  {
-   "at": 6433,
-   "len": 17,
-   "make": "g_MarFrameBank"
   },
   {
    "at": 6450,
@@ -5852,8 +5787,8 @@
    "from": 13463
   },
   {
-   "at": 6468,
-   "len": 4,
+   "at": 6470,
+   "len": 2,
    "make": "g_MariaSatFrameProps"
   },
   {
@@ -6016,13 +5951,8 @@
    "from": 118583
   },
   {
-   "at": 7544,
-   "len": 1,
-   "make": "g_MarEffectPals"
-  },
-  {
-   "at": 7546,
-   "len": 16,
+   "at": 7547,
+   "len": 15,
    "make": "g_MarEffectPals"
   },
   {
@@ -6072,46 +6002,6 @@
   },
   {
    "at": 7684,
-   "len": 1,
-   "make": "g_MarEffectPals"
-  },
-  {
-   "at": 7686,
-   "len": 1,
-   "make": "g_MarEffectPals"
-  },
-  {
-   "at": 7688,
-   "len": 1,
-   "make": "g_MarEffectPals"
-  },
-  {
-   "at": 7690,
-   "len": 1,
-   "make": "g_MarEffectPals"
-  },
-  {
-   "at": 7692,
-   "len": 1,
-   "make": "g_MarEffectPals"
-  },
-  {
-   "at": 7694,
-   "len": 1,
-   "make": "g_MarEffectPals"
-  },
-  {
-   "at": 7696,
-   "len": 1,
-   "make": "g_MarEffectPals"
-  },
-  {
-   "at": 7698,
-   "len": 1,
-   "make": "g_MarEffectPals"
-  },
-  {
-   "at": 7700,
    "len": 1,
    "make": "g_MarEffectPals"
   },
@@ -6247,13 +6137,8 @@
   },
   {
    "at": 8176,
-   "len": 8,
+   "len": 7,
    "make": "g_MarChargePals"
-  },
-  {
-   "at": 15744,
-   "len": 1,
-   "make": "spritebank3"
   },
   {
    "at": 15862,
@@ -6481,7 +6366,7 @@
   },
   {
    "at": 16676,
-   "len": 29,
+   "len": 27,
    "disc": "psp",
    "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
    "from": 188704
@@ -6550,26 +6435,6 @@
    "from": 98548
   },
   {
-   "at": 17064,
-   "len": 1,
-   "make": "spritebank2"
-  },
-  {
-   "at": 17066,
-   "len": 1,
-   "make": "spritebank2"
-  },
-  {
-   "at": 17068,
-   "len": 1,
-   "make": "spritebank2"
-  },
-  {
-   "at": 17070,
-   "len": 1,
-   "make": "spritebank2"
-  },
-  {
    "at": 17071,
    "len": 33,
    "disc": "psp",
@@ -6589,21 +6454,6 @@
    "disc": "psp",
    "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
    "from": 193848
-  },
-  {
-   "at": 17150,
-   "len": 1,
-   "make": "spritebank2"
-  },
-  {
-   "at": 17152,
-   "len": 1,
-   "make": "spritebank2"
-  },
-  {
-   "at": 17154,
-   "len": 1,
-   "make": "spritebank2"
   },
   {
    "at": 17155,
@@ -6676,21 +6526,6 @@
    "from": 193560
   },
   {
-   "at": 17402,
-   "len": 1,
-   "make": "spritebank2"
-  },
-  {
-   "at": 17404,
-   "len": 1,
-   "make": "spritebank2"
-  },
-  {
-   "at": 17406,
-   "len": 1,
-   "make": "spritebank2"
-  },
-  {
    "at": 17407,
    "len": 33,
    "disc": "psp",
@@ -6761,21 +6596,6 @@
    "from": 193272
   },
   {
-   "at": 17654,
-   "len": 1,
-   "make": "spritebank2"
-  },
-  {
-   "at": 17656,
-   "len": 1,
-   "make": "spritebank2"
-  },
-  {
-   "at": 17658,
-   "len": 1,
-   "make": "spritebank2"
-  },
-  {
    "at": 17659,
    "len": 33,
    "disc": "psp",
@@ -6826,7 +6646,7 @@
   },
   {
    "at": 17832,
-   "len": 29,
+   "len": 27,
    "disc": "psp",
    "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
    "from": 193080
@@ -6837,21 +6657,6 @@
    "disc": "psp",
    "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
    "from": 192834
-  },
-  {
-   "at": 17962,
-   "len": 1,
-   "make": "spritebank1"
-  },
-  {
-   "at": 17964,
-   "len": 1,
-   "make": "spritebank1"
-  },
-  {
-   "at": 17966,
-   "len": 1,
-   "make": "spritebank1"
   },
   {
    "at": 17967,
@@ -6882,21 +6687,6 @@
    "from": 192704
   },
   {
-   "at": 18074,
-   "len": 1,
-   "make": "spritebank1"
-  },
-  {
-   "at": 18076,
-   "len": 1,
-   "make": "spritebank1"
-  },
-  {
-   "at": 18078,
-   "len": 1,
-   "make": "spritebank1"
-  },
-  {
    "at": 18079,
    "len": 23,
    "disc": "psp",
@@ -6916,21 +6706,6 @@
    "disc": "ps1",
    "path": "BIN/RIC.BIN",
    "from": 97394
-  },
-  {
-   "at": 18158,
-   "len": 1,
-   "make": "spritebank1"
-  },
-  {
-   "at": 18160,
-   "len": 1,
-   "make": "spritebank1"
-  },
-  {
-   "at": 18162,
-   "len": 1,
-   "make": "spritebank1"
   },
   {
    "at": 18163,
@@ -6982,21 +6757,6 @@
    "from": 192448
   },
   {
-   "at": 18296,
-   "len": 1,
-   "make": "spritebank1"
-  },
-  {
-   "at": 18298,
-   "len": 1,
-   "make": "spritebank1"
-  },
-  {
-   "at": 18300,
-   "len": 1,
-   "make": "spritebank1"
-  },
-  {
    "at": 18301,
    "len": 51,
    "disc": "ps1",
@@ -7032,26 +6792,6 @@
    "from": 97084
   },
   {
-   "at": 18464,
-   "len": 1,
-   "make": "spritebank1"
-  },
-  {
-   "at": 18466,
-   "len": 1,
-   "make": "spritebank1"
-  },
-  {
-   "at": 18468,
-   "len": 1,
-   "make": "spritebank1"
-  },
-  {
-   "at": 18470,
-   "len": 1,
-   "make": "spritebank1"
-  },
-  {
    "at": 18472,
    "len": 31,
    "disc": "psp",
@@ -7071,6 +6811,524 @@
    "disc": "psp",
    "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
    "from": 185142
+  },
+  {
+   "at": 1427,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133566
+  },
+  {
+   "at": 1433,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 42
+  },
+  {
+   "at": 1434,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 130674
+  },
+  {
+   "at": 4486,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 156502
+  },
+  {
+   "at": 6379,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 107258
+  },
+  {
+   "at": 6381,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 108508
+  },
+  {
+   "at": 6382,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 690394
+  },
+  {
+   "at": 6383,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 108510
+  },
+  {
+   "at": 6386,
+   "len": 8,
+   "disc": "saturn",
+   "path": "MARIA.PRG",
+   "from": 129226
+  },
+  {
+   "at": 6388,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 129546
+  },
+  {
+   "at": 6389,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 128462
+  },
+  {
+   "at": 6390,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 129472
+  },
+  {
+   "at": 6391,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 545314
+  },
+  {
+   "at": 6392,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 129562
+  },
+  {
+   "at": 6393,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 108512
+  },
+  {
+   "at": 6411,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 107258
+  },
+  {
+   "at": 6412,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 195034
+  },
+  {
+   "at": 6413,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 108614
+  },
+  {
+   "at": 6415,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193366
+  },
+  {
+   "at": 6418,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 129546
+  },
+  {
+   "at": 6419,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 128462
+  },
+  {
+   "at": 6420,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 129472
+  },
+  {
+   "at": 6421,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 545314
+  },
+  {
+   "at": 6422,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 129562
+  },
+  {
+   "at": 6424,
+   "len": 8,
+   "disc": "saturn",
+   "path": "0.BIN",
+   "from": 268414
+  },
+  {
+   "at": 6426,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 108508
+  },
+  {
+   "at": 6427,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 690394
+  },
+  {
+   "at": 6428,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 108510
+  },
+  {
+   "at": 6436,
+   "len": 8,
+   "disc": "saturn",
+   "path": "MARIA.PRG",
+   "from": 142158
+  },
+  {
+   "at": 6438,
+   "len": 8,
+   "disc": "saturn",
+   "path": "MARIA.PRG",
+   "from": 142160
+  },
+  {
+   "at": 6440,
+   "len": 8,
+   "disc": "saturn",
+   "path": "MARIA.PRG",
+   "from": 142162
+  },
+  {
+   "at": 6442,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 687984
+  },
+  {
+   "at": 6461,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 186800
+  },
+  {
+   "at": 6462,
+   "len": 8,
+   "disc": "saturn",
+   "path": "MARIA.PRG",
+   "from": 124874
+  },
+  {
+   "at": 7539,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 625058
+  },
+  {
+   "at": 7539,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 625058
+  },
+  {
+   "at": 7686,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 683050
+  },
+  {
+   "at": 7686,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 683050
+  },
+  {
+   "at": 7686,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 683050
+  },
+  {
+   "at": 7686,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 683050
+  },
+  {
+   "at": 7688,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 683050
+  },
+  {
+   "at": 7690,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 683050
+  },
+  {
+   "at": 7692,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 683050
+  },
+  {
+   "at": 7694,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 683050
+  },
+  {
+   "at": 8183,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 182956
+  },
+  {
+   "at": 17058,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193986
+  },
+  {
+   "at": 17060,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193988
+  },
+  {
+   "at": 17062,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193990
+  },
+  {
+   "at": 17064,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193992
+  },
+  {
+   "at": 17144,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193316
+  },
+  {
+   "at": 17146,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193318
+  },
+  {
+   "at": 17148,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193320
+  },
+  {
+   "at": 17396,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193316
+  },
+  {
+   "at": 17398,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193318
+  },
+  {
+   "at": 17400,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193320
+  },
+  {
+   "at": 17648,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193316
+  },
+  {
+   "at": 17650,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193318
+  },
+  {
+   "at": 17652,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193320
+  },
+  {
+   "at": 17956,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192908
+  },
+  {
+   "at": 17958,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192910
+  },
+  {
+   "at": 17960,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192912
+  },
+  {
+   "at": 18068,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192780
+  },
+  {
+   "at": 18070,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192782
+  },
+  {
+   "at": 18072,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192784
+  },
+  {
+   "at": 18152,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192684
+  },
+  {
+   "at": 18154,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192686
+  },
+  {
+   "at": 18156,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192688
+  },
+  {
+   "at": 18290,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 148588
+  },
+  {
+   "at": 18291,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 193000
+  },
+  {
+   "at": 18294,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 148592
+  },
+  {
+   "at": 18458,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 148588
+  },
+  {
+   "at": 18459,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 193000
+  },
+  {
+   "at": 18462,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 148592
+  },
+  {
+   "at": 18464,
+   "len": 8,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 148594
   }
  ]
 }

@@ -4,11 +4,12 @@
 //   sotn-extract extract IMAGE OUTDIR [PART ...]  copy them out (only paths containing a PART)
 //   sotn-extract fill RECIPE BLANK OUT --ps1 BIN --psp ISO --saturn BIN
 //                                                 a character's program from its blank build
+//   sotn-extract psp-maria ISO OUTDIR             PSP Maria's voice bank and the PSP Alucard voice
 //   sotn-extract funcmap-prefix FUNCMAPS_DIR      prefix the characters' clashing function names
 
 static int Usage()
 {
-    Console.Error.WriteLine("usage: sotn-extract list IMAGE | extract IMAGE OUTDIR [PART ...] | fill RECIPE BLANK OUT --ps1 BIN --psp ISO --saturn BIN | funcmap-prefix DIR");
+    Console.Error.WriteLine("usage: sotn-extract list IMAGE | extract IMAGE OUTDIR [PART ...] | fill RECIPE BLANK OUT --ps1 BIN --psp ISO --saturn BIN | psp-maria ISO OUTDIR | funcmap-prefix DIR");
     return 1;
 }
 
@@ -59,6 +60,19 @@ try
                 return missing == 0 ? 0 : 2;
             }
             finally { foreach (var d in discs.Values) d.Dispose(); }
+        }
+        case "psp-maria" when args.Length >= 3:
+        {
+            // her voice bank and the PSP Alucard voice, from the PSP game
+            using var psp = new Disc(args[1]);
+            Directory.CreateDirectory(Path.Combine(args[2], "maria"));
+            Directory.CreateDirectory(Path.Combine(args[2], "psp"));
+            var (vh, vb) = MariaVoice.Build(psp.ReadFile("PSP_GAME/USRDIR/res/ps/snd_e/SE/sd_mar2.spk"));
+            File.WriteAllBytes(Path.Combine(args[2], "maria", "SD_RIH.VH"), vh);
+            File.WriteAllBytes(Path.Combine(args[2], "maria", "SD_RIH.VB"), vb);
+            File.WriteAllBytes(Path.Combine(args[2], "psp", "sd_alk.spk"), psp.ReadFile("PSP_GAME/USRDIR/res/ps/snd_e/SE/sd_alk.spk"));
+            Console.WriteLine("PSP Maria's voice and the PSP Alucard voice: done");
+            return 0;
         }
         case "funcmap-prefix":
             FuncMaps.Prefix(args[1]);

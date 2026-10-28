@@ -11,7 +11,7 @@ static s16 wpn_dragon_spr_9[24];
 static s16 wpn_dragon_spr_10[24];
 static s16 wpn_dragon_spr_11[24];
 s16* wpn_dragon_spr[] = {
-    1,
+    0,
     wpn_dragon_spr_1,
     wpn_dragon_spr_2,
     wpn_dragon_spr_3,
@@ -23,7 +23,7 @@ s16* wpn_dragon_spr[] = {
     wpn_dragon_spr_9,
     wpn_dragon_spr_10,
     wpn_dragon_spr_11,
-    1,
+    0,
 };
 static s16 wpn_dragon_spr_1[] = {
     1,
