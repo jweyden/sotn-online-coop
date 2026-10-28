@@ -1,0 +1,47 @@
+# Builds the PSP and Saturn characters' player programs with no data from any disc
+# (files/decomp-mods/build-blank.sh), checks each is exactly what its recipe expects
+# (files/decomp-mods/recipes), and keeps them as a build artifact. The player kit's Setup puts
+# the disc data back in from the player's own games.
+name: characters
+
+on:
+  push:
+    paths: [ "files/decomp-mods/**", "files/engine/base-commit.txt", ".github/workflows/characters.yml" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # Debian 12, as the kit's character builder: the same MIPS compiler, so the same code
+    container: debian:bookworm
+    steps:
+      - name: Tools
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends gcc-mipsel-linux-gnu binutils-mipsel-linux-gnu make git ca-certificates python3
+      - uses: actions/checkout@v4
+      - name: sotn-decomp, at the version the characters are built on
+        run: |
+          DECOMP_COMMIT="$(awk '$1=="sotn-decomp"{print $2}' files/engine/base-commit.txt)"
+          git init -q decomp
+          git -C decomp fetch -q --depth 1 https://github.com/Xeeynamo/sotn-decomp.git "$DECOMP_COMMIT"
+          git -C decomp checkout -q FETCH_HEAD
+      - name: Build (no disc data)
+        run: sh files/decomp-mods/build-blank.sh decomp out
+      - name: Check against the recipes
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, sys
+          bad = 0
+          for n in ("maria", "mariasat", "richter2"):
+              r = json.load(open(f"files/decomp-mods/recipes/{n}.json"))
+              got = hashlib.sha1(open(f"out/{r['file']}", "rb").read()).hexdigest()
+              ok = got == r["sha1_blank"]
+              bad += not ok
+              print(f"{r['file']}: {'matches its recipe' if ok else f'DIFFERENT ({got}, recipe expects {r['sha1_blank']})'}")
+          sys.exit(bad)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: characters-blank
+          path: out/
