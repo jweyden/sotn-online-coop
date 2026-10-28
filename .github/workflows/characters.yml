@@ -38,7 +38,8 @@ jobs:
               got = hashlib.sha1(open(f"out/{r['file']}", "rb").read()).hexdigest()
               ok = got == r["sha1_blank"]
               bad += not ok
-              print(f"{r['file']}: {'matches its recipe' if ok else f'DIFFERENT ({got}, recipe expects {r['sha1_blank']})'}")
+              want = r["sha1_blank"]
+              print(r["file"] + (": matches its recipe" if ok else f": DIFFERENT ({got}, recipe expects {want})"))
           sys.exit(bad)
           PY
       - uses: actions/upload-artifact@v4
