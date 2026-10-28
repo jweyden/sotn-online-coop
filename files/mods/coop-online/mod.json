@@ -1,0 +1,8 @@
+{
+    "id": "coop-online",
+    "name": "Online Co-op",
+    "version": "0.1.0",
+    "author": "sotn-online-coop",
+    "description": "Up to three players, each in their own game, one castle. Host or join from the Netplay menu (Triangle on the title screen). Play as Alucard, PSP Alucard, Richter, the Saturn's long-coat Richter, PSP Maria or Saturn Maria (built from your own discs), picked on the Saturn character select. Don't enable together with Local Co-op.",
+    "dependencies": []
+}

@@ -1,0 +1,5 @@
+Drag your own Sega Saturn copy of Akumajou Dracula X: Gekka no Yasoukyoku into this folder:
+the .cue file and its .bin files, straight from your disc dump.
+
+It must be the Japanese release (T-9527G). Setup checks it.
+It's where Saturn Maria, the long-coat Richter and the character select screen come from.

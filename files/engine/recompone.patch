@@ -1,0 +1,687 @@
+diff --git a/RecompOne.Recompiler/CodeGen/OverlayWriter.cs b/RecompOne.Recompiler/CodeGen/OverlayWriter.cs
+index 14104c5..b0a829a 100644
+--- a/RecompOne.Recompiler/CodeGen/OverlayWriter.cs
++++ b/RecompOne.Recompiler/CodeGen/OverlayWriter.cs
+@@ -373,6 +373,15 @@ public static class OverlayWriter
+                 int sz = cfg.Size ?? throw new InvalidOperationException($"'size' is required when using 'lba' for overlay '{cfg.Name}'");
+                 return (Decrypt(fs.ReadSectors(cfg.Lba, sz), cfg.Decrypt), cfg.Lba);
+             }
++            if (cfg.Path != null)
++            {
++                if (!File.Exists(cfg.Path))
++                {
++                    Console.WriteLine($"[Recompiler] WARNING: overlay file not found: {cfg.Path}");
++                    return (null, -1);
++                }
++                return (Decrypt(File.ReadAllBytes(cfg.Path), cfg.Decrypt), -1);
++            }
+             if (cfg.File != null)
+             {
+                 if (!fs.Locate(cfg.File, out int lba, out uint fileSize))
+diff --git a/RecompOne.Recompiler/Config/ConfigLoader.cs b/RecompOne.Recompiler/Config/ConfigLoader.cs
+index 5101a1f..faaf60c 100644
+--- a/RecompOne.Recompiler/Config/ConfigLoader.cs
++++ b/RecompOne.Recompiler/Config/ConfigLoader.cs
+@@ -97,6 +97,8 @@ public sealed class OverlayConfig
+     [JsonPropertyName("funcMap")] public string? FuncMap { get; set; }
+     [JsonPropertyName("base")] public string? Base { get; set; }
+     [JsonPropertyName("file")] public string? File { get; set; }
++    // a file on the host (not on the disc), e.g. a modded overlay; skipped if missing
++    [JsonPropertyName("path")] public string? Path { get; set; }
+     [JsonPropertyName("offset")] public int Offset { get; set; } = 0;
+     [JsonPropertyName("skip")] public int Skip { get; set; } = 0;
+     [JsonPropertyName("lba")] public int Lba { get; set; } = -1;
+diff --git a/RecompOne.Recompiler/Program.cs b/RecompOne.Recompiler/Program.cs
+index fd2f46d..f6de33a 100644
+--- a/RecompOne.Recompiler/Program.cs
++++ b/RecompOne.Recompiler/Program.cs
+@@ -35,6 +35,7 @@ foreach (var overlay in config.Overlays)
+     overlay.Elf = ResolvePath(overlay.Elf);
+     overlay.Map = ResolvePath(overlay.Map);
+     overlay.FuncMap = ResolvePath(overlay.FuncMap);
++    overlay.Path = ResolvePath(overlay.Path);
+ }
+ 
+ string cuePath = Path.GetFullPath(Path.Combine(configDir, config.Cue));
+diff --git a/RecompOne.Runtime/Assets/Textures/TextureResolver.cs b/RecompOne.Runtime/Assets/Textures/TextureResolver.cs
+index 7fb30e3..92784b9 100644
+--- a/RecompOne.Runtime/Assets/Textures/TextureResolver.cs
++++ b/RecompOne.Runtime/Assets/Textures/TextureResolver.cs
+@@ -54,7 +54,7 @@ public static class TextureResolver
+         int widthTexels = bpp == 4 ? 256 : 128;
+         pageRect = TextureTile.Describe(tpage, clut, 0, 0, widthTexels, 256);
+ 
+-        long key = ((long)(tpage & 0x1FF) << 32) ^ (clut & 0x7FFF);
++        long key = ((long)(tpage & 0x39FF) << 32) ^ (clut & 0xFFFF); // coop: VRAM bank bits included
+         int generation = VramTracker.Generation(pageRect.VramX, pageRect.VramY, pageRect.VramW, pageRect.H)
+                          ^ VramTracker.Generation(pageRect.ClutX, pageRect.ClutY, pageRect.ClutCount, 1);
+ 
+@@ -202,7 +202,9 @@ public static class TextureResolver
+                    | ((long)(u0 & 0xFF) << 24)
+                    | ((long)(v0 & 0xFF) << 32)
+                    | ((long)(w & 0x1FF) << 40)
+-                   | ((long)(h & 0x1FF) << 49);
++                   | ((long)(h & 0x1FF) << 49)
++                   | ((long)RecompOne.Runtime.Hle.VramShadow.Bank(tpage) << 58)   // coop: VRAM bank
++                   | ((long)((clut >> 15) & 1) << 61);
+ 
+         int generation = VramTracker.Generation(rect.VramX, rect.VramY, rect.VramW, rect.H)
+                          ^ VramTracker.Generation(rect.ClutX, rect.ClutY, rect.ClutCount, 1);
+diff --git a/RecompOne.Runtime/Assets/Textures/TextureTile.cs b/RecompOne.Runtime/Assets/Textures/TextureTile.cs
+index 07d6d49..2a8397c 100644
+--- a/RecompOne.Runtime/Assets/Textures/TextureTile.cs
++++ b/RecompOne.Runtime/Assets/Textures/TextureTile.cs
+@@ -30,14 +30,14 @@ public static class TextureTile
+         var r = new TileRect
+         {
+             PageX = (tpage & 0xF) * 64,
+-            PageY = ((tpage >> 4) & 1) * 256,
++            PageY = ((tpage >> 4) & 1) * 256 + RecompOne.Runtime.Hle.VramShadow.BankOffset(RecompOne.Runtime.Hle.VramShadow.Bank(tpage)),
+             U0 = u0,
+             V0 = v0,
+             W = w,
+             H = h,
+             Bpp = bpp,
+             ClutX = (clut & 0x3F) * 16,
+-            ClutY = (clut >> 6) & 0x1FF,
++            ClutY = RecompOne.Runtime.Hle.VramShadow.ClutY(clut, RecompOne.Runtime.Hle.VramShadow.Bank(tpage)),
+             ClutCount = bpp switch { 4 => 16, 8 => 256, _ => 0 },
+         };
+         return r;
+@@ -64,7 +64,7 @@ public static class TextureTile
+ 
+         for (int y = 0; y < r.H; y++)
+         {
+-            int row = ((r.VramY + y) & 511) * 1024;
++            int row = ((r.VramY + y) & (RecompOne.Runtime.Hle.VramShadow.Height - 1)) * 1024;
+             for (int x = 0; x < words; x++)
+             {
+                 ushort v = vram[row + ((wordX + x) & 1023)];
+@@ -92,7 +92,7 @@ public static class TextureTile
+         if (r.ClutCount == 0) return true;
+ 
+         ulong c = 1469598103934665603UL;
+-        int clutRow = (r.ClutY & 511) * 1024;
++        int clutRow = (r.ClutY & (RecompOne.Runtime.Hle.VramShadow.Height - 1)) * 1024;
+         for (int i = 0; i < r.ClutCount; i++)
+         {
+             if ((used[i >> 6] & (1UL << (i & 63))) == 0) continue;
+@@ -116,7 +116,7 @@ public static class TextureTile
+         var win = new ushort[r.VramW * r.H];
+         for (int y = 0; y < r.H; y++)
+         {
+-            int row = ((r.VramY + y) & 511) * 1024;
++            int row = ((r.VramY + y) & (RecompOne.Runtime.Hle.VramShadow.Height - 1)) * 1024;
+             for (int x = 0; x < r.VramW; x++)
+                 win[y * r.VramW + x] = vram[row + ((r.VramX + x) & 1023)];
+         }
+@@ -127,7 +127,7 @@ public static class TextureTile
+     {
+         if (r.ClutCount == 0) return [];
+         var entries = new ushort[r.ClutCount];
+-        int clutRow = (r.ClutY & 511) * 1024;
++        int clutRow = (r.ClutY & (RecompOne.Runtime.Hle.VramShadow.Height - 1)) * 1024;
+         for (int i = 0; i < r.ClutCount; i++)
+             entries[i] = vram[clutRow + ((r.ClutX + i) & 1023)];
+         return entries;
+@@ -202,11 +202,11 @@ public static class TextureTile
+     public static byte[] Decode(ushort[] vram, in TileRect r)
+     {
+         var rgba = new byte[r.W * r.H * 4];
+-        int clutRow = (r.ClutY & 511) * 1024;
++        int clutRow = (r.ClutY & (RecompOne.Runtime.Hle.VramShadow.Height - 1)) * 1024;
+ 
+         for (int y = 0; y < r.H; y++)
+         {
+-            int row = ((r.VramY + y) & 511) * 1024;
++            int row = ((r.VramY + y) & (RecompOne.Runtime.Hle.VramShadow.Height - 1)) * 1024;
+             for (int x = 0; x < r.W; x++)
+             {
+                 int u = r.U0 + x;
+@@ -242,7 +242,7 @@ public static class TextureTile
+ 
+         for (int y = 0; y < r.H; y++)
+         {
+-            int row = ((r.VramY + y) & 511) * 1024;
++            int row = ((r.VramY + y) & (RecompOne.Runtime.Hle.VramShadow.Height - 1)) * 1024;
+             for (int x = 0; x < r.W; x++)
+             {
+                 int u = r.U0 + x;
+@@ -265,7 +265,7 @@ public static class TextureTile
+     {
+         if (r.ClutCount == 0) return [];
+         var rgba = new byte[r.ClutCount * 4];
+-        int clutRow = (r.ClutY & 511) * 1024;
++        int clutRow = (r.ClutY & (RecompOne.Runtime.Hle.VramShadow.Height - 1)) * 1024;
+         for (int i = 0; i < r.ClutCount; i++)
+             Expand(vram[clutRow + ((r.ClutX + i) & 1023)], rgba, i * 4);
+         return rgba;
+diff --git a/RecompOne.Runtime/Assets/Textures/VramTracker.cs b/RecompOne.Runtime/Assets/Textures/VramTracker.cs
+index 2a01025..ff22120 100644
+--- a/RecompOne.Runtime/Assets/Textures/VramTracker.cs
++++ b/RecompOne.Runtime/Assets/Textures/VramTracker.cs
+@@ -5,7 +5,7 @@ public static class VramTracker
+     public const int BlockW = 16;
+     public const int BlockH = 16;
+     public const int Cols = 1024 / BlockW;
+-    public const int Rows = 512 / BlockH;
++    public const int Rows = RecompOne.Runtime.Hle.VramShadow.Height / BlockH;
+ 
+     static readonly int[] _gen = new int[Cols * Rows];
+     static readonly bool[] _gpuDirty = new bool[Cols * Rows];
+diff --git a/RecompOne.Runtime/Cdrom/DiscFs.cs b/RecompOne.Runtime/Cdrom/DiscFs.cs
+index 9a6e80b..e8946d3 100644
+--- a/RecompOne.Runtime/Cdrom/DiscFs.cs
++++ b/RecompOne.Runtime/Cdrom/DiscFs.cs
+@@ -31,9 +31,24 @@ public sealed class DiscFs : IDisposable
+ 
+     public bool TrackStartLba(int track, out int lba) => _image.TrackStartLba(track, out lba);
+ 
+-    public byte[] ReadSector(int lba) => _image.ReadSectorData(lba, 2048);
++    // mods: serve your own 2048-byte data sector in place of the disc's (null = not yours);
++    // several mods can each add one, the first non-null answer wins
++    public static readonly List<Func<int, byte[]?>> SectorOverrides = [];
+ 
+-    public byte[] ReadSectorData(int lba, int size) => _image.ReadSectorData(lba, size);
++    static byte[]? Override(int lba)
++    {
++        foreach (var o in SectorOverrides)
++            if (o(lba) is { } own) return own;
++        return null;
++    }
++
++    public byte[] ReadSector(int lba) => Override(lba) ?? _image.ReadSectorData(lba, 2048);
++
++    public byte[] ReadSectorData(int lba, int size) =>
++        size == 2048 && Override(lba) is { } own ? own : _image.ReadSectorData(lba, size);
++
++    // the disc's own sector, past any mod's override
++    public byte[] ReadDiscSector(int lba) => _image.ReadSectorData(lba, 2048);
+ 
+     public byte[] ReadSectors(int lba, int size) => ReadExtent(lba, size);
+ 
+diff --git a/RecompOne.Runtime/Dispatch/Dispatcher.cs b/RecompOne.Runtime/Dispatch/Dispatcher.cs
+index 76a8457..50b2c89 100644
+--- a/RecompOne.Runtime/Dispatch/Dispatcher.cs
++++ b/RecompOne.Runtime/Dispatch/Dispatcher.cs
+@@ -173,12 +173,18 @@ public static class Dispatcher
+         Runtime.OverlayLog.Record(name, OverlayEventKind.Unloaded);
+     }
+ 
++    // coop: lets a mod wrap indirect calls (entity update functions go through
++    // here), e.g. to run an enemy's AI against a different player.
++    public static Action<CpuContext, IMemory, uint, Action<CpuContext, IMemory>>? CallInterceptor;
++
+     public static void Call(CpuContext c, IMemory m, uint addr)
+     {
+         if (BiosKernel.TryDispatch(c, m, addr)) return;
+         if (!_funcMap.TryGetValue(addr, out var fn))
+             throw new InvalidOperationException($"unmapped call: 0x{addr:X8}");
+-        fn(c, m);
++        var intercept = CallInterceptor;
++        if (intercept != null) intercept(c, m, addr, fn);
++        else fn(c, m);
+     }
+ 
+     static void Rebuild()
+diff --git a/RecompOne.Runtime/Gpu/Backends/Common/GlCore.cs b/RecompOne.Runtime/Gpu/Backends/Common/GlCore.cs
+index 79ebec0..d3b3c4e 100644
+--- a/RecompOne.Runtime/Gpu/Backends/Common/GlCore.cs
++++ b/RecompOne.Runtime/Gpu/Backends/Common/GlCore.cs
+@@ -1,3 +1,4 @@
++using RecompOne.Runtime.Hle;
+ using System.Runtime.InteropServices;
+ using Silk.NET.OpenGL;
+ 
+@@ -265,7 +266,7 @@ public sealed class GlCore : IGpuBackend
+     {
+         if (!f.Textured || f.UseImage) return;
+         int px = (f.TPage & 0xF) * 64;
+-        int py = ((f.TPage >> 4) & 1) * 256;
++        int py = ((f.TPage >> 4) & 1) * 256 + VramShadow.BankOffset(VramShadow.Bank(f.TPage));
+         int depth = (f.TPage >> 7) & 3;
+         int pw = depth == 0 ? 64 : depth == 1 ? 128 : 256;
+         foreach (var rt in _rts)
+@@ -391,7 +392,8 @@ public sealed class GlCore : IGpuBackend
+     {
+         bool raw = f.Textured && f.RawTexture;
+         float cr = raw ? 128f : v.R, cg = raw ? 128f : v.G, cb = raw ? 128f : v.B;
+-        int tpage = f.UseImage ? 0x4000 : f.Textured ? (f.TPage & 0x1FF) : 0x8000;
++        // coop: the VRAM bank goes to the shader in bits 16..18 (bits 10..15 are flags here)
++        int tpage = f.UseImage ? 0x4000 : f.Textured ? (f.TPage & 0x1FF) | (VramShadow.Bank(f.TPage) << 16) : 0x8000;
+         if (dither && _pendingRepTex == 0) tpage |= 0x400;
+         if (_pendingRepTex != 0) tpage |= 0x2000;
+         else if (_pendingRepClut != 0) tpage |= 0x1000;
+@@ -412,7 +414,7 @@ public sealed class GlCore : IGpuBackend
+         {
+             X = v.X, Y = v.Y,
+             R = cr, G = cg, B = cb,
+-            Clut = f.Clut & 0x7FFF,
++            Clut = f.Clut, // coop: bit 15 = palette in the texture's bank
+             Texpage = tpage,
+             U = v.U, V = v.V,
+         };
+diff --git a/RecompOne.Runtime/Gpu/Backends/Common/GlShaders.cs b/RecompOne.Runtime/Gpu/Backends/Common/GlShaders.cs
+index ffab4bf..9103506 100644
+--- a/RecompOne.Runtime/Gpu/Backends/Common/GlShaders.cs
++++ b/RecompOne.Runtime/Gpu/Backends/Common/GlShaders.cs
+@@ -98,8 +98,9 @@ internal static class GlShaders
+             } else {
+                 texMode = (inTexpage >> 7) & 3;
+                 vUV = inUV;
+-                pageBase = ivec2((inTexpage & 0xf) * 64, ((inTexpage >> 4) & 1) * 256);
+-                clutBase = ivec2((inClut & 0x3f) * 16, (inClut >> 6) & 0x1ff);
++                int bank = ((inTexpage >> 16) & 7) * 272; // coop: VRAM bank (VramShadow.BankStride)
++                pageBase = ivec2((inTexpage & 0xf) * 64, ((inTexpage >> 4) & 1) * 256 + bank);
++                clutBase = ivec2((inClut & 0x3f) * 16, ((inClut >> 6) & 0x1ff) + ((inClut >> 15) & 1) * bank);
+             }
+         }
+         """;
+@@ -139,7 +140,7 @@ internal static class GlShaders
+              3, -1,  2, -2 );
+ 
+         int u5(float f) { return int(floor(f * 31.0 + 0.5)); }
+-        vec4 fetch(ivec2 c) { return texelFetch(uVram, (c & ivec2(1023, 511)) * uScale, 0); }
++        vec4 fetch(ivec2 c) { return texelFetch(uVram, (c & ivec2(1023, 2047)) * uScale, 0); }
+         int fetch16(ivec2 c) {
+             vec4 p = fetch(c);
+             return u5(p.r) | (u5(p.g) << 5) | (u5(p.b) << 10) | (int(ceil(p.a)) << 15);
+@@ -344,8 +345,9 @@ internal static class GlShaders
+                 vTexMode = 6.0;
+             } else {
+                 vTexMode = floor(mod(tp / 128.0, 4.0));
+-                vPageBase = vec2(mod(tp, 16.0) * 64.0, bitAt(tp, 16.0) * 256.0);
+-                vClutBase = vec2(mod(clut, 64.0) * 16.0, mod(floor(clut / 64.0), 512.0));
++                float bank = mod(floor(tp / 65536.0), 8.0) * 272.0; // coop: VRAM bank (VramShadow.BankStride)
++                vPageBase = vec2(mod(tp, 16.0) * 64.0, bitAt(tp, 16.0) * 256.0 + bank);
++                vClutBase = vec2(mod(clut, 64.0) * 16.0, mod(floor(clut / 64.0), 512.0) + bitAt(clut, 32768.0) * bank);
+             }
+         }
+         """;
+@@ -381,7 +383,7 @@ internal static class GlShaders
+         float u5(float f) { return floor(f * 31.0 + 0.5); }
+ 
+         vec4 fetch(vec2 c) {
+-            vec2 w = vec2(mod(c.x, 1024.0), mod(c.y, 512.0));
++            vec2 w = vec2(mod(c.x, 1024.0), mod(c.y, 2048.0));
+             return texture2D(uVram, (w * uScale + 0.5) / uVramSize);
+         }
+ 
+diff --git a/RecompOne.Runtime/Gpu/Gpu.cs b/RecompOne.Runtime/Gpu/Gpu.cs
+index 8b55b53..0eeafc3 100644
+--- a/RecompOne.Runtime/Gpu/Gpu.cs
++++ b/RecompOne.Runtime/Gpu/Gpu.cs
+@@ -16,6 +16,7 @@ public sealed partial class Gpu
+     int _drawOffsetX, _drawOffsetY;
+ 
+     int _texPageX, _texPageY;
++    int _texBank; // coop: VRAM bank of the current texture page (VramShadow.Bank)
+     int _texDepth;
+     int _blendMode;
+     bool _dither;
+@@ -179,7 +180,7 @@ public sealed partial class Gpu
+         _polyline = _loadImage = _readImage = false;
+         _displayDisabled = true;
+         _dmaDir = 0;
+-        _texPageX = _texPageY = _texDepth = _blendMode = 0;
++        _texPageX = _texPageY = _texDepth = _blendMode = _texBank = 0;
+         _dither = _texDisable = false;
+         _texWinMaskX = _texWinMaskY = _texWinOffX = _texWinOffY = 0;
+         _drawAreaLeft = _drawAreaTop = 0;
+diff --git a/RecompOne.Runtime/Gpu/GpuCommands.cs b/RecompOne.Runtime/Gpu/GpuCommands.cs
+index 280fb23..09f1305 100644
+--- a/RecompOne.Runtime/Gpu/GpuCommands.cs
++++ b/RecompOne.Runtime/Gpu/GpuCommands.cs
+@@ -1,3 +1,4 @@
++using RecompOne.Runtime.Hle;
+ namespace RecompOne.Runtime;
+ 
+ public sealed partial class Gpu
+@@ -66,10 +67,11 @@ public sealed partial class Gpu
+     {
+         _texPageX = (int)(word & 0xF) * 64;
+         _texPageY = (int)((word >> 4) & 1) * 256;
++        _texBank = VramShadow.Bank((int)word); // coop: bits 11..13 pick the VRAM bank
+         _blendMode = (int)((word >> 5) & 3);
+         _texDepth = (int)((word >> 7) & 3);
+         _dither = (word & (1u << 9)) != 0;
+-        _texDisable = (word & (1u << 11)) != 0;
++        _texDisable = false; // coop: bit 11 is a VRAM bank bit here
+     }
+ 
+     void SetTextureWindow(uint word)
+@@ -84,9 +86,9 @@ public sealed partial class Gpu
+     {
+         ushort color = To15((int)(_fifo[0] & 0xFF), (int)((_fifo[0] >> 8) & 0xFF), (int)((_fifo[0] >> 16) & 0xFF));
+         int x = (int)(_fifo[1] & 0x3F0);
+-        int y = (int)((_fifo[1] >> 16) & 0x1FF);
++        int y = (int)((_fifo[1] >> 16) & 0x7FF);
+         int w = (int)(((_fifo[2] & 0x3FF) + 0xF) & ~0xF);
+-        int h = (int)((_fifo[2] >> 16) & 0x1FF);
++        int h = (int)((_fifo[2] >> 16) & 0x7FF);
+ 
+         if (x + w <= VramWidth)
+         {
+@@ -110,10 +112,10 @@ public sealed partial class Gpu
+ 
+     void CopyVramToVram()
+     {
+-        int sx = (int)(_fifo[1] & 0x3FF), sy = (int)((_fifo[1] >> 16) & 0x1FF);
+-        int dx = (int)(_fifo[2] & 0x3FF), dy = (int)((_fifo[2] >> 16) & 0x1FF);
++        int sx = (int)(_fifo[1] & 0x3FF), sy = (int)((_fifo[1] >> 16) & 0x7FF);
++        int dx = (int)(_fifo[2] & 0x3FF), dy = (int)((_fifo[2] >> 16) & 0x7FF);
+         int w = (int)(_fifo[3] & 0x3FF); if (w == 0) w = 0x400;
+-        int h = (int)((_fifo[3] >> 16) & 0x1FF); if (h == 0) h = 0x200;
++        int h = (int)((_fifo[3] >> 16) & 0x7FF); if (h == 0) h = 0x200;
+         for (int row = 0; row < h; row++)
+             for (int col = 0; col < w; col++)
+             {
+@@ -132,9 +134,9 @@ public sealed partial class Gpu
+     void BeginImageLoad()
+     {
+         _loadX = (int)(_fifo[1] & 0x3FF);
+-        _loadY = (int)((_fifo[1] >> 16) & 0x1FF);
++        _loadY = (int)((_fifo[1] >> 16) & 0x7FF);
+         _loadW = (int)(_fifo[2] & 0xFFFF); if (_loadW == 0) _loadW = 0x400; else _loadW &= 0x3FF; if (_loadW == 0) _loadW = 0x400;
+-        _loadH = (int)((_fifo[2] >> 16) & 0xFFFF); if (_loadH == 0) _loadH = 0x200; else _loadH &= 0x1FF; if (_loadH == 0) _loadH = 0x200;
++        _loadH = (int)((_fifo[2] >> 16) & 0xFFFF); if (_loadH == 0) _loadH = 0x200; else _loadH &= 0x7FF; if (_loadH == 0) _loadH = 0x200;
+         _loadPx = 0;
+         _loadImage = true;
+         HleLoadBegin();
+@@ -164,9 +166,9 @@ public sealed partial class Gpu
+     void BeginImageRead()
+     {
+         _readX = (int)(_fifo[1] & 0x3FF);
+-        _readY = (int)((_fifo[1] >> 16) & 0x1FF);
++        _readY = (int)((_fifo[1] >> 16) & 0x7FF);
+         _readW = (int)(_fifo[2] & 0x3FF); if (_readW == 0) _readW = 0x400;
+-        _readH = (int)((_fifo[2] >> 16) & 0x1FF); if (_readH == 0) _readH = 0x200;
++        _readH = (int)((_fifo[2] >> 16) & 0x7FF); if (_readH == 0) _readH = 0x200;
+         _readPx = 0;
+         _readImage = true;
+         if (HleOn) HleReadback(_readX, _readY, _readW, _readH);
+diff --git a/RecompOne.Runtime/Gpu/GpuHleForward.cs b/RecompOne.Runtime/Gpu/GpuHleForward.cs
+index 07ded1a..77d84c6 100644
+--- a/RecompOne.Runtime/Gpu/GpuHleForward.cs
++++ b/RecompOne.Runtime/Gpu/GpuHleForward.cs
+@@ -6,7 +6,7 @@ public sealed partial class Gpu
+ {
+     static bool HleOn => GpuHle.Active && GpuHle.Backend is { Ready: true };
+ 
+-    int CurTPage() => ((_texPageX / 64) & 0xf) | (((_texPageY / 256) & 1) << 4)
++    int CurTPage() => ((_texPageX / 64) & 0xf) | (((_texPageY / 256) & 1) << 4) | VramShadow.BankBits(_texBank)
+                     | ((_blendMode & 3) << 5) | ((_texDepth & 3) << 7);
+ 
+     HleDrawEnv CurEnv() => new()
+diff --git a/RecompOne.Runtime/Gpu/GpuRaster.cs b/RecompOne.Runtime/Gpu/GpuRaster.cs
+index 6f7a426..f99eb46 100644
+--- a/RecompOne.Runtime/Gpu/GpuRaster.cs
++++ b/RecompOne.Runtime/Gpu/GpuRaster.cs
+@@ -1,3 +1,4 @@
++using RecompOne.Runtime.Hle;
+ using RecompOne.Runtime.Events;
+ 
+ namespace RecompOne.Runtime;
+@@ -272,12 +273,12 @@ public sealed partial class Gpu
+         v = (v & ~(_texWinMaskY * 8)) | ((_texWinOffY & _texWinMaskY) * 8);
+         u &= 0xFF; v &= 0xFF;
+ 
+-        int row = (_texPageY + v) & (VramHeight - 1);
++        int row = (_texPageY + VramShadow.BankOffset(_texBank) + v) & (VramHeight - 1);
+         if (_texDepth == 2 || _texDepth == 3)
+             return Vram[row * VramWidth + ((_texPageX + u) & (VramWidth - 1))];
+ 
+         int clutX = (clut & 0x3F) * 16;
+-        int clutY = (clut >> 6) & 0x1FF;
++        int clutY = VramShadow.ClutY(clut, _texBank); // coop: bit 15 = in the texture's bank
+         int index;
+         if (_texDepth == 0)
+         {
+@@ -330,9 +331,10 @@ public sealed partial class Gpu
+     {
+         _texPageX = (int)(tp & 0xF) * 64;
+         _texPageY = (int)((tp >> 4) & 1) * 256;
++        _texBank = VramShadow.Bank((int)tp); // coop: bits 11..13 pick the VRAM bank
+         _blendMode = (int)((tp >> 5) & 3);
+         _texDepth = (int)((tp >> 7) & 3);
+-        _texDisable = (tp & (1u << 11)) != 0;
++        _texDisable = false; // coop: bit 11 is a VRAM bank bit here
+     }
+ 
+     static int CoordX(uint w) { int x = (int)(w & 0x7FF); return (x & 0x400) != 0 ? x - 0x800 : x; }
+diff --git a/RecompOne.Runtime/Gpu/Hle/VramShadow.cs b/RecompOne.Runtime/Gpu/Hle/VramShadow.cs
+index c6b7b41..fa4005a 100644
+--- a/RecompOne.Runtime/Gpu/Hle/VramShadow.cs
++++ b/RecompOne.Runtime/Gpu/Hle/VramShadow.cs
+@@ -3,7 +3,19 @@ namespace RecompOne.Runtime.Hle;
+ public sealed class VramShadow //in ram vram
+ {
+     public const int Width = 1024;
+-    public const int Height = 512;
++    // coop: 2048 lines. Bank 0 (lines 0..511) is the PS1's VRAM; banks 1..5 are
++    // private copies of the texture/palette rows (0xF0..0x1FF) for each extra
++    // player, BankStride lines apart. A texture page picks its bank with tpage bits
++    // 11..13 (bit 11 alone = bank 1); CLUT bit 15 means "the palette is in that
++    // bank too".
++    public const int Height = 2048;
++    public const int MaxBanks = 6;
++    public const int BankStride = 0x110;
++    public static int Bank(int tpage) => ((tpage >> 11) & 1) | (((tpage >> 12) & 3) << 1);
++    public static int BankBits(int bank) => ((bank & 1) << 11) | (((bank >> 1) & 3) << 12);
++    public static int BankOffset(int bank) => bank * BankStride;
++    // y of a CLUT: rows 0..511, plus the bank's offset when bit 15 is set
++    public static int ClutY(int clut, int bank) => ((clut >> 6) & 0x1FF) + ((clut >> 15) & 1) * BankOffset(bank);
+ 
+     // raw bgr555 buffer, index = y * Width + x
+     public readonly ushort[] Pixels = new ushort[Width * Height];
+diff --git a/RecompOne.Runtime/Hardware/Spu.cs b/RecompOne.Runtime/Hardware/Spu.cs
+index d26dfab..af80d7a 100644
+--- a/RecompOne.Runtime/Hardware/Spu.cs
++++ b/RecompOne.Runtime/Hardware/Spu.cs
+@@ -125,11 +125,46 @@ public sealed class Spu
+         public int VolCycL, VolCycR;
+ 
+         public readonly short[] Buf = new short[31];
++
++        // coop: playing from Ram2, at PitchQ12/4096 of the register pitch
++        public bool Bank2;
++        public int PitchQ12 = 0x1000;
+     }
+ 
+     readonly Voice[] _v = new Voice[24];
+     readonly object _sync = new();
+ 
++    // coop: a second sample RAM ("bank 2") that games can't see, for mods that add
++    // samples (co-op players' voices, Saturn Maria's effects). A mod loads samples into
++    // Ram2 and arms a voice; that voice's next key-on plays the armed sample instead of
++    // its start address. 4MB: room for every character's voice bank at once.
++    public const int Ram2Size = 4 * 1024 * 1024;
++    public readonly byte[] Ram2 = new byte[Ram2Size];
++    readonly uint[] _armAddr = new uint[24];
++    readonly int[] _armPitch = new int[24];
++    uint _armed;
++
++    public void LoadBank2(uint addr, ReadOnlySpan<byte> data)
++    {
++        lock (_sync) data.CopyTo(Ram2.AsSpan((int)addr));
++    }
++
++    // pitchQ12: playback rate relative to what the game asks for, 0x1000 = same
++    public void ArmBank2(int voice, uint addr, int pitchQ12)
++    {
++        lock (_sync)
++        {
++            _armAddr[voice] = addr;
++            _armPitch[voice] = pitchQ12;
++            _armed |= 1u << voice;
++        }
++    }
++
++    public void DisarmBank2(int voice)
++    {
++        lock (_sync) _armed &= ~(1u << voice);
++    }
++
+     ushort _mainVolL, _mainVolR;
+     short _mainCurL, _mainCurR;
+     int _mainCycL, _mainCycR;
+@@ -315,6 +350,10 @@ public sealed class Spu
+                 v.AdsrVol = 0;
+                 v.AdsrCycleCount = 0;
+                 v.CurAddr = (uint)v.StartAddr << 3;
++                // coop: an armed voice plays its bank 2 sample, once
++                v.Bank2 = (_armed & bit) != 0;
++                v.PitchQ12 = v.Bank2 ? _armPitch[i] : 0x1000;
++                if (v.Bank2) { v.CurAddr = _armAddr[i]; _armed &= ~bit; }
+                 v.IgnoreLoop = false;
+                 v.PitchCounter = 0;
+                 v.Old = v.Older = 0;
+@@ -471,6 +510,7 @@ public sealed class Spu
+             int amp = (sample * v.AdsrVol) >> 15;
+ 
+             int step = v.Pitch;
++            if (v.Bank2) step = step * v.PitchQ12 >> 12; // coop
+             if (i > 0 && (pmonMask & (1u << i)) != 0)
+             {
+                 int factor = Math.Clamp(prevOutx, -0x8000, 0x7FFF) + 0x8000;
+@@ -535,9 +575,11 @@ public sealed class Spu
+         v.Buf[1] = v.Buf[29];
+         v.Buf[2] = v.Buf[30];
+ 
+-        uint addr = v.CurAddr & (uint)(RamSize - 1);
+-        byte hdr = Ram[addr];
+-        byte flags = Ram[(addr + 1) & (RamSize - 1)];
++        var ram = v.Bank2 ? Ram2 : Ram; // coop
++        uint mask = (uint)(ram.Length - 1);
++        uint addr = v.CurAddr & mask;
++        byte hdr = ram[addr];
++        byte flags = ram[(addr + 1) & mask];
+ 
+         int shift = hdr & 0xF;
+         if (shift > 12) shift = 9;
+@@ -550,7 +592,7 @@ public sealed class Spu
+         int pos = 3;
+         for (int i = 0; i < 14; i++)
+         {
+-            byte b = Ram[(addr + 2 + (uint)i) & (RamSize - 1)];
++            byte b = ram[(addr + 2 + (uint)i) & mask];
+             v.Buf[pos++] = DecodeSample(v, b & 0xF, shift, k0, k1);
+             v.Buf[pos++] = DecodeSample(v, b >> 4,  shift, k0, k1);
+         }
+diff --git a/RecompOne.Runtime/Host/Window/Panels/Debug/OutputPanel.cs b/RecompOne.Runtime/Host/Window/Panels/Debug/OutputPanel.cs
+index 639c740..dff192f 100644
+--- a/RecompOne.Runtime/Host/Window/Panels/Debug/OutputPanel.cs
++++ b/RecompOne.Runtime/Host/Window/Panels/Debug/OutputPanel.cs
+@@ -41,6 +41,7 @@ internal sealed class OutputPanel : IPanel
+             var offset = (avail - imageSize) * 0.5f;
+             ImGui.SetCursorPos(ImGui.GetCursorPos() + offset);
+             ImGui.Image((nint)_texId, imageSize);
++            ModOverlay.Invoke(ImGui.GetItemRectMin(), imageSize); // coop: mod overlays
+         }
+ 
+         ToastNotifications.Draw();
+@@ -55,3 +56,20 @@ internal sealed class OutputPanel : IPanel
+         return src * scale;
+     }
+ }
++
++// coop: lets mods draw over the game picture (name tags and such). Called from the
++// Output panel right after the game image, inside that ImGui window, with the image's
++// top-left corner (screen pixels) and size; use ImGui.GetWindowDrawList() to draw.
++// (Lives here rather than in its own file so the engine patch stays a plain diff.)
++public static class ModOverlay
++{
++    public static event Action<Vector2, Vector2>? Draw;
++
++    internal static void Invoke(Vector2 min, Vector2 size)
++    {
++        var d = Draw;
++        if (d == null) return;
++        try { d(min, size); }
++        catch (Exception e) { Console.WriteLine($"[mods] overlay draw failed: {e.Message}"); }
++    }
++}
+diff --git a/RecompOne.Runtime/Modding/ModCompiler.cs b/RecompOne.Runtime/Modding/ModCompiler.cs
+index 44c47aa..7ffb7b5 100644
+--- a/RecompOne.Runtime/Modding/ModCompiler.cs
++++ b/RecompOne.Runtime/Modding/ModCompiler.cs
+@@ -35,6 +35,17 @@ public static class ModCompiler
+     {
+         if (_references != null) return _references;
+ 
++        // coop: mods only see assemblies that are already loaded; make sure the ones an
++        // online mod needs (sockets, compression) are, even if nothing touched them yet.
++        _ = typeof(System.Net.Sockets.UdpClient).Assembly;
++        _ = typeof(System.Net.IPEndPoint).Assembly;
++        _ = typeof(System.Net.Dns).Assembly;
++        _ = typeof(System.IO.Compression.DeflateStream).Assembly;
++        // (and the UI ones: on Windows ImGui isn't loaded yet when mods are built)
++        _ = typeof(ImGuiNET.ImGui).Assembly;
++        _ = typeof(System.Numerics.Vector2).Assembly;
++        _ = typeof(System.Collections.Concurrent.ConcurrentQueue<int>).Assembly;
++
+         var refs = new List<MetadataReference>();
+         foreach (var a in AppDomain.CurrentDomain.GetAssemblies())
+         {
+diff --git a/RecompOne.Runtime/sdk/LibGpu.cs b/RecompOne.Runtime/sdk/LibGpu.cs
+index 8392a54..bc8e426 100644
+--- a/RecompOne.Runtime/sdk/LibGpu.cs
++++ b/RecompOne.Runtime/sdk/LibGpu.cs
+@@ -9,6 +9,7 @@ public static class LibGpu
+ {
+     static readonly DrawEnvEvent _drawEnvEvent = new();
+     static readonly DispEnvEvent _dispEnvEvent = new();
++    static int _missed;
+ 
+     public static void DrawOTag(CpuContext c, IMemory m)
+     {
+@@ -20,10 +21,20 @@ public static class LibGpu
+         uint otBase = GpuPrims.OtBase & Runtime.RamWordMask;
+         uint otEnd = otBase + (uint)GpuPrims.OtLength * 4u;
+ 
++        // coop: the walk follows the table's links, which skip over runs of empty
++        // entries, so it doesn't land on every order; on reaching an order, emit the
++        // custom prims of every order up to it, and the rest when the table ends
++        bool hit = false;
++        int emitted = -1;
+         for (int guard = 0; guard < 0x100000; guard++)
+         {
+             if (custom && addr >= otBase && addr < otEnd)
+-                gpu.EmitCustomOrder((int)((addr - otBase) >> 2));
++            {
++                int ord = (int)((addr - otBase) >> 2);
++                for (int o = emitted + 1; o <= ord; o++) gpu.EmitCustomOrder(o);
++                if (ord > emitted) emitted = ord;
++                hit = true;
++            }
+ 
+             uint header = m.ReadU32(addr);
+             uint count = header >> 24;
+@@ -34,7 +45,17 @@ public static class LibGpu
+             addr = next & Runtime.RamWordMask;
+         }
+ 
+-        if (custom) GpuPrims.Clear();
++        if (custom && hit)
++        {
++            for (int o = emitted + 1; o < GpuPrims.OtLength; o++) gpu.EmitCustomOrder(o);
++            GpuPrims.Clear();
++            _missed = 0;
++        }
++        else if (custom && ++_missed > 4)
++        {
++            GpuPrims.Clear(); // that table isn't being drawn any more
++            _missed = 0;
++        }
+     }
+ 
+     public static void DrawSync(CpuContext c, IMemory m) => c.V0 = 0;
+@@ -235,7 +256,7 @@ public static class LibGpu
+         => 0xE5000000u | (((uint)y & 0x7FF) << 11) | ((uint)x & 0x7FF);
+ 
+     static uint GetMode(int dfe, int dtd, ushort tpage)
+-        => (dtd != 0 ? 0xE1000200u : 0xE1000000u) | (dfe != 0 ? 0x400u : 0u) | ((uint)tpage & 0x9FF);
++        => (dtd != 0 ? 0xE1000200u : 0xE1000000u) | (dfe != 0 ? 0x400u : 0u) | ((uint)tpage & 0x39FF); // coop: keep bank bits 11..13
+ 
+     static uint GetTw(short x, short y, short w, short h)
+     {

@@ -1,0 +1,7076 @@
+{
+ "file": "MARIASAT.BIN",
+ "size": 162624,
+ "sha1_blank": "6316ca5d08dd290b04995656f0928073db573444",
+ "sha1": "3115327b6602ff663f4b4bf9a120454bd0f0511f",
+ "fill": [
+  {
+   "at": 32,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 34,
+   "len": 1347,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1382,
+   "len": 46,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1440,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1444,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1446,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1449,
+   "len": 2,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1452,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1454,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1456,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1460,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1462,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1464,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1468,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1470,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1472,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1476,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1478,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1480,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1484,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1486,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1488,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1492,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1494,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1496,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1500,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1502,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1504,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1508,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1510,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1512,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1516,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1518,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1520,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1524,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1526,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1528,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1532,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1534,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1536,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1540,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1542,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1544,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1548,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1550,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1552,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1556,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1558,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1560,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1564,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1566,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1568,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1572,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1574,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1576,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1580,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1582,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1584,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1588,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1590,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1592,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1596,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1598,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1600,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1604,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1606,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1608,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1612,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1614,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1616,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1620,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1622,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1624,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1628,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1630,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1632,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1636,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1638,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1640,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1644,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1646,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1648,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1652,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1654,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1656,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1660,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1662,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1664,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1668,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1670,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1672,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1676,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1678,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1680,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1684,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1686,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1688,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1692,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1694,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1696,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1700,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1702,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1704,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1708,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1710,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1712,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1716,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1718,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1720,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1724,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1726,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1728,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1732,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1734,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1736,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1740,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1742,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1744,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1748,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1750,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1752,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1756,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1758,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1760,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1764,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1766,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1768,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1772,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1774,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1776,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1780,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1782,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1784,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1788,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1790,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1792,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1796,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1798,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1800,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1804,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1806,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1808,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1812,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1814,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1816,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1820,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1822,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1824,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1828,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1830,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1832,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1836,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1838,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1840,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1844,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1846,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1848,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1852,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1854,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1856,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1860,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1862,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1864,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1868,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1870,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1872,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1876,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1878,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1880,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1884,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1886,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1888,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1892,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1894,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1896,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1900,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1902,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1904,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1908,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1910,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1912,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1916,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1918,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1920,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1924,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1926,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1928,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1932,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1934,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1936,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1940,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1942,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1944,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1948,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1950,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1952,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1956,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1958,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1960,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1964,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1966,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1968,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1972,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1974,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1976,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1980,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1982,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1984,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1988,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1990,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1992,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1996,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 1998,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2000,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2004,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2006,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2008,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2012,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2014,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2016,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2020,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2022,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2024,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2028,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2030,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2032,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2036,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2038,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2040,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2044,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2046,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2048,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2052,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2054,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2056,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2060,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2062,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2064,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2068,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2070,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2072,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2076,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2078,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2080,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2084,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2086,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2088,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2092,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2094,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2096,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2100,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2102,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2104,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2108,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2110,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2112,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2116,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2118,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2120,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2124,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2126,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2128,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2132,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2134,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2136,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2140,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2142,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2144,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2148,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2150,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2152,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2156,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2158,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2160,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2164,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2166,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2168,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2172,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2174,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2176,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2180,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2182,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2184,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2188,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2190,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2192,
+   "len": 2,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2196,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2198,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2200,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2204,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2206,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2208,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2212,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2214,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2216,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2220,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2222,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2224,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2228,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2230,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2232,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2236,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2238,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2240,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2244,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2246,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2248,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2252,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2254,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2256,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2260,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2262,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2264,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2268,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2270,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2272,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2276,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2278,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2280,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2284,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2286,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2288,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2292,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2294,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2296,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2300,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2302,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2304,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2308,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2310,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2312,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2316,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2318,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2320,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2324,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2326,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2328,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2332,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2334,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2336,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2340,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2342,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2344,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2348,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2350,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2352,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2356,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2358,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2360,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2364,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2366,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2368,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2372,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2374,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2376,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2380,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2382,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2384,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2388,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2390,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2392,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2396,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2398,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2400,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2404,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2406,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2408,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2412,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2414,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2416,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2420,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2422,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2424,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2428,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2430,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2432,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2436,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2438,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2440,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2444,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2446,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2448,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2452,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2454,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2456,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2460,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2462,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2464,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2468,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2470,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2472,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2476,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2478,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2480,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2484,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2486,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2488,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2494,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2496,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2500,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2502,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2504,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2508,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2510,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2512,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2516,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2518,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2520,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2524,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2526,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2528,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2532,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2534,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2536,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2542,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2544,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2548,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2550,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2552,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2556,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2558,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2560,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2564,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2566,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2568,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2572,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2574,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2576,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2580,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2582,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2584,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2588,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2590,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2592,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2596,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2598,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2600,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2604,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2606,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2608,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2612,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2614,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2616,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2620,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2622,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2624,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2628,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2630,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2632,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2636,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2638,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2640,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2644,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2646,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2648,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2652,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2654,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2656,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2660,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2662,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2664,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2668,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2670,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2672,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2676,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2678,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2680,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2684,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2686,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2688,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2692,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2694,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2696,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2700,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2702,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2704,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2708,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2710,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2712,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2716,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2718,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2720,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2724,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2726,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2728,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2732,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2734,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2736,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2740,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2742,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2744,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2748,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2750,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2752,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2756,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2758,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2760,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2764,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2766,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2768,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2772,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2774,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2776,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2780,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2782,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2784,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2788,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2790,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2792,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2796,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2798,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2800,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2804,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2806,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2808,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2812,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2814,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2816,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2820,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2822,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2824,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2828,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2830,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2832,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2836,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2838,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2840,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2844,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2846,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2848,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2852,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2854,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2856,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2860,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2862,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2864,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2868,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2870,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2872,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2876,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2878,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2880,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2886,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2888,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2894,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2896,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2902,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2904,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2910,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2912,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2916,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2918,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2920,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2924,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2926,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2928,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2932,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2934,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2936,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2940,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2942,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2944,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2948,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2950,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2952,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2956,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2958,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2960,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2964,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2966,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2968,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2972,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2974,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2976,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2980,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2982,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2984,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2988,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2990,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2992,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2996,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 2998,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3000,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3004,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3006,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3008,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3012,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3014,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3016,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3020,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3022,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3024,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3028,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3030,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3032,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3036,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3038,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3040,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3044,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3046,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3048,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3052,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3054,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3056,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3060,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3062,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3064,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3068,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3070,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3072,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3076,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3078,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3080,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3084,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3086,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3088,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3092,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3094,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3096,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3100,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3102,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3104,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3108,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3110,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3112,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3116,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3118,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3120,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3124,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3126,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3128,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3132,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3134,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3136,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3140,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3142,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3144,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3148,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3150,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3152,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3156,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3158,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3160,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3164,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3166,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3168,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3172,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3174,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3176,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3180,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3182,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3184,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3188,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3190,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3192,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3196,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3198,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3200,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3204,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3206,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3208,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3212,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3214,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3216,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3220,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3222,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3224,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3228,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3230,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3232,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3236,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3238,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3240,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3244,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3246,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3248,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3252,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3254,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3256,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3260,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3262,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3264,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3268,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3270,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3272,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3276,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3278,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3280,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3284,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3286,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3288,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3292,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3294,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3296,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3300,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3302,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3304,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3308,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3310,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3312,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3316,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3318,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3320,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3324,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3326,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3328,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3332,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3334,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3336,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3340,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3342,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3344,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3348,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3350,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3352,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3356,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3358,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3360,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3364,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3366,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3368,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3372,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3374,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3376,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3380,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3382,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3384,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3388,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3390,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3392,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3396,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3398,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3400,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3404,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3406,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3408,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3412,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3414,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3416,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3420,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3422,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3424,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3428,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3430,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3432,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3436,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3438,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3440,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3444,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3446,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3448,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3452,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3454,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3456,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3460,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3462,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3464,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3468,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3470,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3472,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3476,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3478,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3480,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3484,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3486,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3488,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3492,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3494,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3496,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3500,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3502,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3504,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3508,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3510,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3512,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3516,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3518,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3520,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3524,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3526,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3528,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3532,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3534,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3537,
+   "len": 2,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3540,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3542,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3544,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3548,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3550,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3552,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3556,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3558,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3560,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3564,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3566,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3568,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3572,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3574,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3576,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3580,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3582,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3584,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3588,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3590,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3592,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3596,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3598,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3600,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3604,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3606,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3608,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3612,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3614,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3616,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3620,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3622,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3624,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3628,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3630,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3632,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3636,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3638,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3640,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3644,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3646,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3648,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3652,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3654,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3656,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3660,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3662,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3664,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3668,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3670,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3672,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3676,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3678,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3680,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3684,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3686,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3688,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3692,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3694,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3696,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3700,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3702,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3704,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3708,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3710,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3712,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3716,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3718,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3720,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3724,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3726,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3728,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3732,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3734,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3736,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3740,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3742,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3744,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3748,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3750,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3752,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3756,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3758,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3760,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3764,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3766,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3768,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3772,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3774,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3776,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3780,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3782,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3784,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3788,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3790,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3792,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3796,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3798,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3800,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3804,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3806,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3808,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3812,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3814,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3816,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3820,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3822,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3824,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3828,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3830,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3832,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3836,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3838,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3840,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3844,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3846,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3848,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3854,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3856,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3860,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3862,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3864,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3868,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3870,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3872,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3876,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3878,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3880,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3884,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3886,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3888,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3892,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3894,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3896,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3900,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3902,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3904,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3908,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3910,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3912,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3916,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3918,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3920,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3924,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3926,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3928,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3932,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3934,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3936,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3940,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3942,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3944,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3948,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3950,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3952,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3956,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3958,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3960,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3964,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3966,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3968,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3972,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3974,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3976,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3980,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3982,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3984,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3988,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3990,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3992,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3996,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 3998,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4000,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4004,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4006,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4008,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4012,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4014,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4016,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4020,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4022,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4024,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4028,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4030,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4032,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4036,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4038,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4040,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4044,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4046,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4048,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4052,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4054,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4056,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4060,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4062,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4064,
+   "len": 2,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4068,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4070,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4072,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4076,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4078,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4080,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4084,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4086,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4088,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4092,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4094,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4096,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4100,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4102,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4104,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4108,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4110,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4112,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4116,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4118,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4120,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4124,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4126,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4128,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4132,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4134,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4136,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4140,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4142,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4144,
+   "len": 2,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4148,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4150,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4152,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4156,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4158,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4160,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4164,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4166,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4168,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4172,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4174,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4176,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4180,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4182,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4184,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4188,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4190,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4192,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4196,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4198,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4200,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4204,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4206,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4208,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4212,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4214,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4216,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4220,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4222,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4224,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4228,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4230,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4232,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4236,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4238,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4240,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4244,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4246,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4248,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4252,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4254,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4256,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4260,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4262,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4264,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4268,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4270,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4272,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4276,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4278,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4280,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4284,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4286,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4288,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4292,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4294,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4296,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4300,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4302,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4304,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4308,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4310,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4312,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4316,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4318,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4320,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4324,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4326,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4328,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4332,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4334,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4336,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4340,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4342,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4344,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4348,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4350,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4352,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4356,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4358,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4360,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4364,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4366,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4368,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4372,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4374,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4376,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4380,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4382,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4384,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4388,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4390,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4392,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4396,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4398,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4400,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4404,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4406,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4408,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4412,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4414,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4416,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4420,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4422,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4424,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4428,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4430,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4432,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4436,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4438,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4440,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4444,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4446,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4448,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4452,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4454,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4456,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4460,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4462,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4464,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4468,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4470,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4472,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4476,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4478,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4480,
+   "len": 3,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4484,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4486,
+   "len": 1,
+   "make": "richter_sprites"
+  },
+  {
+   "at": 4488,
+   "len": 1,
+   "make": "spritebank0"
+  },
+  {
+   "at": 6016,
+   "len": 1,
+   "make": "g_MariaSatPalette"
+  },
+  {
+   "at": 6018,
+   "len": 31,
+   "make": "g_MariaSatPalette"
+  },
+  {
+   "at": 6050,
+   "len": 29,
+   "make": "g_MarFlashPalette"
+  },
+  {
+   "at": 6079,
+   "len": 42,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/sel.bin",
+   "from": 154790
+  },
+  {
+   "at": 6121,
+   "len": 87,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 41
+  },
+  {
+   "at": 6208,
+   "len": 60,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 41
+  },
+  {
+   "at": 6268,
+   "len": 20,
+   "disc": "saturn",
+   "path": "RICHTER2.PRG",
+   "from": 118852
+  },
+  {
+   "at": 6288,
+   "len": 18,
+   "disc": "saturn",
+   "path": "RICHTER2.PRG",
+   "from": 118852
+  },
+  {
+   "at": 6306,
+   "len": 24,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 688210
+  },
+  {
+   "at": 6330,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 41
+  },
+  {
+   "at": 6346,
+   "len": 21,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 540778
+  },
+  {
+   "at": 6368,
+   "len": 17,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 195034
+  },
+  {
+   "at": 6386,
+   "len": 1,
+   "make": "g_MarFrameBank"
+  },
+  {
+   "at": 6388,
+   "len": 3,
+   "make": "g_MarFrameBank"
+  },
+  {
+   "at": 6392,
+   "len": 1,
+   "make": "g_MarFrameBank"
+  },
+  {
+   "at": 6394,
+   "len": 1,
+   "make": "g_MarFrameBank"
+  },
+  {
+   "at": 6396,
+   "len": 5,
+   "make": "g_MarFrameBank"
+  },
+  {
+   "at": 6401,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/dra.bin",
+   "from": 688207
+  },
+  {
+   "at": 6418,
+   "len": 3,
+   "make": "g_MarFrameBank"
+  },
+  {
+   "at": 6422,
+   "len": 1,
+   "make": "g_MarFrameBank"
+  },
+  {
+   "at": 6424,
+   "len": 1,
+   "make": "g_MarFrameBank"
+  },
+  {
+   "at": 6426,
+   "len": 4,
+   "make": "g_MarFrameBank"
+  },
+  {
+   "at": 6431,
+   "len": 1,
+   "make": "g_MarFrameBank"
+  },
+  {
+   "at": 6433,
+   "len": 17,
+   "make": "g_MarFrameBank"
+  },
+  {
+   "at": 6450,
+   "len": 18,
+   "disc": "saturn",
+   "path": "MAR_W.CHR",
+   "from": 13463
+  },
+  {
+   "at": 6468,
+   "len": 4,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6473,
+   "len": 63,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6537,
+   "len": 7,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6545,
+   "len": 72,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6618,
+   "len": 58,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6677,
+   "len": 4,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6682,
+   "len": 7,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6690,
+   "len": 3,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6694,
+   "len": 11,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6706,
+   "len": 2,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6709,
+   "len": 3,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6713,
+   "len": 3,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6717,
+   "len": 27,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6745,
+   "len": 3,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6749,
+   "len": 3,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6753,
+   "len": 15,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6769,
+   "len": 4,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6774,
+   "len": 6,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6781,
+   "len": 15,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6797,
+   "len": 3,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6801,
+   "len": 15,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6817,
+   "len": 3,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6821,
+   "len": 15,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6837,
+   "len": 15,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6853,
+   "len": 15,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6869,
+   "len": 3,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6873,
+   "len": 16,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6890,
+   "len": 3,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6894,
+   "len": 10,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6905,
+   "len": 7,
+   "make": "g_MariaSatFrameProps"
+  },
+  {
+   "at": 6912,
+   "len": 19,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 127920
+  },
+  {
+   "at": 6931,
+   "len": 613,
+   "disc": "saturn",
+   "path": "MARIA.PRG",
+   "from": 118583
+  },
+  {
+   "at": 7544,
+   "len": 1,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7546,
+   "len": 16,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7563,
+   "len": 10,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7574,
+   "len": 3,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7578,
+   "len": 31,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7610,
+   "len": 31,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7642,
+   "len": 31,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7674,
+   "len": 3,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7678,
+   "len": 1,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7680,
+   "len": 1,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7682,
+   "len": 1,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7684,
+   "len": 1,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7686,
+   "len": 1,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7688,
+   "len": 1,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7690,
+   "len": 1,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7692,
+   "len": 1,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7694,
+   "len": 1,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7696,
+   "len": 1,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7698,
+   "len": 1,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7700,
+   "len": 1,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7702,
+   "len": 3,
+   "make": "g_MarEffectPals"
+  },
+  {
+   "at": 7706,
+   "len": 31,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 7738,
+   "len": 31,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 7770,
+   "len": 31,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 7802,
+   "len": 31,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 7834,
+   "len": 31,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 7866,
+   "len": 31,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 7898,
+   "len": 31,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 7930,
+   "len": 31,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 7962,
+   "len": 31,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 7994,
+   "len": 31,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 8026,
+   "len": 1,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 8028,
+   "len": 29,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 8058,
+   "len": 1,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 8060,
+   "len": 17,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 8078,
+   "len": 11,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 8090,
+   "len": 1,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 8092,
+   "len": 17,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 8110,
+   "len": 11,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 8122,
+   "len": 1,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 8124,
+   "len": 17,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 8142,
+   "len": 1,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 8144,
+   "len": 9,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 8154,
+   "len": 1,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 8156,
+   "len": 17,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 8174,
+   "len": 1,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 8176,
+   "len": 8,
+   "make": "g_MarChargePals"
+  },
+  {
+   "at": 15744,
+   "len": 1,
+   "make": "spritebank3"
+  },
+  {
+   "at": 15862,
+   "len": 26,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189618
+  },
+  {
+   "at": 15888,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189584
+  },
+  {
+   "at": 15916,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189552
+  },
+  {
+   "at": 15944,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189520
+  },
+  {
+   "at": 15972,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189488
+  },
+  {
+   "at": 16000,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189456
+  },
+  {
+   "at": 16028,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189424
+  },
+  {
+   "at": 16056,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189392
+  },
+  {
+   "at": 16084,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189360
+  },
+  {
+   "at": 16112,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189328
+  },
+  {
+   "at": 16140,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189296
+  },
+  {
+   "at": 16168,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189264
+  },
+  {
+   "at": 16196,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 188960
+  },
+  {
+   "at": 16212,
+   "len": 16,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 99340
+  },
+  {
+   "at": 16228,
+   "len": 24,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189204
+  },
+  {
+   "at": 16252,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189168
+  },
+  {
+   "at": 16280,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189136
+  },
+  {
+   "at": 16308,
+   "len": 26,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 188992
+  },
+  {
+   "at": 16334,
+   "len": 22,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189114
+  },
+  {
+   "at": 16356,
+   "len": 26,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 188992
+  },
+  {
+   "at": 16382,
+   "len": 48,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189066
+  },
+  {
+   "at": 16430,
+   "len": 22,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 189018
+  },
+  {
+   "at": 16452,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 188960
+  },
+  {
+   "at": 16480,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 188896
+  },
+  {
+   "at": 16496,
+   "len": 16,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 99056
+  },
+  {
+   "at": 16512,
+   "len": 24,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 188900
+  },
+  {
+   "at": 16536,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 188864
+  },
+  {
+   "at": 16564,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 188832
+  },
+  {
+   "at": 16592,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 188768
+  },
+  {
+   "at": 16608,
+   "len": 16,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 98944
+  },
+  {
+   "at": 16624,
+   "len": 24,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 188772
+  },
+  {
+   "at": 16648,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 188736
+  },
+  {
+   "at": 16676,
+   "len": 29,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 188704
+  },
+  {
+   "at": 16854,
+   "len": 26,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 194202
+  },
+  {
+   "at": 16880,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 194168
+  },
+  {
+   "at": 16908,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 194136
+  },
+  {
+   "at": 16936,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193976
+  },
+  {
+   "at": 16952,
+   "len": 24,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 98632
+  },
+  {
+   "at": 16976,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 194084
+  },
+  {
+   "at": 16992,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193976
+  },
+  {
+   "at": 17008,
+   "len": 28,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 98576
+  },
+  {
+   "at": 17036,
+   "len": 28,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 98548
+  },
+  {
+   "at": 17064,
+   "len": 1,
+   "make": "spritebank2"
+  },
+  {
+   "at": 17066,
+   "len": 1,
+   "make": "spritebank2"
+  },
+  {
+   "at": 17068,
+   "len": 1,
+   "make": "spritebank2"
+  },
+  {
+   "at": 17070,
+   "len": 1,
+   "make": "spritebank2"
+  },
+  {
+   "at": 17071,
+   "len": 33,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193939
+  },
+  {
+   "at": 17104,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193912
+  },
+  {
+   "at": 17132,
+   "len": 18,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193848
+  },
+  {
+   "at": 17150,
+   "len": 1,
+   "make": "spritebank2"
+  },
+  {
+   "at": 17152,
+   "len": 1,
+   "make": "spritebank2"
+  },
+  {
+   "at": 17154,
+   "len": 1,
+   "make": "spritebank2"
+  },
+  {
+   "at": 17155,
+   "len": 33,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193843
+  },
+  {
+   "at": 17188,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193816
+  },
+  {
+   "at": 17216,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193784
+  },
+  {
+   "at": 17244,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193720
+  },
+  {
+   "at": 17260,
+   "len": 16,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 97820
+  },
+  {
+   "at": 17276,
+   "len": 24,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193724
+  },
+  {
+   "at": 17300,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193688
+  },
+  {
+   "at": 17328,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193656
+  },
+  {
+   "at": 17356,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193624
+  },
+  {
+   "at": 17384,
+   "len": 18,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193560
+  },
+  {
+   "at": 17402,
+   "len": 1,
+   "make": "spritebank2"
+  },
+  {
+   "at": 17404,
+   "len": 1,
+   "make": "spritebank2"
+  },
+  {
+   "at": 17406,
+   "len": 1,
+   "make": "spritebank2"
+  },
+  {
+   "at": 17407,
+   "len": 33,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193555
+  },
+  {
+   "at": 17440,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193528
+  },
+  {
+   "at": 17468,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193496
+  },
+  {
+   "at": 17496,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193432
+  },
+  {
+   "at": 17512,
+   "len": 16,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 97820
+  },
+  {
+   "at": 17528,
+   "len": 24,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193436
+  },
+  {
+   "at": 17552,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193400
+  },
+  {
+   "at": 17580,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193368
+  },
+  {
+   "at": 17608,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193336
+  },
+  {
+   "at": 17636,
+   "len": 18,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193272
+  },
+  {
+   "at": 17654,
+   "len": 1,
+   "make": "spritebank2"
+  },
+  {
+   "at": 17656,
+   "len": 1,
+   "make": "spritebank2"
+  },
+  {
+   "at": 17658,
+   "len": 1,
+   "make": "spritebank2"
+  },
+  {
+   "at": 17659,
+   "len": 33,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193267
+  },
+  {
+   "at": 17692,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193240
+  },
+  {
+   "at": 17720,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193208
+  },
+  {
+   "at": 17748,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193144
+  },
+  {
+   "at": 17764,
+   "len": 16,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 97820
+  },
+  {
+   "at": 17780,
+   "len": 24,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193148
+  },
+  {
+   "at": 17804,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193112
+  },
+  {
+   "at": 17832,
+   "len": 29,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 193080
+  },
+  {
+   "at": 17946,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192834
+  },
+  {
+   "at": 17962,
+   "len": 1,
+   "make": "spritebank1"
+  },
+  {
+   "at": 17964,
+   "len": 1,
+   "make": "spritebank1"
+  },
+  {
+   "at": 17966,
+   "len": 1,
+   "make": "spritebank1"
+  },
+  {
+   "at": 17967,
+   "len": 33,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192859
+  },
+  {
+   "at": 18000,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192832
+  },
+  {
+   "at": 18028,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192800
+  },
+  {
+   "at": 18056,
+   "len": 18,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192704
+  },
+  {
+   "at": 18074,
+   "len": 1,
+   "make": "spritebank1"
+  },
+  {
+   "at": 18076,
+   "len": 1,
+   "make": "spritebank1"
+  },
+  {
+   "at": 18078,
+   "len": 1,
+   "make": "spritebank1"
+  },
+  {
+   "at": 18079,
+   "len": 23,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192667
+  },
+  {
+   "at": 18102,
+   "len": 28,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 97422
+  },
+  {
+   "at": 18130,
+   "len": 28,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 97394
+  },
+  {
+   "at": 18158,
+   "len": 1,
+   "make": "spritebank1"
+  },
+  {
+   "at": 18160,
+   "len": 1,
+   "make": "spritebank1"
+  },
+  {
+   "at": 18162,
+   "len": 1,
+   "make": "spritebank1"
+  },
+  {
+   "at": 18163,
+   "len": 17,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192539
+  },
+  {
+   "at": 18180,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192652
+  },
+  {
+   "at": 18196,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192544
+  },
+  {
+   "at": 18212,
+   "len": 28,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 97308
+  },
+  {
+   "at": 18240,
+   "len": 24,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 97252
+  },
+  {
+   "at": 18264,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192556
+  },
+  {
+   "at": 18280,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192448
+  },
+  {
+   "at": 18296,
+   "len": 1,
+   "make": "spritebank1"
+  },
+  {
+   "at": 18298,
+   "len": 1,
+   "make": "spritebank1"
+  },
+  {
+   "at": 18300,
+   "len": 1,
+   "make": "spritebank1"
+  },
+  {
+   "at": 18301,
+   "len": 51,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 97173
+  },
+  {
+   "at": 18352,
+   "len": 42,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 97112
+  },
+  {
+   "at": 18394,
+   "len": 26,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192386
+  },
+  {
+   "at": 18420,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192320
+  },
+  {
+   "at": 18436,
+   "len": 28,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 97084
+  },
+  {
+   "at": 18464,
+   "len": 1,
+   "make": "spritebank1"
+  },
+  {
+   "at": 18466,
+   "len": 1,
+   "make": "spritebank1"
+  },
+  {
+   "at": 18468,
+   "len": 1,
+   "make": "spritebank1"
+  },
+  {
+   "at": 18470,
+   "len": 1,
+   "make": "spritebank1"
+  },
+  {
+   "at": 18472,
+   "len": 31,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 192284
+  },
+  {
+   "at": 20460,
+   "len": 22,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 126944
+  },
+  {
+   "at": 20482,
+   "len": 597,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/ric.bin",
+   "from": 185142
+  }
+ ]
+}

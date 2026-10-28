@@ -1,0 +1,158 @@
+CASTLEVANIA: SYMPHONY OF THE NIGHT - ONLINE CO-OP
+==================================================
+
+Up to three players, each on their own computer, one castle. You each run your own
+game and see each other in it: fight the same enemies, share items, gold, relics and
+the map. Experience and levels are your own.
+
+Play as any of six characters, each from the version of the game they come from:
+Alucard, Alucard with the PSP recast voice, Richter, the Saturn's long-coat Richter,
+PSP Maria and Saturn Maria.
+
+
+WHAT YOU NEED
+-------------
+
+  - A Mac (2020 or newer is best) or a Windows 10/11 PC, with about 15 GB free.
+  - Docker Desktop (free): it builds the PSP and Saturn characters from your discs.
+      https://www.docker.com/products/docker-desktop/
+    Install it and start it once before running Setup (Windows: keep the WSL 2 option).
+  - Your OWN copies of all three versions of the game, dumped to files. This package
+    doesn't include any of them. They must be exactly these releases:
+
+      PlayStation   Castlevania: Symphony of the Night
+                    US release, SLUS-00067        (.cue + .bin files)
+      PSP           Castlevania: The Dracula X Chronicles
+                    European release, ULES-00841  (.iso file)
+      Saturn        Akumajou Dracula X: Gekka no Yasoukyoku
+                    Japanese release, T-9527G     (.cue + .bin files)
+
+    Setup checks each one and tells you if it's not the right release.
+  - An internet connection.
+
+
+SETUP (once, about 30-60 minutes, mostly waiting)
+-------------------------------------------------
+
+1. Unzip this folder somewhere you'll keep it (Desktop or Documents is fine).
+
+2. Drag your game files into the three folders:
+       1 - PlayStation game     the .cue and .bin files
+       2 - PSP game             the .iso
+       3 - Saturn game          the .cue and .bin files
+
+3. Make sure Docker Desktop is running.
+
+4. Double-click Setup:
+     Mac:      "Setup (Mac)"
+               The first time, macOS says it can't check the file: right-click it
+               (or Control-click), choose Open, then click Open.
+     Windows:  "Setup (Windows)"
+               If Windows shows "Windows protected your PC": click "More info",
+               then "Run anyway".
+
+   A window opens and does everything by itself: it checks your games, downloads the
+   game engine (SymphonyRecomp), builds the game and every character from your games,
+   and installs the co-op mod. Leave it running. It may ask you for something along
+   the way:
+     - Mac: "install command line tools?" -> click Install, wait, then
+       double-click Setup again.
+     - Mac: your login password (for Homebrew, the sound library installer).
+       Nothing shows while you type: that's normal. Press Enter.
+     - Windows: "allow this app to make changes?" (installing Git) -> Yes.
+   If it stops with a message, do what it says and double-click Setup again.
+   It picks up where it left off.
+
+   When it says "All set!", you're done.
+
+
+PLAYING
+-------
+
+1. Double-click "Play (Mac)" or "Play (Windows)". Keep the black window that
+   opens alongside the game: it's the game's log.
+   The very first time, a SymphonyRecomp notice appears: read it and click
+   "I understand".
+   If your computer asks whether the game may use the network: click Allow.
+
+2. On the title screen's main menu, press Triangle (Netplay). Type your name
+   (the same way you name a save file) and press Start.
+
+3. Pick your character (Select Character): left and right choose, hold Up for
+   the other version (PSP Alucard, the long-coat Richter, PSP Maria), then pick
+   your colours.
+
+4. One player hosts, the others join:
+     Host:  choose "Host".
+     Join:  choose "Join", then the game you want (Refresh if it isn't listed yet).
+   Up to three players per game. Connecting can take a few seconds; if your
+   routers don't allow a direct connection, it goes through the server by itself.
+
+5. The host then starts: New Game, or load a save from File Select. Everyone
+   else's game follows by itself.
+     - Loaded save: you get the host's save and all start in the same save room.
+     - New game: the opening movie and the prologue are skipped and you all start
+       inside the castle together.
+
+F11 switches fullscreen. F1 shows the top bar (game settings, key bindings).
+
+
+HOW A GAME PLAYS
+----------------
+
+- All Alucards: the normal game, story scenes included. Each of you sees the
+  scenes in your own game; nobody can teleport to you while you're in one.
+- Alucard together with Richter or Maria: there's no story (as in Richter's
+  mode), and Alucard starts with every relic and the full set of equipment.
+- If you die, you come back at the last save room you went into (or the castle
+  entrance if you haven't been in one), with full health. An Alucard with the
+  fairy out and a Life Apple can revive you on the spot.
+- Your pause only pauses your own game. While you're in a menu, the others see
+  you as a see-through ghost.
+- Your friends' names and health show above their heads and at the top right,
+  and the map (Select) shows them with markers.
+- Teleport to a friend with Up, Up, Down, Triangle (or F6).
+- PvP is on: you can hit each other. The host can switch it off in the Online
+  Co-op panel (F1, Mods, Manage Mods, the gear next to "Online Co-op").
+- If the connection drops, it reconnects by itself within a few seconds.
+- If something looks stuck, press F7 (resync) or walk through a door.
+
+
+CONTROLS (keyboard; a controller works too)
+-------------------------------------------
+
+   D-pad ................................. arrow keys
+   Cross / Circle / Square / Triangle .... Z / X / A / S
+   L1 / R1 / L2 / R2 ..................... Q / W / E / R
+   Start / Select ........................ Enter / Right Shift
+   Fullscreen ............................ F11
+   Teleport to a friend .................. F6, or Up, Up, Down, Triangle
+   Resync (if things look out of step) ... F7
+
+Rebind keys in the game's settings (F1).
+
+
+COPYING A READY FOLDER TO ANOTHER WINDOWS PC
+--------------------------------------------
+
+A folder that's already set up can be copied to another PC (USB stick, network
+share) instead of running Setup there. The copied folder holds the game, but
+not the Microsoft runtimes, which live in Windows itself. On the new PC:
+
+1. Double-click "Check (Windows)". It checks 64-bit Windows, the Visual C++
+   runtime, .NET 10, the built game and characters, your disc, the mod and the
+   lobby server. It offers to install whatever is missing (from Microsoft) and
+   repairs the disc location after the move.
+2. When it says "All good", double-click "Play (Windows)".
+
+Run the check any time something won't start; it's safe to run repeatedly.
+
+
+PROBLEMS
+--------
+
+Copy the text from the black log window (or Setup's window) and report it on the
+project's GitHub page, under Issues.
+
+This is an unofficial fan project, not affiliated with or endorsed by Konami.
+You must own the games to play.

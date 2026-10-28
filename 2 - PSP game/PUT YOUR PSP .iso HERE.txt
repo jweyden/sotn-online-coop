@@ -1,0 +1,5 @@
+Drag your own PSP copy of Castlevania: The Dracula X Chronicles into this folder:
+the .iso file of the UMD.
+
+It must be the European release (ULES-00841). Setup checks it.
+It's where PSP Maria and the PSP version's Alucard voice come from.

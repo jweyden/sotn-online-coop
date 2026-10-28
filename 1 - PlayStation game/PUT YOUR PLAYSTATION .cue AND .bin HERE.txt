@@ -1,0 +1,5 @@
+Drag your own PlayStation copy of Castlevania: Symphony of the Night into this folder:
+the .cue file and its .bin file(s), straight from your disc dump.
+
+It must be the US release (SLUS-00067). Setup checks it.
+(Any file names are fine, as long as the .bin names match what's written inside the .cue.)

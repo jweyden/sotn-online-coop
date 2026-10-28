@@ -1,0 +1,4607 @@
+{
+ "file": "MARIA.BIN",
+ "size": 210464,
+ "sha1_blank": "9886d3be9f680168467cc7de5095891a0e44d964",
+ "sha1": "f6f2deeacafe1a45034504cc1971ad33b62eb1e4",
+ "fill": [
+  {
+   "at": 496,
+   "len": 576,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 231560
+  },
+  {
+   "at": 1072,
+   "len": 556,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 231000
+  },
+  {
+   "at": 1628,
+   "len": 564,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 230432
+  },
+  {
+   "at": 2192,
+   "len": 625,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 229808
+  },
+  {
+   "at": 2817,
+   "len": 675,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 229129
+  },
+  {
+   "at": 3492,
+   "len": 724,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 228400
+  },
+  {
+   "at": 4216,
+   "len": 740,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 227656
+  },
+  {
+   "at": 4956,
+   "len": 556,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 227096
+  },
+  {
+   "at": 5512,
+   "len": 664,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 226432
+  },
+  {
+   "at": 6176,
+   "len": 628,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 225800
+  },
+  {
+   "at": 6804,
+   "len": 724,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 225072
+  },
+  {
+   "at": 7528,
+   "len": 352,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 224720
+  },
+  {
+   "at": 7880,
+   "len": 340,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 224376
+  },
+  {
+   "at": 8220,
+   "len": 532,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 223840
+  },
+  {
+   "at": 8752,
+   "len": 456,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 223384
+  },
+  {
+   "at": 9208,
+   "len": 492,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 222888
+  },
+  {
+   "at": 9700,
+   "len": 480,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 222408
+  },
+  {
+   "at": 10180,
+   "len": 480,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 221928
+  },
+  {
+   "at": 10660,
+   "len": 456,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 221472
+  },
+  {
+   "at": 11116,
+   "len": 492,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 220976
+  },
+  {
+   "at": 11608,
+   "len": 480,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 220496
+  },
+  {
+   "at": 12088,
+   "len": 508,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 219984
+  },
+  {
+   "at": 12596,
+   "len": 508,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 219472
+  },
+  {
+   "at": 13104,
+   "len": 556,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 218912
+  },
+  {
+   "at": 13660,
+   "len": 55,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 217792
+  },
+  {
+   "at": 13715,
+   "len": 501,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 218407
+  },
+  {
+   "at": 14216,
+   "len": 556,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 217792
+  },
+  {
+   "at": 14772,
+   "len": 364,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 217424
+  },
+  {
+   "at": 15136,
+   "len": 736,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 216688
+  },
+  {
+   "at": 15872,
+   "len": 648,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 216040
+  },
+  {
+   "at": 16520,
+   "len": 636,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 215400
+  },
+  {
+   "at": 17156,
+   "len": 340,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 215056
+  },
+  {
+   "at": 17496,
+   "len": 352,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 214704
+  },
+  {
+   "at": 17848,
+   "len": 412,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 214288
+  },
+  {
+   "at": 18260,
+   "len": 364,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 213920
+  },
+  {
+   "at": 18624,
+   "len": 780,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 213136
+  },
+  {
+   "at": 19404,
+   "len": 864,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 212272
+  },
+  {
+   "at": 20268,
+   "len": 708,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 211560
+  },
+  {
+   "at": 20976,
+   "len": 352,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 211208
+  },
+  {
+   "at": 21328,
+   "len": 412,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 210792
+  },
+  {
+   "at": 21740,
+   "len": 86,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 169816
+  },
+  {
+   "at": 21826,
+   "len": 210,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 210582
+  },
+  {
+   "at": 22036,
+   "len": 844,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 209648
+  },
+  {
+   "at": 22880,
+   "len": 39,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 167560
+  },
+  {
+   "at": 22919,
+   "len": 425,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 209223
+  },
+  {
+   "at": 23344,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 167560
+  },
+  {
+   "at": 23360,
+   "len": 448,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 208736
+  },
+  {
+   "at": 23808,
+   "len": 372,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 208344
+  },
+  {
+   "at": 24180,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 167560
+  },
+  {
+   "at": 24196,
+   "len": 448,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 207896
+  },
+  {
+   "at": 24644,
+   "len": 17,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 167560
+  },
+  {
+   "at": 24661,
+   "len": 463,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 207433
+  },
+  {
+   "at": 25124,
+   "len": 465,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 206968
+  },
+  {
+   "at": 25589,
+   "len": 447,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 206505
+  },
+  {
+   "at": 26036,
+   "len": 372,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 206112
+  },
+  {
+   "at": 26408,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 167560
+  },
+  {
+   "at": 26436,
+   "len": 436,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 205676
+  },
+  {
+   "at": 26872,
+   "len": 47,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 167560
+  },
+  {
+   "at": 26919,
+   "len": 417,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 205231
+  },
+  {
+   "at": 27336,
+   "len": 556,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 204624
+  },
+  {
+   "at": 27892,
+   "len": 556,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 204064
+  },
+  {
+   "at": 28448,
+   "len": 620,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 203440
+  },
+  {
+   "at": 29068,
+   "len": 592,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 202848
+  },
+  {
+   "at": 29660,
+   "len": 532,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 202312
+  },
+  {
+   "at": 30192,
+   "len": 708,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 201600
+  },
+  {
+   "at": 30900,
+   "len": 520,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 201080
+  },
+  {
+   "at": 31420,
+   "len": 521,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 200560
+  },
+  {
+   "at": 31941,
+   "len": 495,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 200065
+  },
+  {
+   "at": 32436,
+   "len": 708,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 199352
+  },
+  {
+   "at": 33144,
+   "len": 692,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 198656
+  },
+  {
+   "at": 33836,
+   "len": 872,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 197784
+  },
+  {
+   "at": 34708,
+   "len": 816,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 196968
+  },
+  {
+   "at": 35524,
+   "len": 652,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 196312
+  },
+  {
+   "at": 36176,
+   "len": 580,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 195728
+  },
+  {
+   "at": 36756,
+   "len": 672,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 195056
+  },
+  {
+   "at": 37428,
+   "len": 652,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 194400
+  },
+  {
+   "at": 38080,
+   "len": 676,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 193720
+  },
+  {
+   "at": 38756,
+   "len": 664,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 193056
+  },
+  {
+   "at": 39420,
+   "len": 777,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 192280
+  },
+  {
+   "at": 40197,
+   "len": 711,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 191569
+  },
+  {
+   "at": 40908,
+   "len": 884,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 190680
+  },
+  {
+   "at": 41792,
+   "len": 836,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 189840
+  },
+  {
+   "at": 42628,
+   "len": 708,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 189128
+  },
+  {
+   "at": 43336,
+   "len": 724,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 188400
+  },
+  {
+   "at": 44060,
+   "len": 708,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 187688
+  },
+  {
+   "at": 44768,
+   "len": 708,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 186976
+  },
+  {
+   "at": 45476,
+   "len": 620,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 186352
+  },
+  {
+   "at": 46096,
+   "len": 532,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 185816
+  },
+  {
+   "at": 46628,
+   "len": 532,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 185280
+  },
+  {
+   "at": 47160,
+   "len": 608,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 184672
+  },
+  {
+   "at": 47768,
+   "len": 224,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 182848
+  },
+  {
+   "at": 47992,
+   "len": 391,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 184288
+  },
+  {
+   "at": 48383,
+   "len": 217,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 182855
+  },
+  {
+   "at": 48600,
+   "len": 608,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 183680
+  },
+  {
+   "at": 49208,
+   "len": 384,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 183072
+  },
+  {
+   "at": 49592,
+   "len": 692,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 182152
+  },
+  {
+   "at": 50284,
+   "len": 364,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 181784
+  },
+  {
+   "at": 50648,
+   "len": 77,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 181048
+  },
+  {
+   "at": 50725,
+   "len": 287,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 181493
+  },
+  {
+   "at": 51012,
+   "len": 364,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 181048
+  },
+  {
+   "at": 51376,
+   "len": 364,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 180680
+  },
+  {
+   "at": 51740,
+   "len": 196,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 171656
+  },
+  {
+   "at": 51936,
+   "len": 368,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 180308
+  },
+  {
+   "at": 52304,
+   "len": 147,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 179232
+  },
+  {
+   "at": 52451,
+   "len": 289,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 179819
+  },
+  {
+   "at": 52740,
+   "len": 436,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 179232
+  },
+  {
+   "at": 53176,
+   "len": 444,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 178784
+  },
+  {
+   "at": 53620,
+   "len": 532,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 178248
+  },
+  {
+   "at": 54152,
+   "len": 620,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 177624
+  },
+  {
+   "at": 54772,
+   "len": 608,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 177016
+  },
+  {
+   "at": 55380,
+   "len": 53,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 175720
+  },
+  {
+   "at": 55433,
+   "len": 591,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 176421
+  },
+  {
+   "at": 56024,
+   "len": 644,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 175720
+  },
+  {
+   "at": 56668,
+   "len": 620,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 175096
+  },
+  {
+   "at": 57288,
+   "len": 620,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 174472
+  },
+  {
+   "at": 57908,
+   "len": 620,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 173848
+  },
+  {
+   "at": 58528,
+   "len": 608,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 173240
+  },
+  {
+   "at": 59136,
+   "len": 520,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 172720
+  },
+  {
+   "at": 59656,
+   "len": 496,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 172224
+  },
+  {
+   "at": 60152,
+   "len": 564,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 171656
+  },
+  {
+   "at": 60716,
+   "len": 436,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 171216
+  },
+  {
+   "at": 61152,
+   "len": 364,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 170848
+  },
+  {
+   "at": 61516,
+   "len": 364,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 170480
+  },
+  {
+   "at": 61880,
+   "len": 364,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 170112
+  },
+  {
+   "at": 62244,
+   "len": 296,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 169816
+  },
+  {
+   "at": 62540,
+   "len": 412,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 169400
+  },
+  {
+   "at": 62952,
+   "len": 456,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 168944
+  },
+  {
+   "at": 63408,
+   "len": 457,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 168488
+  },
+  {
+   "at": 63865,
+   "len": 464,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 168025
+  },
+  {
+   "at": 64329,
+   "len": 463,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 167561
+  },
+  {
+   "at": 65160,
+   "len": 1,
+   "make": "maria_sprites"
+  },
+  {
+   "at": 65200,
+   "len": 1,
+   "make": "maria_sprites"
+  },
+  {
+   "at": 65240,
+   "len": 1,
+   "make": "maria_sprites"
+  },
+  {
+   "at": 65260,
+   "len": 1,
+   "make": "maria_sprites"
+  },
+  {
+   "at": 65268,
+   "len": 1440,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 257432
+  },
+  {
+   "at": 66708,
+   "len": 34,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 257400
+  },
+  {
+   "at": 66742,
+   "len": 32,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 257370
+  },
+  {
+   "at": 66774,
+   "len": 30,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 257338
+  },
+  {
+   "at": 66804,
+   "len": 3780,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 253552
+  },
+  {
+   "at": 70584,
+   "len": 4708,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 248840
+  },
+  {
+   "at": 75292,
+   "len": 4748,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 244096
+  },
+  {
+   "at": 80040,
+   "len": 3924,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 240172
+  },
+  {
+   "at": 83964,
+   "len": 3568,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 236600
+  },
+  {
+   "at": 87532,
+   "len": 3996,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 232600
+  },
+  {
+   "at": 91528,
+   "len": 3127,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 164432
+  },
+  {
+   "at": 94655,
+   "len": 1501,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 162931
+  },
+  {
+   "at": 96156,
+   "len": 33,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 162896
+  },
+  {
+   "at": 96236,
+   "len": 1,
+   "make": "wpn_dragon_spr"
+  },
+  {
+   "at": 96237,
+   "len": 51,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 162845
+  },
+  {
+   "at": 96288,
+   "len": 50,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 162800
+  },
+  {
+   "at": 96338,
+   "len": 48,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 162754
+  },
+  {
+   "at": 96386,
+   "len": 50,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 162706
+  },
+  {
+   "at": 96436,
+   "len": 48,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 162660
+  },
+  {
+   "at": 96484,
+   "len": 48,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 162612
+  },
+  {
+   "at": 96532,
+   "len": 44,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 162564
+  },
+  {
+   "at": 96576,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 162528
+  },
+  {
+   "at": 96604,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 162496
+  },
+  {
+   "at": 96632,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 162464
+  },
+  {
+   "at": 96660,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 162432
+  },
+  {
+   "at": 96688,
+   "len": 3291,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 159088
+  },
+  {
+   "at": 99979,
+   "len": 1501,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 157587
+  },
+  {
+   "at": 101480,
+   "len": 35,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 157552
+  },
+  {
+   "at": 101516,
+   "len": 1,
+   "make": "wpn_cat_spr"
+  },
+  {
+   "at": 101520,
+   "len": 1,
+   "make": "wpn_cat_spr"
+  },
+  {
+   "at": 101524,
+   "len": 1,
+   "make": "wpn_cat_spr"
+  },
+  {
+   "at": 101528,
+   "len": 1,
+   "make": "wpn_cat_spr"
+  },
+  {
+   "at": 101532,
+   "len": 1,
+   "make": "wpn_cat_spr"
+  },
+  {
+   "at": 101536,
+   "len": 1,
+   "make": "wpn_cat_spr"
+  },
+  {
+   "at": 101540,
+   "len": 1,
+   "make": "wpn_cat_spr"
+  },
+  {
+   "at": 101544,
+   "len": 1,
+   "make": "wpn_cat_spr"
+  },
+  {
+   "at": 101548,
+   "len": 3,
+   "make": "wpn_cat_spr"
+  },
+  {
+   "at": 101580,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 157520
+  },
+  {
+   "at": 101608,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 157488
+  },
+  {
+   "at": 101636,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 157456
+  },
+  {
+   "at": 101664,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 157424
+  },
+  {
+   "at": 101692,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 157392
+  },
+  {
+   "at": 101720,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 157360
+  },
+  {
+   "at": 101748,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 157328
+  },
+  {
+   "at": 101776,
+   "len": 180,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 157144
+  },
+  {
+   "at": 101956,
+   "len": 180,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 156960
+  },
+  {
+   "at": 102136,
+   "len": 224,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 156736
+  },
+  {
+   "at": 102360,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 156704
+  },
+  {
+   "at": 102388,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 156672
+  },
+  {
+   "at": 102416,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 156640
+  },
+  {
+   "at": 102444,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 156608
+  },
+  {
+   "at": 102472,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 156576
+  },
+  {
+   "at": 102500,
+   "len": 3758,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 152744
+  },
+  {
+   "at": 106258,
+   "len": 1534,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 151210
+  },
+  {
+   "at": 107792,
+   "len": 1,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107794,
+   "len": 1,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107796,
+   "len": 5,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107804,
+   "len": 2,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107808,
+   "len": 2,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107812,
+   "len": 2,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107816,
+   "len": 2,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107820,
+   "len": 2,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107824,
+   "len": 2,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107828,
+   "len": 1,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107832,
+   "len": 1,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107836,
+   "len": 2,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107840,
+   "len": 1,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107844,
+   "len": 2,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107848,
+   "len": 1,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107852,
+   "len": 2,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107856,
+   "len": 1,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107860,
+   "len": 2,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107864,
+   "len": 1,
+   "make": "wpn_cardinal_spr"
+  },
+  {
+   "at": 107868,
+   "len": 116,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 151088
+  },
+  {
+   "at": 107984,
+   "len": 116,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 150968
+  },
+  {
+   "at": 108100,
+   "len": 136,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 150832
+  },
+  {
+   "at": 108236,
+   "len": 136,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 150696
+  },
+  {
+   "at": 108372,
+   "len": 68,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 150456
+  },
+  {
+   "at": 108440,
+   "len": 48,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 150166
+  },
+  {
+   "at": 108488,
+   "len": 116,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 150456
+  },
+  {
+   "at": 108604,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 150216
+  },
+  {
+   "at": 108632,
+   "len": 88,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 150364
+  },
+  {
+   "at": 108720,
+   "len": 116,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 150216
+  },
+  {
+   "at": 108836,
+   "len": 92,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 150120
+  },
+  {
+   "at": 108928,
+   "len": 92,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 150024
+  },
+  {
+   "at": 109020,
+   "len": 248,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 149776
+  },
+  {
+   "at": 109268,
+   "len": 268,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 149504
+  },
+  {
+   "at": 109536,
+   "len": 248,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 149256
+  },
+  {
+   "at": 109784,
+   "len": 254,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 149008
+  },
+  {
+   "at": 110038,
+   "len": 20,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 148518
+  },
+  {
+   "at": 110058,
+   "len": 228,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 148786
+  },
+  {
+   "at": 110286,
+   "len": 242,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 148518
+  },
+  {
+   "at": 110528,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 148480
+  },
+  {
+   "at": 110556,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 148448
+  },
+  {
+   "at": 110584,
+   "len": 4546,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 143824
+  },
+  {
+   "at": 115130,
+   "len": 1502,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 142322
+  },
+  {
+   "at": 116632,
+   "len": 34,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 142288
+  },
+  {
+   "at": 116666,
+   "len": 1,
+   "make": "wpn_turtle_spr"
+  },
+  {
+   "at": 116668,
+   "len": 5,
+   "make": "wpn_turtle_spr"
+  },
+  {
+   "at": 116676,
+   "len": 1,
+   "make": "wpn_turtle_spr"
+  },
+  {
+   "at": 116680,
+   "len": 1,
+   "make": "wpn_turtle_spr"
+  },
+  {
+   "at": 116684,
+   "len": 2,
+   "make": "wpn_turtle_spr"
+  },
+  {
+   "at": 116688,
+   "len": 1,
+   "make": "wpn_turtle_spr"
+  },
+  {
+   "at": 116692,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 142256
+  },
+  {
+   "at": 116720,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 142160
+  },
+  {
+   "at": 116748,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 142192
+  },
+  {
+   "at": 116776,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 142160
+  },
+  {
+   "at": 116804,
+   "len": 50,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 142112
+  },
+  {
+   "at": 116854,
+   "len": 26,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 142082
+  },
+  {
+   "at": 116880,
+   "len": 2630,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 139416
+  },
+  {
+   "at": 119510,
+   "len": 32,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 131698
+  },
+  {
+   "at": 119542,
+   "len": 1502,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133962
+  },
+  {
+   "at": 121044,
+   "len": 1,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121046,
+   "len": 1,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121048,
+   "len": 5,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121056,
+   "len": 1,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121060,
+   "len": 2,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121064,
+   "len": 1,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121068,
+   "len": 1,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121072,
+   "len": 1,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121076,
+   "len": 1,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121080,
+   "len": 1,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121084,
+   "len": 32,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 137844
+  },
+  {
+   "at": 121116,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 137784
+  },
+  {
+   "at": 121132,
+   "len": 1,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121134,
+   "len": 1,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121136,
+   "len": 1,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121138,
+   "len": 1,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121139,
+   "len": 21,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 137811
+  },
+  {
+   "at": 121160,
+   "len": 1,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121162,
+   "len": 1,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121164,
+   "len": 1,
+   "make": "wpn_doll_spr"
+  },
+  {
+   "at": 121165,
+   "len": 55,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 137729
+  },
+  {
+   "at": 121220,
+   "len": 72,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 137664
+  },
+  {
+   "at": 121292,
+   "len": 72,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 137592
+  },
+  {
+   "at": 121364,
+   "len": 50,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 137544
+  },
+  {
+   "at": 121414,
+   "len": 72,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 137474
+  },
+  {
+   "at": 121486,
+   "len": 46,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 137426
+  },
+  {
+   "at": 121532,
+   "len": 1910,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 135464
+  },
+  {
+   "at": 123442,
+   "len": 1534,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133930
+  },
+  {
+   "at": 124976,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 124978,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 124980,
+   "len": 5,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 124988,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 124992,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 124996,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125000,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125004,
+   "len": 2,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125008,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125012,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125016,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125020,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125024,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125028,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125032,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125036,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125040,
+   "len": 2,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125044,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125048,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125052,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125056,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125060,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133896
+  },
+  {
+   "at": 125088,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133864
+  },
+  {
+   "at": 125116,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133832
+  },
+  {
+   "at": 125144,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133800
+  },
+  {
+   "at": 125172,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133736
+  },
+  {
+   "at": 125188,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125190,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125192,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125194,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125195,
+   "len": 33,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133731
+  },
+  {
+   "at": 125228,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133704
+  },
+  {
+   "at": 125256,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133608
+  },
+  {
+   "at": 125272,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125274,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125276,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125278,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125279,
+   "len": 21,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133603
+  },
+  {
+   "at": 125300,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125302,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125304,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125306,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125307,
+   "len": 33,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133603
+  },
+  {
+   "at": 125340,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133544
+  },
+  {
+   "at": 125356,
+   "len": 16,
+   "disc": "ps1",
+   "path": "BIN/RIC.BIN",
+   "from": 99536
+  },
+  {
+   "at": 125372,
+   "len": 24,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133548
+  },
+  {
+   "at": 125396,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133480
+  },
+  {
+   "at": 125412,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125414,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125416,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125418,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125419,
+   "len": 33,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133475
+  },
+  {
+   "at": 125452,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133448
+  },
+  {
+   "at": 125480,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133416
+  },
+  {
+   "at": 125508,
+   "len": 28,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133384
+  },
+  {
+   "at": 125536,
+   "len": 16,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133288
+  },
+  {
+   "at": 125552,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125554,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125556,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125558,
+   "len": 1,
+   "make": "wpn_owl_spr"
+  },
+  {
+   "at": 125559,
+   "len": 33,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133315
+  },
+  {
+   "at": 125592,
+   "len": 30,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 133288
+  },
+  {
+   "at": 125622,
+   "len": 1537,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 131666
+  },
+  {
+   "at": 129481,
+   "len": 467,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 127921
+  },
+  {
+   "at": 130688,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131184,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131188,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131192,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131194,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131196,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131200,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131202,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131204,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131208,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131210,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131212,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131216,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131218,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131220,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131224,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131226,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131228,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131232,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131234,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131236,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131240,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131242,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131244,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131248,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131250,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131252,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131256,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131258,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131260,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131264,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131266,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131268,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131272,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131274,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131276,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131280,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131282,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131284,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131288,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131290,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131292,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131296,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131298,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131300,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131304,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131306,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131308,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131312,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131314,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131316,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131320,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131322,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131324,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131328,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131330,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131332,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131336,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131338,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131340,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131344,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131346,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131348,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131352,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131354,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131356,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131360,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131362,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131364,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131368,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131370,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131372,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131376,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131378,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131380,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131384,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131386,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131388,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131392,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131394,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131396,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131400,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131402,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131404,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131408,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131410,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131412,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131416,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131418,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131420,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131424,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131426,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131428,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131432,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131434,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131436,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131440,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131442,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131444,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131448,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131450,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131452,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131456,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131458,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131460,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131464,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131466,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131468,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131472,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131474,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131476,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131480,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131482,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131484,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131488,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131490,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131492,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131496,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131498,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131500,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131504,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131506,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131508,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131512,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131514,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131516,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131520,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131522,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131524,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131528,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131530,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131532,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131536,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131538,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131540,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131544,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131546,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131548,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131552,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131554,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131556,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131560,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131562,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131564,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131568,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131570,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131572,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131576,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131578,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131580,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131584,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131586,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131588,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131592,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131594,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131596,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131600,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131602,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131604,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131608,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131610,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131612,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131616,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131618,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131620,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131624,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131626,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131628,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131632,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131634,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131636,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131640,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131642,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131644,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131648,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131650,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131652,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131656,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131658,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131660,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131664,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131666,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131668,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131672,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131674,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131676,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131680,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131682,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131684,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131688,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131690,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131692,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131696,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131698,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131700,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131704,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131706,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131708,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131712,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131714,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131716,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131720,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131722,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131724,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131728,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131730,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131732,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131736,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131738,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131740,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131744,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131746,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131748,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131752,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131754,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131756,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131760,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131762,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131764,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131768,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131770,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131772,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131776,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131778,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131780,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131784,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131786,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131788,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131792,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131794,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131796,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131800,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131802,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131804,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131808,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131810,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131812,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131816,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131818,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131820,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131824,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131826,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131828,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131832,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131834,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131836,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131840,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131842,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131844,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131848,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131850,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131852,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131856,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131858,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131860,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131864,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131866,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131868,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131872,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131874,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131876,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131880,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131882,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131884,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131888,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131890,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131892,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131896,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131898,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131900,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131904,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131906,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131908,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131912,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131914,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131916,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131920,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131922,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131924,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131928,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131930,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131932,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131936,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131938,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131940,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131944,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131946,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131948,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131952,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131954,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131956,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131960,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131962,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131964,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131968,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131970,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131972,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131976,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131978,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131980,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131984,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131986,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131988,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131992,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131994,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 131996,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132000,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132002,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132004,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132008,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132010,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132012,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132016,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132018,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132020,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132024,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132026,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132028,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132032,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132034,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132036,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132040,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132042,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132044,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132048,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132050,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132052,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132056,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132058,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132060,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132064,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132066,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132068,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132072,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132074,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132076,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132080,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132082,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132084,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132088,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132090,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132092,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132096,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132098,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132100,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132104,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132106,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132108,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132112,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132114,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132116,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132120,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132122,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132124,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132128,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132130,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132132,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132136,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132138,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132140,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132144,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132146,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132148,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132152,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132154,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132157,
+   "len": 2,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132160,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132162,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132164,
+   "len": 3,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132168,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 132170,
+   "len": 1,
+   "make": "maria_spr"
+  },
+  {
+   "at": 133400,
+   "len": 639,
+   "disc": "psp",
+   "path": "PSP_GAME/USRDIR/res/ps/PSPBIN/maria.bin",
+   "from": 126944
+  },
+  {
+   "at": 136424,
+   "len": 1,
+   "make": "MarLoadPalettes"
+  },
+  {
+   "at": 136472,
+   "len": 1,
+   "make": "MarLoadPalettes"
+  },
+  {
+   "at": 136488,
+   "len": 1,
+   "make": "MarLoadPalettes"
+  },
+  {
+   "at": 136532,
+   "len": 1,
+   "make": "MarLoadPalettes"
+  },
+  {
+   "at": 136548,
+   "len": 1,
+   "make": "MarLoadPalettes"
+  },
+  {
+   "at": 136592,
+   "len": 1,
+   "make": "MarLoadPalettes"
+  },
+  {
+   "at": 136608,
+   "len": 1,
+   "make": "MarLoadPalettes"
+  },
+  {
+   "at": 136652,
+   "len": 1,
+   "make": "MarLoadPalettes"
+  },
+  {
+   "at": 136788,
+   "len": 1,
+   "make": "MarLoadPalettes"
+  },
+  {
+   "at": 136832,
+   "len": 1,
+   "make": "MarLoadPalettes"
+  },
+  {
+   "at": 136968,
+   "len": 1,
+   "make": "MarLoadPalettes"
+  },
+  {
+   "at": 137012,
+   "len": 1,
+   "make": "MarLoadPalettes"
+  },
+  {
+   "at": 137668,
+   "len": 1,
+   "make": "MARIA_Load"
+  },
+  {
+   "at": 137696,
+   "len": 1,
+   "make": "MARIA_Load"
+  },
+  {
+   "at": 137724,
+   "len": 1,
+   "make": "MARIA_Load"
+  },
+  {
+   "at": 142108,
+   "len": 1,
+   "make": "MarEntityTeleport"
+  },
+  {
+   "at": 142112,
+   "len": 2,
+   "make": "MarEntityTeleport"
+  },
+  {
+   "at": 142748,
+   "len": 1,
+   "make": "MarEntityTeleport"
+  },
+  {
+   "at": 145168,
+   "len": 1,
+   "make": "MarEntityHitByCutBlood"
+  },
+  {
+   "at": 145804,
+   "len": 1,
+   "make": "MarEntityHitByCutBlood"
+  },
+  {
+   "at": 157732,
+   "len": 2,
+   "make": "EntityMariaOwl"
+  },
+  {
+   "at": 158460,
+   "len": 2,
+   "make": "func_pspeu_092BFD30"
+  },
+  {
+   "at": 159048,
+   "len": 1,
+   "make": "MarEntityPlayerBlinkWhite"
+  },
+  {
+   "at": 159268,
+   "len": 1,
+   "make": "MarEntityPlayerBlinkWhite"
+  },
+  {
+   "at": 159624,
+   "len": 1,
+   "make": "MarEntityPlayerBlinkWhite"
+  },
+  {
+   "at": 163336,
+   "len": 1,
+   "make": "MarEntityPlayerBlinkWhite"
+  },
+  {
+   "at": 163656,
+   "len": 2,
+   "make": "func_maria_8015F9F0"
+  },
+  {
+   "at": 163776,
+   "len": 2,
+   "make": "func_maria_8015FA5C"
+  },
+  {
+   "at": 163788,
+   "len": 2,
+   "make": "func_maria_8015FA5C"
+  },
+  {
+   "at": 163796,
+   "len": 2,
+   "make": "func_maria_8015FA5C"
+  },
+  {
+   "at": 163808,
+   "len": 2,
+   "make": "func_maria_8015FA5C"
+  },
+  {
+   "at": 163952,
+   "len": 2,
+   "make": "MarSetSubweaponParams"
+  },
+  {
+   "at": 165176,
+   "len": 2,
+   "make": "MarUpdatePlayerEntities"
+  },
+  {
+   "at": 165204,
+   "len": 2,
+   "make": "MarUpdatePlayerEntities"
+  },
+  {
+   "at": 165220,
+   "len": 2,
+   "make": "MarUpdatePlayerEntities"
+  },
+  {
+   "at": 165256,
+   "len": 1,
+   "make": "MarUpdatePlayerEntities"
+  },
+  {
+   "at": 165260,
+   "len": 1,
+   "make": "MarUpdatePlayerEntities"
+  },
+  {
+   "at": 165536,
+   "len": 1,
+   "make": "MarUpdatePlayerEntities"
+  },
+  {
+   "at": 165572,
+   "len": 2,
+   "make": "MarUpdatePlayerEntities"
+  },
+  {
+   "at": 165580,
+   "len": 2,
+   "make": "MarUpdatePlayerEntities"
+  },
+  {
+   "at": 165592,
+   "len": 2,
+   "make": "MarUpdatePlayerEntities"
+  },
+  {
+   "at": 165624,
+   "len": 2,
+   "make": "MarUpdatePlayerEntities"
+  },
+  {
+   "at": 166776,
+   "len": 2,
+   "make": "MarSetWeaponParams"
+  },
+  {
+   "at": 173704,
+   "len": 1,
+   "make": "MarDebugOff"
+  },
+  {
+   "at": 173712,
+   "len": 1,
+   "make": "MarDebug"
+  },
+  {
+   "at": 173804,
+   "len": 1,
+   "make": "MarDebug"
+  },
+  {
+   "at": 174076,
+   "len": 1,
+   "make": "MarDebug"
+  },
+  {
+   "at": 175168,
+   "len": 1,
+   "make": "MarDebug"
+  },
+  {
+   "at": 175932,
+   "len": 1,
+   "make": "MarInit"
+  },
+  {
+   "at": 175952,
+   "len": 1,
+   "make": "MarInit"
+  },
+  {
+   "at": 176084,
+   "len": 1,
+   "make": "MarInit"
+  },
+  {
+   "at": 176096,
+   "len": 1,
+   "make": "MarInit"
+  },
+  {
+   "at": 176120,
+   "len": 1,
+   "make": "MarInit"
+  },
+  {
+   "at": 176144,
+   "len": 1,
+   "make": "MarInit"
+  },
+  {
+   "at": 177964,
+   "len": 1,
+   "make": "MarMain"
+  },
+  {
+   "at": 177996,
+   "len": 1,
+   "make": "MarMain"
+  },
+  {
+   "at": 178020,
+   "len": 1,
+   "make": "MarMain"
+  },
+  {
+   "at": 178184,
+   "len": 1,
+   "make": "MarMain"
+  },
+  {
+   "at": 178212,
+   "len": 1,
+   "make": "MarMain"
+  },
+  {
+   "at": 178220,
+   "len": 1,
+   "make": "MarMain"
+  },
+  {
+   "at": 178284,
+   "len": 1,
+   "make": "MarMain"
+  },
+  {
+   "at": 178944,
+   "len": 1,
+   "make": "MarMain"
+  },
+  {
+   "at": 178972,
+   "len": 1,
+   "make": "MarMain"
+  },
+  {
+   "at": 179344,
+   "len": 1,
+   "make": "MarMain"
+  },
+  {
+   "at": 179432,
+   "len": 1,
+   "make": "MarMain"
+  },
+  {
+   "at": 179920,
+   "len": 1,
+   "make": "MarMain"
+  },
+  {
+   "at": 180204,
+   "len": 1,
+   "make": "MarMain"
+  },
+  {
+   "at": 180212,
+   "len": 1,
+   "make": "MarMain"
+  },
+  {
+   "at": 184684,
+   "len": 1,
+   "make": "MarStepStand"
+  },
+  {
+   "at": 184700,
+   "len": 1,
+   "make": "MarStepStand"
+  },
+  {
+   "at": 184880,
+   "len": 1,
+   "make": "MarStepStand"
+  },
+  {
+   "at": 187208,
+   "len": 1,
+   "make": "MarStepCrouch"
+  },
+  {
+   "at": 187224,
+   "len": 1,
+   "make": "MarStepCrouch"
+  },
+  {
+   "at": 187580,
+   "len": 1,
+   "make": "MarStepCrouch"
+  },
+  {
+   "at": 187768,
+   "len": 1,
+   "make": "MarStepDead"
+  },
+  {
+   "at": 187924,
+   "len": 1,
+   "make": "MarStepDead"
+  },
+  {
+   "at": 187964,
+   "len": 1,
+   "make": "MarStepDead"
+  },
+  {
+   "at": 187976,
+   "len": 1,
+   "make": "MarStepDead"
+  },
+  {
+   "at": 188116,
+   "len": 1,
+   "make": "MarStepDead"
+  },
+  {
+   "at": 188128,
+   "len": 1,
+   "make": "MarStepDead"
+  },
+  {
+   "at": 188132,
+   "len": 1,
+   "make": "MarStepDead"
+  },
+  {
+   "at": 188156,
+   "len": 1,
+   "make": "MarStepDead"
+  },
+  {
+   "at": 188468,
+   "len": 1,
+   "make": "MarStepDead"
+  },
+  {
+   "at": 188640,
+   "len": 1,
+   "make": "MarStepDead"
+  },
+  {
+   "at": 188748,
+   "len": 1,
+   "make": "MarStepDead"
+  },
+  {
+   "at": 188884,
+   "len": 1,
+   "make": "MarStepDead"
+  },
+  {
+   "at": 188980,
+   "len": 1,
+   "make": "MarStepDead"
+  },
+  {
+   "at": 189008,
+   "len": 1,
+   "make": "MarStepDead"
+  },
+  {
+   "at": 189020,
+   "len": 1,
+   "make": "MarStepDead"
+  },
+  {
+   "at": 189120,
+   "len": 1,
+   "make": "MarStepDead"
+  },
+  {
+   "at": 189200,
+   "len": 1,
+   "make": "MarStepHit"
+  },
+  {
+   "at": 189220,
+   "len": 1,
+   "make": "MarStepHit"
+  },
+  {
+   "at": 190092,
+   "len": 1,
+   "make": "MarStepHit"
+  },
+  {
+   "at": 190264,
+   "len": 1,
+   "make": "MarStepHit"
+  },
+  {
+   "at": 190740,
+   "len": 1,
+   "make": "MarStepHit"
+  },
+  {
+   "at": 191112,
+   "len": 1,
+   "make": "MarStepHit"
+  },
+  {
+   "at": 200172,
+   "len": 1,
+   "make": "EntityMariaDragonCrash"
+  },
+  {
+   "at": 200248,
+   "len": 1,
+   "make": "EntityMariaDragonCrash"
+  },
+  {
+   "at": 200280,
+   "len": 1,
+   "make": "EntityMariaDragonCrash"
+  },
+  {
+   "at": 200400,
+   "len": 1,
+   "make": "EntityMariaDragonCrash"
+  },
+  {
+   "at": 200992,
+   "len": 1,
+   "make": "EntityMariaDragonCrash"
+  },
+  {
+   "at": 201088,
+   "len": 1,
+   "make": "EntityMariaDragonCrash"
+  },
+  {
+   "at": 201192,
+   "len": 1,
+   "make": "EntityMariaDragonCrash"
+  },
+  {
+   "at": 201388,
+   "len": 1,
+   "make": "EntityMariaDragonCrash"
+  },
+  {
+   "at": 201544,
+   "len": 1,
+   "make": "EntityMariaDragonCrash"
+  },
+  {
+   "at": 201952,
+   "len": 1,
+   "make": "EntityMariaDragonCrashBodyPart"
+  },
+  {
+   "at": 201956,
+   "len": 1,
+   "make": "EntityMariaDragonCrashBodyPart"
+  },
+  {
+   "at": 202000,
+   "len": 1,
+   "make": "EntityMariaDragonCrashBodyPart"
+  },
+  {
+   "at": 202048,
+   "len": 1,
+   "make": "EntityMariaDragonCrashBodyPart"
+  },
+  {
+   "at": 202504,
+   "len": 1,
+   "make": "EntityMariaDragonCrashBodyPart"
+  },
+  {
+   "at": 206188,
+   "len": 1,
+   "make": "EntityMariaCardinalCrashFireball"
+  },
+  {
+   "at": 206464,
+   "len": 1,
+   "make": "EntityMariaCardinalCrashFireball"
+  },
+  {
+   "at": 206624,
+   "len": 1,
+   "make": "EntityMariaCardinalCrashFireball"
+  }
+ ]
+}

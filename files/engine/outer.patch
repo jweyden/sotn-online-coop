@@ -1,0 +1,42 @@
+diff --git a/RecompOne.SoTN.csproj b/RecompOne.SoTN.csproj
+index 092a2b7..c3c0439 100644
+--- a/RecompOne.SoTN.csproj
++++ b/RecompOne.SoTN.csproj
+@@ -7,7 +7,7 @@
+     <AssemblyName>sotn</AssemblyName>
+     <ApplicationIcon>assets/icon/SymphonyRecomp.ico</ApplicationIcon>
+     <NoWarn>0162</NoWarn>
+-    <DefaultItemExcludes>$(DefaultItemExcludes);RecompOne/**</DefaultItemExcludes>
++    <DefaultItemExcludes>$(DefaultItemExcludes);RecompOne/**;mods/coop/**;mods/coop-online/**</DefaultItemExcludes><!-- coop: these mods are compiled at runtime by the mod loader -->
+     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+diff --git a/config/sotn.json b/config/sotn.json
+index 3f7fdfe..5c5c2a8 100644
+--- a/config/sotn.json
++++ b/config/sotn.json
+@@ -23,6 +23,24 @@
+       "funcMap": "funcmaps/ric.json",
+       "base": "0x8013C000"
+     },
++    {
++      "name": "maria",
++      "path": "../disc/maria/MARIA.BIN",
++      "funcMap": "funcmaps/maria.json",
++      "base": "0x8013C000"
++    },
++    {
++      "name": "mariasat",
++      "path": "../disc/mariasat/MARIASAT.BIN",
++      "funcMap": "funcmaps/mariasat.json",
++      "base": "0x8013C000"
++    },
++    {
++      "name": "richter2",
++      "path": "../disc/richter2/RICHTER2.BIN",
++      "funcMap": "funcmaps/richter2.json",
++      "base": "0x8013C000"
++    },
+     {
+       "name": "cen",
+       "file": "ST/CEN/CEN.BIN",
