@@ -25,12 +25,12 @@ using System.Threading;
 // frame and only ever touches the decoded data from there.
 public sealed partial class NetSession : IDisposable
 {
-    public const ushort ProtocolVersion = 4;   // 4: snapshot Flags2 (in a cutscene)
+    public const ushort ProtocolVersion = 5;   // 5: the game mode in Welcome, a password key in Hello, Refuse
     public const int TimeoutFrames = 300; // 5 s of silence: the connection is gone
     public const int MaxPlayersLimit = 6;   // what the system handles (test bots: COOP_PLAYERS)
     public const int PublicMaxPlayers = 3;  // what a host can choose: capped on purpose
     internal const ushort Magic = 0x4F53; // "SO"
-    internal const byte PkHello = 1, PkWelcome = 2, PkFrame = 3, PkBye = 4, PkRoom = 5, PkPunch = 6, PkRoster = 7, PkPair = 8;
+    internal const byte PkHello = 1, PkWelcome = 2, PkFrame = 3, PkBye = 4, PkRoom = 5, PkPunch = 6, PkRoster = 7, PkPair = 8, PkRefuse = 9;
     internal const byte Nobody = 0xFF;
     const int PairDirectAfterFrames = 180;   // a guest pair still on the host's forwarding after this: stays there
 
@@ -38,6 +38,14 @@ public sealed partial class NetSession : IDisposable
     public State Status { get; private set; } = State.Off;
     public string LastError { get; private set; } = "";
     public int MaxPlayers = 3;
+    // The game mode (the host's choice, sent in Welcome): Free Select (any characters, no
+    // story: Richter mode's rules) or Normal Mode (Alucards only, the story).
+    public bool FreeSelect = true;
+    // A private game: joiners need the key (PasswordKey of the game id and password).
+    // Host: what it asks for; guest: what it gives.
+    public string Key = "";
+    // A seat past the cap: a public game takes one such player even when full
+    public bool Chaos;
 
     public string LocalName = "Player";
     public byte LocalCharacter, LocalPalette;   // CoopCharacter, 0..2
@@ -130,6 +138,7 @@ public sealed partial class NetSession : IDisposable
     void BeginJoin()
     {
         _isHost = false;
+        Refused = "";
         LocalNumber = Nobody;
         Status = State.Joining;
         _session = (uint)Random.Shared.Next(1, int.MaxValue);
@@ -142,6 +151,21 @@ public sealed partial class NetSession : IDisposable
     }
 
     // A short code that's easy to read out: no 0/O or 1/I.
+    // The one seat past the cap: public games only, while nobody's in it
+    bool ChaosSeat(bool chaos) => chaos && Key.Length == 0 && PlayerCount == MaxPlayers;
+
+    // Why the host turned us away (until the next attempt)
+    public string Refused = "";
+
+    // A private game's key: the password, hashed with the game's id (the lobby server
+    // checks it too, and never sees the password)
+    public static string PasswordKey(string gameId, string password)
+    {
+        if (password.Length == 0) return "";
+        var hash = System.Security.Cryptography.SHA256.HashData(System.Text.Encoding.UTF8.GetBytes(gameId.ToUpperInvariant() + ":" + password));
+        return Convert.ToHexString(hash, 0, 12).ToLowerInvariant();
+    }
+
     public static string NewCode()
     {
         const string letters = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
@@ -194,6 +218,7 @@ public sealed partial class NetSession : IDisposable
         _udp = null; _rx = null; _hostEp = null; _joinTargets = null;
         _relay = null; _relayHello = null; _relayTag = ""; RelayCode = "";
         Status = State.Off;
+        _isHost = false;   // (or the next lobby browse, on the same session, counts as hosting)
         _links.Clear();
         _sentInputs.Clear();
         LocalNumber = 0;
@@ -322,6 +347,14 @@ public sealed partial class NetSession : IDisposable
                 case PkWelcome when !_isHost && Status == State.Joining: HandleWelcome(r, from); break;
                 case PkRoster when !_isHost && Status == State.Connected && src == 0: HandleRoster(r); break;
                 case PkPair when !_isHost: HandlePair(r, src, from); break;
+                case PkRefuse when !_isHost && Status == State.Joining:
+                {
+                    string why = r.ReadString();
+                    Close();
+                    LastError = why;
+                    Refused = why;
+                    break;
+                }
                 case PkBye:
                 {
                     var l = Link(src);
@@ -370,6 +403,8 @@ public sealed partial class NetSession : IDisposable
         w.Write(LocalName);
         w.Write(LocalCharacter); w.Write(LocalPalette); w.Write(LocalAvailable);
         w.Write(LanAddress());
+        w.Write(Key);
+        w.Write(Chaos);
         var pkt = w.ToArray();
         // joining through the lobby: knock on every address we were given at once
         if (_joinTargets != null) foreach (var t in _joinTargets) SendRaw(pkt, t, "");
@@ -393,11 +428,22 @@ public sealed partial class NetSession : IDisposable
         byte ch = r.ReadByte(), pal = r.ReadByte();
         uint avail = r.ReadUInt32();
         string lan = r.ReadString();
+        string key = r.ReadString();
+        bool chaos = r.ReadBoolean();
+        if (Key.Length > 0 && key != Key)
+        {
+            // (a private game: no answer but this, so they stop knocking)
+            var no = Packet(PkRefuse, Nobody);
+            no.Write("wrong password");
+            SendRaw(no.ToArray(), from, relayTag);
+            Console.WriteLine($"[coop-online] {name}: wrong password");
+            return;
+        }
 
         var l = _links.Find(x => x.InstallId == install);
         if (l == null)
         {
-            if (PlayerCount >= MaxPlayers) return;   // full: no answer (they keep knocking)
+            if (PlayerCount >= MaxPlayers && !ChaosSeat(chaos)) return;   // full: no answer (they keep knocking)
             int n = 1;
             while (_links.Exists(x => x.Number == n)) n++;
             l = new NetLink(n) { InstallId = install };
@@ -432,6 +478,7 @@ public sealed partial class NetSession : IDisposable
         w.Write(ProtocolVersion);
         w.Write((byte)l.Number);
         w.Write((byte)MaxPlayers);
+        w.Write(FreeSelect);
         WriteRoster(w);
         SendTo(l, w.ToArray());
     }
@@ -469,6 +516,7 @@ public sealed partial class NetSession : IDisposable
         if (r.ReadUInt16() != ProtocolVersion) return;
         LocalNumber = r.ReadByte();
         MaxPlayers = r.ReadByte();
+        FreeSelect = r.ReadBoolean();
         _hostEp = from;   // whichever way got through (direct, LAN or relay)
         _joinTargets = null;
         Status = State.Connected;

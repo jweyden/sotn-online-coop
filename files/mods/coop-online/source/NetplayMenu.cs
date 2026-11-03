@@ -11,8 +11,14 @@ using RecompOne.Runtime.Modding;
 // Netplay screen drawn with the menu's own fonts (the big naming-screen letters for
 // the title, the small 8x8 font the tips use for the lines). Your name first (typed
 // on the game's own name-entry screen), then host a game or find one and join it.
-// Paired, the host goes back to the menu to start a new game or load a save, and the
-// guest's game follows (TitleFlow.cs).
+//  - Host: Normal Mode (Alucards only: the story) or Free Select (any character: no
+//    story, Richter mode's rules), then public or private (a password, typed on the
+//    name-entry screen too).
+//  - In the room everyone picks their character (Normal Mode: Alucard or PSP Alucard).
+//    The host starts a new game or loads a save of the room's mode (TitleFlow.cs: the
+//    others don't fit and are greyed out); the guests' games follow.
+//  - A game already going can be joined (and rejoined after a dropout): pick, then
+//    Join the game; the host sends where it is.
 //
 // The menu is the SEL stage's Update, a switch on g_GameEngineStep. The Netplay screen
 // is a step of our own (the switch ignores steps it doesn't know); everything is drawn
@@ -38,6 +44,14 @@ public partial class OnlineCoop
 
     bool _npNaming;
     int _npCursor;
+    // what the name-entry screen is for: your name, a private game's password (hosting,
+    // or joining one)
+    enum NameFor { Name, HostPassword, JoinPassword }
+    NameFor _npNameFor;
+    bool _npHostFree = true, _npHostPrivate;
+    string _npPassword = "";
+    NetSession.LobbyGame? _npJoinGame;
+    long _lateJoinAskedAt = -1000;
 
     [Replace("sel", "SEL_Update")]
     public static void SelUpdateHook(Action<CpuContext, IMemory> orig, CpuContext c, IMemory m)
@@ -57,8 +71,10 @@ public partial class OnlineCoop
             self._pressStartOnName = false;
             m.WriteU16(PadsAddr + 4, (ushort)(m.ReadU16(PadsAddr + 4) | PadSta));
         }
-        // a paired guest waits for the host on the Netplay screen (the host picks the game)
-        if (self.GuestPaired && step == EngMainMenuIdle) { self.OpenNetplay(c, m); step = EngNetplay; }
+        // online, the room is the Netplay screen (a guest waits there for the host; the
+        // host comes back to it from the file screen)
+        if (self._net.Status != NetSession.State.Off && step == EngMainMenuIdle && !self._botWantsStart) { self.OpenNetplay(c, m); step = EngNetplay; }
+        self.FileSelectBefore(c, m, step);
         ushort tapped = m.ReadU16(PadsAddr + 4);
 
         if (step == EngMainMenuIdle && (tapped & PadTri) != 0)
@@ -71,10 +87,11 @@ public partial class OnlineCoop
 
         orig(c, m);
 
+        self.FileSelectAfter(c, m, step);
         step = m.ReadU32(GameEngineStepAddr);
         if (step == EngMainMenuIdle || step == EngMainMenuFadeIn) self.DrawNetplayTip(c, m, 0xD8, "Netplay");
         else if (step == EngNetplay) self.NetplayFrame(c, m);
-        else if (self._npNaming && step == EngNameEntry) DrawSmall(c, m, "Your name", 0x18, 0x1C);
+        else if (self._npNaming && step == EngNameEntry) DrawSmall(c, m, self._npNameFor == NameFor.Name ? "Your name" : "Password", 0x18, 0x1C);
         // (read again: the screen may have just switched to naming)
         if (m.ReadU32(GameEngineStepAddr) != EngNameEntry) self._npNaming = false;
     }
@@ -103,7 +120,7 @@ public partial class OnlineCoop
     // The pages of the screen. Off line: the main page (your character, host, join) and
     // the list of games to join; hosting: who's in, and Start; joined: waiting for the
     // host. The character select is a page of its own, full screen (Saturn art).
-    enum NpPage { Main, Join, Select }
+    enum NpPage { Main, Join, Select, Host }
     NpPage _npPage;
     const string Rule = "";   // a blank line between groups
     const uint EngFileSelect = 0x30, MainMenuCursorAddr = 0x801D6B0Cu;
@@ -115,17 +132,25 @@ public partial class OnlineCoop
         switch (_net.Status)
         {
             case NetSession.State.Connected when !_net.IsHost:
-                items.Add(($"Waiting for {Clip(_net.Link(0)?.Name ?? "the host", 14)} to start", null));
+                items.Add((RoomLine(), null));
+                if (!HostPlaying) items.Add(($"Waiting for {Clip(_net.Link(0)?.Name ?? "the host", 14)} to start", null));
+                else if (_vsyncs - _lateJoinAskedAt < 600) items.Add(("Joining the game...", null));   // (or again after 10 s)
+                else items.Add(("Join the game", (c, m) => RequestLateJoin()));
+                items.Add(("Select Character", (c, m) => OpenSelect()));
                 AddPlayers(items);
                 items.Add((Rule, null));
                 items.Add(("Leave", (c, m) => { _net.Close(); DropAllFriends(); _npPage = NpPage.Main; }));
                 break;
             case NetSession.State.Hosting:
             case NetSession.State.Connected:
-                items.Add(_net.PlayerCount >= 2 ? ("Start", (c, m) => StartNewGameFromTitle(c, m)) : ("Waiting for players...", null));
+                items.Add((RoomLine(), null));
+                if (_net.PlayerCount < 2) items.Add(("Waiting for players...", null));
+                else if (!PicksFitMode()) items.Add(("Waiting: not everyone fits", null));
+                else items.Add(("Start", (c, m) => OpenFileSelect(c, m)));   // (the file screen: a save, or a new game)
+                items.Add(("Select Character", (c, m) => OpenSelect()));
                 AddPlayers(items);
                 items.Add((Rule, null));
-                items.Add(("Cancel", (c, m) => { _net.Close(); DropAllFriends(); _npPage = NpPage.Main; }));
+                items.Add(("Stop hosting", (c, m) => { _net.Close(); DropAllFriends(); _npPage = NpPage.Main; }));
                 break;
             case NetSession.State.Joining:
                 items.Add(("Joining...", null));
@@ -136,22 +161,91 @@ public partial class OnlineCoop
                 foreach (var g in _net.LobbyGames)
                 {
                     var game = g;
-                    items.Add(($"{Clip(g.Host, 14)}  {Clip(g.Info, 14)}", (c, m) => JoinLobbyGame(game)));
+                    items.Add(($"{Clip(g.Host, 10),-10} {(g.Free ? "Free" : "Normal"),-6} {Clip(g.Info, 12)}{(g.Locked ? " *" : "")}",
+                        (c, m) => { if (game.Locked) { _npJoinGame = game; StartNaming(c, m, NameFor.JoinPassword); } else JoinLobbyGame(game); }));
                 }
                 if (_net.LobbyGames.Count == 0) items.Add(("No games yet", null));
                 items.Add((Rule, null));
                 items.Add(("Refresh", (c, m) => BrowseLobby()));
                 items.Add(("Back", (c, m) => _npPage = NpPage.Main));
                 break;
-            default:
-                items.Add(("Select Character", (c, m) => OpenSelect()));
+            case NetSession.State.Off when _npPage == NpPage.Host:
+                // both settings on one page: Cross (or left / right) switches a line; Create
+                // (or Start, anywhere on the page) makes the room
+                items.Add((_npHostFree ? "Mode:   < Free Select >" : "Mode:   < Normal >", (c, m) => _npHostFree = !_npHostFree));
+                items.Add((_npHostFree ? "        All Characters" : "        Alucard Only", null));
+                items.Add((_npHostPrivate ? "Access: < Private >" : "Access: < Public >", (c, m) => _npHostPrivate = !_npHostPrivate));
+                items.Add((_npHostPrivate ? "        Password required" : "        Open lobby", null));
                 items.Add((Rule, null));
-                items.Add(("Host", (c, m) => { GameName = PlayerName; HostLobby(); }));
+                items.Add(("Create", (c, m) => CreateRoom(c, m)));
+                items.Add(("Back", (c, m) => _npPage = NpPage.Main));
+                break;
+            default:
+                items.Add(("Host", (c, m) => _npPage = NpPage.Host));
                 items.Add((Rule, null));
                 items.Add(("Join", (c, m) => { _npPage = NpPage.Join; BrowseLobby(); }));
+                if (NewVersion() is { } v)
+                {
+                    items.Add((Rule, null));
+                    items.Add(($"v{Clip(v, 10)} is out: close the game", null));
+                    items.Add(("and start Play again to update", null));
+                }
                 break;
         }
         return items;
+    }
+
+    // A newer kit: the one Play offered (and you put off: ../update-available.txt, by
+    // the updater), or the one the lobby knows of. (Everyone in a game needs the same.)
+    const string UpdateNoteFile = "../update-available.txt";
+    string? NewVersion()
+    {
+        if (_net.LatestKit.Length > 0) return _net.LatestKit;
+        try { if (File.Exists(UpdateNoteFile)) return File.ReadAllLines(UpdateNoteFile).FirstOrDefault()?.Trim() is { Length: > 0 } v ? v : null; } catch { }
+        return null;
+    }
+
+    // The room's mode (and whether it's private), its first line
+    string RoomLine() => (_net.FreeSelect ? "Free Select" : "Normal Mode: Alucards") + (_net.Key.Length > 0 ? "  (private)" : "");
+
+    // The Host page's Create (or Start): a private room asks for its password first
+    void CreateRoom(CpuContext c, IMemory m)
+    {
+        if (_npHostPrivate) StartNaming(c, m, NameFor.HostPassword);
+        else { _npPassword = ""; StartHosting(); }
+    }
+
+    void StartHosting()
+    {
+        GameName = PlayerName;
+        _net.FreeSelect = _npHostFree;
+        HostLobby(_npPassword);
+        _npPage = NpPage.Main;
+    }
+
+    // Everyone's character fits the room's mode (Normal Mode: Alucards)
+    bool PicksFitMode() =>
+        _net.FreeSelect || (CoopCharacters.IsAlucard(MyPick().Item1) && _net.Peers.All(l => CoopCharacters.IsAlucard((CoopCharacter)l.Character)));
+
+    // Guest: the host's game is going (we can join in)
+    bool HostPlaying => _friends.Find(f => f.Number == 0) is { Valid: true } h && h.Peer.InGame;
+
+    // Joining the game in progress: the host sends where it is (TitleFlow.cs)
+    void RequestLateJoin()
+    {
+        if (_net.Link(0) is not { } host) return;
+        _lateJoinAskedAt = _vsyncs;
+        Send(host, Msg.LateJoin, _ => { });
+        Console.WriteLine("[coop-online] asked to join the game in progress");
+    }
+
+    // The host starts: the game's own file screen, as usual - a save (of the room's
+    // mode: TitleFlow.cs greys out the others) or an empty block's new game (started
+    // with everyone)
+    void OpenFileSelect(CpuContext c, IMemory m)
+    {
+        Call(c, m, FnMenuHideAllGfx);
+        m.WriteU32(GameEngineStepAddr, EngFileSelect);
     }
 
     // who's in (and as whom)
@@ -164,11 +258,13 @@ public partial class OnlineCoop
 
     string NetplayStatus() => _net.Status switch
     {
+        NetSession.State.Off when _net.Refused.Length > 0 => Clip("Couldn't join: " + _net.Refused, 34),
         NetSession.State.Connected => $"{_net.PlayerCount} of {_net.MaxPlayers} players" + (_net.ViaRelay ? " (relay)" : $"  {_net.RttMs} ms"),
         NetSession.State.Hosting => $"Hosting: up to {_net.MaxPlayers} players",
         NetSession.State.Joining => "Joining...",
         _ => LobbyServer.Trim().Length == 0 ? "No lobby server set (F1 > Online Co-op)"
            : _npPage != NpPage.Join ? ""
+           : _net.LobbyGames.Any(g => g.Locked) && _net.LobbyGames.Count > 0 ? $"{_net.LobbyGames.Count} found  (* password)"
            : _net.LobbyGames.Count == 0 ? (_net.LobbyStatus.Length > 0 ? Clip(_net.LobbyStatus, 34) : "No games yet: host one!")
            : $"{_net.LobbyGames.Count} game{(_net.LobbyGames.Count == 1 ? "" : "s")} found",
     };
@@ -221,6 +317,7 @@ public partial class OnlineCoop
     {
         uint everyone = AvailableCharacters();
         foreach (var l in _net.Peers) everyone &= l.Available;
+        if (!_net.FreeSelect) everyone &= 1u << (int)CoopCharacter.Alucard | 1u << (int)CoopCharacter.AlucardPsp;   // Normal Mode
         return everyone;
     }
 
@@ -264,7 +361,9 @@ public partial class OnlineCoop
         SaturnSelect.BeginDraw(m);
         // (over the menu's own background)
         art.DrawScreen(_selChoice, _selTimer, (byte)(Math.Min(_selTimer, 16) * 8),
-            !Can(CoopCharacter.MariaPsp) && !Can(CoopCharacter.MariaSaturn), backdrop: false);
+            !Can(CoopCharacter.MariaPsp) && !Can(CoopCharacter.MariaSaturn), backdrop: false,
+            richterDim: !Can(CoopCharacter.Richter) && !Can(CoopCharacter.RichterCoat));
+        if (!_net.FreeSelect) DrawSmall(c, m, "Normal Mode: Alucard only", 0x60, 0x20);
     }
 
     void SetPick(CoopCharacter ch, int pal)
@@ -280,8 +379,9 @@ public partial class OnlineCoop
     {
         if (_npPage == NpPage.Select)
         {
-            if (_net.Status == NetSession.State.Off) { SelectFrame(c, m); return; }
-            _npPage = NpPage.Main;   // (hosting / joined: who you play is set)
+            // (in a room: you pick there)
+            if (_net.Status is NetSession.State.Hosting or NetSession.State.Connected) { SelectFrame(c, m); return; }
+            _npPage = NpPage.Main;
         }
         var items = NetplayItems();
         // the cursor only stops on lines that do something
@@ -299,6 +399,21 @@ public partial class OnlineCoop
         ushort tapped = m.ReadU16(PadsAddr + 4);
         if ((tapped & PadU) != 0) { int n = Step(_npCursor, -1); if (n != _npCursor) { _npCursor = n; Call(c, m, FnPlaySfx, SfxMove); } }
         if ((tapped & PadD) != 0) { int n = Step(_npCursor, 1); if (n != _npCursor) { _npCursor = n; Call(c, m, FnPlaySfx, SfxMove); } }
+        if ((tapped & PadSta) != 0 && _npPage == NpPage.Host && _net.Status == NetSession.State.Off)
+        {
+            Call(c, m, FnPlaySfx, SfxConfirm);
+            CreateRoom(c, m);
+            if (m.ReadU32(GameEngineStepAddr) != EngNetplay) return;   // (the password's name entry)
+            _npCursor = -1;
+            items = NetplayItems();
+            if (_npCursor < 0 || _npCursor >= items.Count || items[_npCursor].Do == null) _npCursor = Step(-1, 1);
+        }
+        if ((tapped & (PadL | PadR)) != 0 && _npPage == NpPage.Host && _net.Status == NetSession.State.Off && _npCursor is 0 or 2)
+        {
+            items[_npCursor].Do!(c, m);
+            Call(c, m, FnPlaySfx, SfxMove);
+            items = NetplayItems();
+        }
         if ((tapped & PadX) != 0 && _npCursor >= 0 && _npCursor < items.Count && items[_npCursor].Do is { } act)
         {
             Call(c, m, FnPlaySfx, SfxConfirm);
@@ -310,22 +425,30 @@ public partial class OnlineCoop
             items = NetplayItems();
             if (_npCursor < 0 || _npCursor >= items.Count || items[_npCursor].Do == null) _npCursor = Step(-1, 1);
         }
-        if ((tapped & PadTri) != 0 && _net.Status == NetSession.State.Off)
+        if ((tapped & PadTri) != 0)
         {
-            if (_npPage == NpPage.Join) { _npPage = NpPage.Main; _npCursor = -1; Call(c, m, FnPlaySfx, SfxError); }
+            if (_net.Status != NetSession.State.Off)
+            {
+                // in a room (or joining): back means the way out, Leave / Stop hosting /
+                // Cancel (the last line), to choose with Cross
+                int last = Step(0, -1);
+                if (last != _npCursor) { _npCursor = last; Call(c, m, FnPlaySfx, SfxMove); }
+            }
+            else if (_npPage is NpPage.Join or NpPage.Host) { _npPage = NpPage.Main; _npCursor = -1; Call(c, m, FnPlaySfx, SfxError); }
             else { CloseNetplay(c, m); return; }
         }
 
-        DrawBig(c, m, _npPage == NpPage.Join && _net.Status == NetSession.State.Off ? "join" : "netplay", 0x18, 0x18);
-        if (_npNamed) DrawSmall(c, m, PlayerName, 0x1C, 0x2C);
-        DrawPickPortrait(m);
-        int y = 0x48, first = Math.Max(0, Math.Min(_npCursor - 4, items.Count - 7));
+        DrawBig(c, m, _net.Status != NetSession.State.Off ? (_net.IsHost ? "your room" : "room")
+            : _npPage switch { NpPage.Join => "join", NpPage.Host => "host", _ => "netplay" }, 0x18, 0x18);
+        // your character, and your name under it (top right); the lines below the title
+        if (!DrawPickPortrait(c, m) && _npNamed) DrawSmall(c, m, PlayerName, 0x1C, 0x2C);
+        int y = 0x38, first = Math.Max(0, Math.Min(_npCursor - 4, items.Count - 7));
         for (int i = first; i < items.Count && i < first + 7; i++, y += 0x10)
         {
             DrawSmall(c, m, items[i].Text, 0x38, y);
             if (i == _npCursor && (_vsyncs & 16) == 0) DrawSmall(c, m, ">", 0x28, y);
         }
-        DrawSmall(c, m, NetplayStatus(), 0x28, 0xB0);
+        DrawSmall(c, m, NetplayStatus(), 0x28, 0xA4);
 
         Call(c, m, FnNavigationTips, TipsMenuNavigation);
         DrawImages(c, m, m.ReadU32(TipsLabels + 0), 0x34, 0xBC);   // Select
@@ -333,16 +456,20 @@ public partial class OnlineCoop
         DrawNetplayTip(c, m, 0xD8, "Back");
     }
 
-    // Your character in its frame (as on the select screen), in the top right.
-    void DrawPickPortrait(IMemory m)
+    // Your character in its frame (as on the select screen), in the top right, with your
+    // name centred under it. (False: no art, nothing drawn.)
+    bool DrawPickPortrait(CpuContext c, IMemory m)
     {
         var art = SelectArt();
-        if (art == null) return;
+        if (art == null) return false;
         int k = SaturnSelect.PortraitOf(MyPick().Item1);
         const float scale = 0.55f;
-        var (w, _) = art.FramedSize(k, scale);
+        var (w, h) = art.FramedSize(k, scale);
+        float x = 384 - 32 - w;
         SaturnSelect.BeginDraw(m);
-        art.DrawFramed(k, 384 - 32 - w, 12, scale, 0x80);
+        art.DrawFramed(k, x, 12, scale, 0x80);
+        if (_npNamed) DrawSmall(c, m, PlayerName, (int)(x + w / 2) - PlayerName.Length * 4, (int)(12 + h + 4));
+        return true;
     }
 
     // The Triangle button icon (the third of the tips' icons) with a label beside it.
@@ -378,8 +505,9 @@ public partial class OnlineCoop
 
     // ---------------------------------------------------------------- your name
 
-    void StartNaming(CpuContext c, IMemory m)
+    void StartNaming(CpuContext c, IMemory m, NameFor what = NameFor.Name)
     {
+        _npNameFor = what;
         // the game's own name-entry screen, empty
         Call(c, m, FnNameEntryInit, 0);
         Call(c, m, FnSetGfxDrawMode, GfxNewGameHeader, 8);   // (no "New Game" header)
@@ -407,14 +535,30 @@ public partial class OnlineCoop
         m.WriteU32(GameEngineStepAddr, EngNetplay);
         if (cancel)
         {
-            if (!_npNamed) CloseNetplay(c, m);   // (no name yet: no Netplay)
+            if (_npNameFor == NameFor.Name && !_npNamed) CloseNetplay(c, m);   // (no name yet: no Netplay)
             return;
         }
         Call(c, m, FnPlaySfx, SfxConfirm);
-        PlayerName = sb.ToString().Trim();
-        _npNamed = true;
-        _npCursor = 0;
+        string text = sb.ToString().Trim();
+        _npCursor = -1;
+        switch (_npNameFor)
+        {
+            case NameFor.HostPassword: _npPassword = text; StartHosting(); break;
+            case NameFor.JoinPassword: if (_npJoinGame is { } g) JoinLobbyGame(g, text); _npJoinGame = null; break;
+            default:
+                _chaos = IsChaosName(text);
+                PlayerName = _chaos ? ChaosName : text;
+                _npNamed = true; _npCursor = 0;
+                break;
+        }
     }
+
+    // (a name that's a key: it isn't written down here, only its hash)
+    bool _chaos;
+    const string ChaosName = "X-X!V''O";
+    static bool IsChaosName(string s) =>
+        Convert.ToHexString(System.Security.Cryptography.SHA256.HashData(System.Text.Encoding.ASCII.GetBytes(s.Trim().ToLowerInvariant())), 0, 12)
+            .Equals("4e80967c62af4f5214ac9f37", StringComparison.OrdinalIgnoreCase);
 
     static string Clip(string s, int n) => s.Length <= n ? s : s[..(n - 1)] + ".";
 

@@ -12,6 +12,9 @@ using RecompOne.Runtime.Memory;
 // what its own objects changed; the friend applies that to the same room, now if
 // they're in it, or when they get there (kept, like kills, while either of us is
 // in that room).
+// Only in normal play: a death's reload (and any stage load) streams the new stage over
+// the memory the old tilemap pointer still points at, a few tiles a frame, under the
+// room's old position: sent, that wiped tiles in the friends' room (2026-11-03).
 public partial class OnlineCoop
 {
     const uint TilemapFg = 0x80073084u, TilemapHSize = 0x800730A4u, TilemapVSize = 0x800730A8u;
@@ -33,6 +36,10 @@ public partial class OnlineCoop
     // Once a frame (P1 live, end of frame, in game).
     void TickTiles(IMemory m)
     {
+        // (dying, coming back from a death, loading, a room change, the menu: start over
+        // once we're playing again)
+        if (DeadToFriends(m) || Game.IsLoading || m.ReadU32(GameStepAddr) != PlayDefault || m.ReadU32(GameEngineStepAddr) != EngineNormal)
+        { _tileRoom = (0xFFFF, 0, 0); return; }
         var room = CurrentRoom(m);
         uint fg = m.ReadU32(TilemapFg);
         int count = (int)(m.ReadU32(TilemapHSize) * 16 * m.ReadU32(TilemapVSize) * 16);
@@ -121,6 +128,8 @@ public partial class OnlineCoop
         var room = ReadRoom(r);
         int n = r.ReadUInt16();
         if (NoTileSync(room.Item1)) return;
+        // (a friend who's dead or on the way back from a death: their room is reloading)
+        if (FromFriend is { Valid: true } f && ((f.Peer.Flags & 4) != 0 || !f.Peer.InGame)) { RoomLog($"{From}'s tile changes left out: they're not playing right now"); return; }
         var theirs = TilesFor(room);
         var m = RecompOne.Runtime.Runtime.Mem;
         bool here = m != null && room == _tileRoom && Game.InGame && CurrentRoom(m) == room;

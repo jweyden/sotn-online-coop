@@ -97,43 +97,62 @@ public partial class OnlineCoop
     const byte ItemSwordFamiliar = 0x7E;                   // the sword familiar's own weapon
     static readonly byte[] NoBodyItem = { 0x00, 0x1A, 0x30, 0x39 };   // no armour, head, cape, accessory
     const int FirstCard = 18, LastCard = 22;               // RELIC_BAT_CARD .. RELIC_SWORD_CARD
-    // the prologue's armour (InitStatsAndGear): head, armour, cape, first accessory
-    static readonly (int Slot, uint Empty, uint Item)[] PrologueArmour =
-        { (2, 0x1A, 0x2D), (3, 0x00, 0x0F), (4, 0x30, 0x38), (5, 0x39, 0x4E) };   // Dragon Helm, Alucard Mail, Twilight Cloak, Necklace of J
+    // the prologue's gear (InitStatsAndGear), per slot: what's an empty slot, what fits
+    // there (item ids First..Last of the hand or body list), and what goes in: Alucard
+    // Sword, Alucard Shield, Dragon Helm, Alucard Mail, Twilight Cloak, Necklace of J, and
+    // no second accessory. A slot that's empty or holds what doesn't fit (a Richter-mode
+    // save: Richter's slots aren't Alucard's) gets it; gear he chose stays.
+    static readonly (int Slot, uint Empty, uint First, uint Last, uint Item)[] PrologueGear =
+    {
+        (0, 0x00, 0x00, 0xA8, 0x7B), (1, 0x00, 0x00, 0xA8, 0x10),
+        (2, 0x1A, 0x1A, 0x2F, 0x2D), (3, 0x00, 0x00, 0x19, 0x0F), (4, 0x30, 0x30, 0x38, 0x38),
+        (5, 0x39, 0x39, 0x59, 0x4E), (6, 0x39, 0x39, 0x59, 0x39),
+    };
     bool _loadedOut;
+    // The extra seat's loadout in a Normal Mode room: the story's relics and bag are
+    // shared, so his stay his (not sent; what he finds later is)
+    bool KeepOwnLoadout => _chaos && !CharacterMode;
     long _loadoutAt = -1;
 
     // Once a frame (P1 live).
     void TickLoadout(CpuContext c, IMemory m)
     {
         if (!Game.InGame || _net.Status != NetSession.State.Connected) { _loadedOut = false; _loadoutAt = -1; return; }
-        if (_loadedOut || Game.IsLoading || !LocalAlucard || !CharacterMode || !_fullSyncSent) return;
+        // (the extra seat's Alucard is loaded in any room)
+        if (_loadedOut || Game.IsLoading || !LocalAlucard || !(CharacterMode || _chaos) || !_fullSyncSent) return;
         // (a moment after the progress sync, so the host's bag doesn't replace what we give)
         if (_loadoutAt < 0) { _loadoutAt = _vsyncs + 180; return; }
         if (_vsyncs < _loadoutAt) return;
         _loadedOut = true;
 
+        // every relic (the familiar cards found but not on: one familiar at a time); found
+        // ones stay as he set them, unless none at all are on (a Richter-mode save)
+        bool anyOn = Enumerable.Range(0, RelicCount).Any(i => i is not (>= FirstCard and <= LastCard) && (m.ReadU8(RelicsAddr + (uint)i) & RelicActive) != 0);
         int relics = 0;
         for (int i = 0; i < RelicCount; i++)
         {
             byte v = m.ReadU8(RelicsAddr + (uint)i);
-            if ((v & RelicFound) != 0) continue;
-            m.WriteU8(RelicsAddr + (uint)i, (byte)(i is >= FirstCard and <= LastCard ? RelicFound : RelicFound | RelicActive));
+            byte want = (byte)(i is >= FirstCard and <= LastCard ? RelicFound : RelicFound | RelicActive);
+            if ((v & RelicFound) != 0 && (anyOn || (v & want) == want)) continue;
+            m.WriteU8(RelicsAddr + (uint)i, (byte)(v | want));
             relics++;
         }
         int worn = 0;
-        foreach (var (slot, empty, item) in PrologueArmour)
+        foreach (var (slot, empty, first, last, item) in PrologueGear)
         {
-            uint a = StatusEquipAddr + (uint)slot * 4;
-            if (m.ReadU32(a) != empty) continue;
+            uint a = StatusEquipAddr + (uint)slot * 4, v = m.ReadU32(a);
+            if (v != empty && v >= first && v <= last) continue;
+            if (v == item) continue;
             m.WriteU32(a, item);
             worn++;
         }
         if (worn > 0) { Call(c, m, FnCalcDefense); Call(c, m, FnCalcAttack); }
 
-        // the bag: one of everything (the shared bag passes it on to the others)
+        // the bag: one of everything (the shared bag passes it on to the others; the extra
+        // seat in a Normal room keeps his to himself, and as the host gives none: the
+        // host's bag is everyone's starting point)
         int me = _net.LocalNumber, items = 0;
-        bool giver = !_net.Peers.Any(l => CoopCharacters.IsAlucard((CoopCharacter)l.Character) && l.Number < me);
+        bool giver = KeepOwnLoadout ? !_net.IsHost : !_net.Peers.Any(l => CoopCharacters.IsAlucard((CoopCharacter)l.Character) && l.Number < me);
         if (giver)
         {
             for (uint id = 1; id < HandItems; id++)
@@ -141,6 +160,13 @@ public partial class OnlineCoop
             for (uint id = 0; id < BodyItemIds; id++)
                 if (!NoBodyItem.Contains((byte)id) && m.ReadU8(BodyCountAddr + id) == 0) { Call(c, m, FnAddToInventory, id, 2u /* EQUIP_ARMOR */); items++; }
         }
-        Console.WriteLine($"[coop-online] character mode: Alucard fully loaded ({relics} relics, {worn} armour worn, {items} items{(giver ? "" : ": another Alucard gives the items")})");
+        // (kept to himself: what he was given isn't news for the others)
+        if (KeepOwnLoadout)
+        {
+            _lastRelics = ReadBytes(m, RelicsAddr, RelicCount);
+            _lastHand = ReadBytes(m, HandCountAddr, HandItems);
+            _lastBody = ReadBytes(m, BodyCountAddr, BodyItems);
+        }
+        Console.WriteLine($"[coop-online] character mode: Alucard fully loaded ({relics} relics, {worn} pieces of gear put on, {items} items{(giver ? "" : ": another Alucard gives the items")})");
     }
 }

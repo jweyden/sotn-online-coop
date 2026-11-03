@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
-# Starts the game (started by "Play (Mac).command"). Host and join in the game:
+# Starts the game (started by "Play (Mac).command"), after checking for an update
+# (update-mac.sh). Host and join in the game:
 # the title screen's main menu, Triangle (Netplay).
 # Optional, for direct connections:  ./play-mac.sh host   |   ./play-mac.sh join 100.x.y.z
 HERE="$(cd "$(dirname "$0")" && pwd)"
 [ -d "$HERE/SymphonyRecomp/bin" ] || { echo "The game isn't set up yet: double-click \"Setup (Mac)\" first."; exit 1; }
+# a new version? (asks first; offline: nothing happens)
+bash "$HERE/update-mac.sh" || exit 1
 export DOTNET_ROOT="$HOME/.dotnet" PATH="$HOME/.dotnet:$PATH"
 BREW="$(brew --prefix 2>/dev/null || { [ -d /opt/homebrew ] && echo /opt/homebrew || echo /usr/local; })"
 export DYLD_FALLBACK_LIBRARY_PATH="$BREW/opt/openal-soft/lib:$BREW/lib"

@@ -985,10 +985,12 @@ public abstract partial class CoopCore : IMod
     // Run the game's own cloak logic with P2 live and read back the result, so
     // every cloak works (animated ones are captured as one frame), including the
     // Joseph's Cloak colours from the config menu.
+    protected bool _capturingCape;   // (the game's cloak code is running for R, P2 live)
     protected void CaptureP2Cape(CpuContext c, IMemory m)
     {
-        Call(c, m, FnUpdateCapePalette);
-        Call(c, m, FnPaletteUpdate);
+        _capturingCape = true;
+        try { Call(c, m, FnUpdateCapePalette); Call(c, m, FnPaletteUpdate); }
+        finally { _capturingCape = false; }
         for (int i = 0; i < CapeColors; i++)
             R.Cape[i] = m.ReadU16(ClutAddr + (uint)((AlucardPalette * 16 + CapeFirstColor + i) * 2));
         _restoreP1Cape = true;

@@ -28,7 +28,7 @@ public partial class OnlineCoop
     const uint FnRevealSecretPassage = 0x800F1EB0u; // RevealSecretPassageOnMap(x, y, 0xFFFF)
     const byte RelicFound = 1, RelicActive = 2;
 
-    enum Msg : byte { FullSync = 1, Flags, Map, Relics, Spells, Bag, Gold, MaxUp, RoomCount, Killed, Hit, Collected, PvpHit, Resync, Drop, Tiles, NewGameGo, TeleportCast, LevelUp, HostNewGame, HostSave, PvpGuard, Revive, RespawnFx, SatHeal, HealShown }
+    enum Msg : byte { FullSync = 1, Flags, Map, Relics, Spells, Bag, Gold, MaxUp, RoomCount, Killed, Hit, Collected, PvpHit, Resync, Drop, Tiles, NewGameGo, TeleportCast, LevelUp, HostNewGame, HostSave, PvpGuard, Revive, RespawnFx, SatHeal, HealShown, LateJoin }
 
     byte[] _lastFlags = Array.Empty<byte>(), _lastMap = Array.Empty<byte>();
     byte[] _lastRelics = Array.Empty<byte>(), _lastSpells = Array.Empty<byte>();
@@ -84,7 +84,7 @@ public partial class OnlineCoop
         SendByteDiffs(m, Msg.Flags, CastleFlagsAddr, _lastFlags);
         SendByteDiffs(m, Msg.Map, CastleMapAddr, _lastMap);
         // (only Alucard finds relics and learns spells: Richter mode starts with them all)
-        if (CoopCharacters.IsAlucard(_p1Char))
+        if (CoopCharacters.IsAlucard(_p1Char) && !KeepOwnLoadout)
         {
             SendByteDiffs(m, Msg.Relics, RelicsAddr, _lastRelics);
             SendByteDiffs(m, Msg.Spells, SpellsAddr, _lastSpells);
@@ -171,7 +171,7 @@ public partial class OnlineCoop
             w.Write(ReadBytes(m, CastleFlagsAddr, CastleFlagsLen));
             w.Write(ReadBytes(m, CastleMapAddr, CastleMapLen));
             // (a Richter-mode game's relics and spells are that mode's, all of them: not shared)
-            bool alucard = CoopCharacters.IsAlucard(_p1Char);
+            bool alucard = CoopCharacters.IsAlucard(_p1Char) && !KeepOwnLoadout;   // (the extra seat's: his own)
             w.Write(alucard ? ReadBytes(m, RelicsAddr, RelicCount) : new byte[RelicCount]);
             w.Write(alucard ? ReadBytes(m, SpellsAddr, SpellCount) : new byte[SpellCount]);
             w.Write(alucard ? m.ReadU32(SpellsLearntAddr) : 0u);
@@ -207,6 +207,7 @@ public partial class OnlineCoop
             case Msg.RespawnFx: OnFriendRespawnFx(); return;
             case Msg.SatHeal: OnSatHeal(m, r); return;
             case Msg.HealShown: OnFriendHealShown(); return;
+            case Msg.LateJoin: if (_msgFrom != null) _lateJoinWanted.Add(_msgFrom.Number); return;
         }
         if (!ShareProgress || !_progressReady) return;
         switch (type)

@@ -73,32 +73,46 @@ PLAYING
 2. On the title screen's main menu, press Triangle (Netplay). Type your name
    (the same way you name a save file) and press Start.
 
-3. Pick your character (Select Character): left and right choose, hold Up for
-   the other version (PSP Alucard, the long-coat Richter, PSP Maria), then pick
-   your colours.
-
-4. One player hosts, the others join:
-     Host:  choose "Host".
-     Join:  choose "Join", then the game you want (Refresh if it isn't listed yet).
+3. One player hosts, the others join:
+     Host:  choose "Host". On its page, set (Cross or left/right switches):
+              Mode     Free Select: all characters, no story (as in Richter's
+                       mode); Alucard starts with every relic.
+                       Normal: Alucard only (Alucard or PSP Alucard), the
+                       normal story, cutscenes and all.
+              Access   Public: an open lobby, anyone can join.
+                       Private: password required (you type it on the name
+                       screen; give it to your friends).
+            then choose "Create" (or press Start).
+     Join:  choose "Join", then the game you want (Refresh if it isn't listed
+            yet). A * means it needs a password.
    Up to three players per game. Connecting can take a few seconds; if your
    routers don't allow a direct connection, it goes through the server by itself.
 
-5. The host then starts: New Game, or load a save from File Select. Everyone
-   else's game follows by itself.
-     - Loaded save: you get the host's save and all start in the same save room.
-     - New game: the opening movie and the prologue are skipped and you all start
-       inside the castle together.
+4. In the room, everyone picks their character (Select Character): left and
+   right choose, hold Up for the other version (PSP Alucard, the long-coat
+   Richter, PSP Maria). Normal Mode rooms are Alucards only.
 
+5. The host then chooses Start: the game's file screen, as usual. Pick a save,
+   or an empty block for a new game. Everyone else's game follows by itself.
+     - A save: only saves of the room's kind can be picked; the others are
+       greyed out. (A save made in a Free Select room shows as "Richter".)
+       You all start in the same save room, each as your own character.
+     - A new game: the opening movie and the prologue are skipped and you all
+       start inside the castle together.
+   Joining a game that's already going (or getting back in after dropping
+   out): join it as usual, pick your character, then "Join the game".
+
+In a room, Triangle jumps to "Leave" (or "Stop hosting" for the host).
 F11 switches fullscreen. F1 shows the top bar (game settings, key bindings).
 
 
 HOW A GAME PLAYS
 ----------------
 
-- All Alucards: the normal game, story scenes included. Each of you sees the
+- Normal Mode: the normal game, story scenes included. Each of you sees the
   scenes in your own game; nobody can teleport to you while you're in one.
-- Alucard together with Richter or Maria: there's no story (as in Richter's
-  mode), and Alucard starts with every relic and the full set of equipment.
+- Free Select: there's no story (as in Richter's mode), and an Alucard starts
+  with every relic and the full set of equipment, even if everyone's Alucard.
 - If you die, you come back at the last save room you went into (or the castle
   entrance if you haven't been in one), with full health. An Alucard with the
   fairy out and a Life Apple can revive you on the spot.
@@ -125,6 +139,18 @@ CONTROLS (keyboard; a controller works too)
    Resync (if things look out of step) ... F7
 
 Rebind keys in the game's settings (F1).
+
+
+UPDATES
+-------
+
+Play checks for a new version each time you start it (it takes a second; offline,
+it just starts the game). If there is one, it says what's new and asks:
+  - most updates take about a minute;
+  - some rebuild the game from your discs (5-15 minutes): it says so first.
+It never touches your game files, saves or settings. Everyone in a game needs the
+same version: if you put an update off, the Netplay screen reminds you. The version
+you had before is kept in the folder "files.prev" (one update back).
 
 
 COPYING A READY FOLDER TO ANOTHER WINDOWS PC

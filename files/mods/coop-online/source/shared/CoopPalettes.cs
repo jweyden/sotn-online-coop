@@ -46,6 +46,18 @@ public static class CoopPalettes
         return (ushort)((bgr555 & 0x8000) | To5(nr) | To5(ng) << 5 | To5(nb) << 10);
     }
 
+    // A colour with its hue set to `hue` (degrees), saturation and brightness kept;
+    // black, transparent and greys stay as they are.
+    public static ushort WithHue(ushort bgr555, float hue)
+    {
+        int r = bgr555 & 31, g = (bgr555 >> 5) & 31, b = (bgr555 >> 10) & 31;
+        if (r == 0 && g == 0 && b == 0) return bgr555;
+        RgbToHsv(r / 31f, g / 31f, b / 31f, out _, out float s, out float v);
+        if (s < 0.18f) return bgr555;
+        HsvToRgb(hue, s, v, out float nr, out float ng, out float nb);
+        return (ushort)((bgr555 & 0x8000) | To5(nr) | To5(ng) << 5 | To5(nb) << 10);
+    }
+
     static int To5(float f) => Math.Clamp((int)Math.Round(f * 31), 0, 31);
 
     static void RgbToHsv(float r, float g, float b, out float h, out float s, out float v)

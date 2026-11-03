@@ -1,0 +1,5 @@
+version=0.1.3
+kind=quick
+summary=Game modes (Normal / Free Select), private rooms, pick your character in the room, join games in progress, automatic updates
+zip=https://github.com/jweyden/sotn-online-coop/releases/download/v0.1.3/sotn-coop-online.zip
+sha256=6f8acfc9290eae267ed065452b7ab7f057db7e316327afd6a42438e2d25ab1e6

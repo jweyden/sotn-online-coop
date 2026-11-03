@@ -15,6 +15,12 @@ using RecompOne.Runtime.Modding;
 //    the title screen loads one from the memory card (ApplySaveData, then its own
 //    fade into loading). Both start in the same save room with the same progress.
 // The guest waits on the Netplay screen meanwhile.
+//
+// Saves remember their room's mode (2026-11-03): an online save made in Free Select
+// says "Richter" (SaveInfo.character = 1, what the file screen shows as Richter mode),
+// one made in Normal Mode says Alucard (0). On the host's file screen the saves of the
+// other mode are greyed out and can't be picked. Loading one, everyone plays their own
+// pick (the host too: the save's character is only its mode).
 public partial class OnlineCoop
 {
     const uint PixBuf = 0x8007EFE4u;            // g_Pix[0]: where the title screen reads a save into
@@ -31,9 +37,21 @@ public partial class OnlineCoop
     public static void ApplySaveDataHook(Action<CpuContext, IMemory> orig, CpuContext c, IMemory m)
     {
         uint save = c.A0;
+        // (a save of the other mode, picked anyway: the load fails, "Version error", and
+        // it's back to the file list)
+        if (I is OnlineCoop host && host.FilteringSaves && m.ReadU32(GameEngineStepAddr) == EngCardLoad &&
+            (m.ReadU32(save + SaveInfoCharacter) != 0) != host._net.FreeSelect)
+        {
+            Console.WriteLine($"[coop-online] that's a {(host._net.FreeSelect ? "Normal Mode" : "Free Select")} save: not in this room");
+            c.V0 = unchecked((uint)-1);
+            return;
+        }
         orig(c, m);
         if (I is OnlineCoop self && (int)c.V0 >= 0 && self._net.IsHost && self._net.Status == NetSession.State.Connected)
+        {
             self.SendSave(m, save);
+            self.ApplyOwnCharacter(m);   // (the save's character is its mode, not who we play)
+        }
     }
 
     void SendSave(IMemory m, uint save, NetLink? to = null)
@@ -55,31 +73,153 @@ public partial class OnlineCoop
     }
     byte _saveSendId;
 
-    // Joining a game that's already going: the host makes a save of where it is right
-    // now (the game's own StoreSaveData, into spare high RAM) and sends it to whoever
-    // just came in on the title screen; they load it like any host save (and teleport
-    // to the others from wherever it puts them). Host, P1 live, after its update.
+    // Joining a game that's already going (or rejoining after a dropout): someone in the
+    // room on the title screen picks their character and asks (Msg.LateJoin); the host
+    // makes a save of where it is right now (the game's own StoreSaveData, into spare
+    // high RAM) and sends it to them; they load it like any host save (and teleport to
+    // the others from wherever it puts them). Host, P1 live, after its update.
     const uint FnStoreSaveData = 0x800E9C14u, LateSaveAddr = 0x80700000u;
-    readonly HashSet<int> _lateSaveSent = new();
-    readonly Dictionary<int, long> _outsideSince = new();
+    readonly HashSet<int> _lateJoinWanted = new();
 
     void SendSaveToLateJoiners(CpuContext c, IMemory m)
     {
-        if (!_net.IsHost || !Sotn.Game.InGame || Sotn.Game.IsLoading || Paused(m)) return;
+        if (!_net.IsHost || !Sotn.Game.InGame || Sotn.Game.IsLoading || Paused(m) || _lateJoinWanted.Count == 0) return;
         foreach (var f in _friends)
         {
-            // (out of the game for a while: not just a few frames behind a game we
-            // started together)
-            bool outside = f.Valid && !f.Peer.InGame && (f.Peer.Flags & 128) == 0;
-            if (!outside) { _outsideSince.Remove(f.Number); _lateSaveSent.Remove(f.Number); continue; }
-            if (!_outsideSince.TryGetValue(f.Number, out long since)) _outsideSince[f.Number] = since = _vsyncs;
-            if (_vsyncs - since < 300 || _lateSaveSent.Contains(f.Number)) continue;
-            _lateSaveSent.Add(f.Number);
+            if (!_lateJoinWanted.Remove(f.Number) || !f.Valid || f.Peer.InGame) continue;
             Call(c, m, FnStoreSaveData, LateSaveAddr, 0, 0);
-            Console.WriteLine($"[coop-online] {f.Name} joined while we're playing: sending them the game as it is");
+            Console.WriteLine($"[coop-online] {f.Name} is joining the game in progress: sending them the game as it is");
             SendSave(m, LateSaveAddr, f.Link);
         }
-        _lateSaveSent.RemoveWhere(n => !_friends.Exists(f => f.Number == n));
+        _lateJoinWanted.RemoveWhere(n => !_friends.Exists(f => f.Number == n));
+    }
+
+    // A save made where the host is (not in a save room) only says which room: loading
+    // it puts us at that room's own entry spot (in the entrance: outside the walls). Once
+    // in, we go to the host's exact spot (the teleport's same-room move, no spell).
+    // Guest, once a frame (P1 live).
+    long _lateArrivalAt = -1;
+
+    void TickLateArrival(IMemory m)
+    {
+        if (_lateArrivalAt < 0 || !Sotn.Game.InGame || Sotn.Game.IsLoading) return;
+        if (_lateArrivalAt == 0) { _lateArrivalAt = _vsyncs + 20; return; }   // (settled first)
+        if (_vsyncs < _lateArrivalAt) return;
+        if (_vsyncs > _lateArrivalAt + 600) { _lateArrivalAt = -1; Console.WriteLine("[coop-online] joined in progress: couldn't get to the host (teleport with F6)"); return; }
+        if (_friends.Find(f => f.Number == 0) is not { Valid: true } host || !host.Peer.InGame) return;
+        RequestTeleport(host);
+        if (_tp == Tp.Idle) return;   // (not now: next frame)
+        if (_tp == Tp.Casting) { _castWant = false; _tp = Tp.Go; }   // (no spell: straight there)
+        _lateArrivalAt = -1;
+        Console.WriteLine($"[coop-online] joined in progress: going to {host.Name}");
+    }
+
+    // ---------------------------------------------------------------- saves and the room's mode
+
+    const int SaveInfoCharacter = 0x230;   // SaveData.info.character
+    uint _storingSave;
+
+    [PreHook("dra", "StoreSaveData_dra")]
+    public static void BeforeStoreSave(CpuContext c, IMemory m) { if (I is OnlineCoop self) self._storingSave = c.A0; }
+
+    // Online, the save says its room's mode
+    [PostHook("dra", "StoreSaveData_dra")]
+    public static void AfterStoreSave(CpuContext c, IMemory m)
+    {
+        if (I is not OnlineCoop self || self._storingSave == 0 || self._net.Status != NetSession.State.Connected) return;
+        m.WriteU32(self._storingSave + SaveInfoCharacter, self._net.FreeSelect ? 1u : 0u);
+        Console.WriteLine($"[coop-online] saved: a {(self._net.FreeSelect ? "Free Select" : "Normal Mode")} save");
+        self._storingSave = 0;
+    }
+
+    // The host's file screen: which saves (card, block) are of the other mode, from the
+    // game's own list of what's on the cards (g_SaveSummary: it reads the cards once and
+    // keeps that, so this reads the list, not the saves as they're read in).
+    const uint SaveSummaryAddr = 0x801BC8E0u;       // g_SaveSummary[2], 0x3A8 each: icon[15] at 0, character[15] at 0x2D0
+    const uint SummarySize = 0x3A8, SummaryCharacter = 0x2D0;
+    const uint FileCursorAddr = 0x801D6B04u;        // the file screen's cursor: card * 15 + block
+    const uint EngFileList = 0x33, EngNewGameName = 0x10;   // Upd_Eng_51 (the list), Upd_Eng_0x10
+    const uint EngCardLoad = 0x101;                           // Upd_Eng_257: loading the picked save
+    const ushort PadCross = 0x40;
+
+    bool FilteringSaves => _net.IsHost && _net.Status is NetSession.State.Hosting or NetSession.State.Connected;
+    bool OtherModeSave(int port, int block)
+    {
+        if (!FilteringSaves || port is < 0 or > 1 || block is < 0 or >= 15) return false;
+        IMemory? m = RecompOne.Runtime.Runtime.Mem;
+        if (m == null) return false;
+        uint card = SaveSummaryAddr + (uint)port * SummarySize;
+        if ((int)m.ReadU32(card + (uint)block * 4) < 0) return false;   // (no save there: a new game, or nothing)
+        bool free = m.ReadU32(card + SummaryCharacter + (uint)block * 4) != 0;
+        return free != _net.FreeSelect;
+    }
+
+    // The file screen's save icons: those of the other mode drawn dim (the cursor's one a
+    // little less, so you can see where you are).
+    //   func_801B27A8(x, y, w, h, u, v, clut, tpage, tge, colour): the last six on the stack
+    [Replace("sel", "func_801B27A8")]
+    public static void DrawFileIconHook(Action<CpuContext, IMemory> orig, CpuContext c, IMemory m)
+    {
+        if (I is OnlineCoop self && self.FilteringSaves && c.A2 == 0x10 && c.A3 == 0x10 && m.ReadU32(c.SP + 0x1C) == 0x16)
+        {
+            int x = (int)c.A0 - 0x20, y = (int)c.A1;
+            int port = x >> 8, col = (x & 0xFF) / 0x18, row = (0x90 - y) / 0x10;
+            if (port is 0 or 1 && col is >= 0 and < 3 && row is >= 0 and < 5 && self.OtherModeSave(port, row * 3 + col))
+            {
+                uint colour = m.ReadU32(c.SP + 0x24);
+                m.WriteU32(c.SP + 0x24, colour >= 0x80 ? 0x30 + (colour - 0x80) / 4 : 0x18);
+            }
+        }
+        orig(c, m);
+    }
+
+    // (the log: what the file screen shows, as this room sees it)
+    void LogFileList(IMemory m)
+    {
+        var saves = new List<string>();
+        for (int port = 0; port < 2; port++)
+            for (int block = 0; block < 15; block++)
+            {
+                uint card = SaveSummaryAddr + (uint)port * SummarySize;
+                if ((int)m.ReadU32(card + (uint)block * 4) < 0) continue;
+                bool free = m.ReadU32(card + SummaryCharacter + (uint)block * 4) != 0;
+                saves.Add($"card {port + 1} block {block + 1}: {(free ? "Free Select" : "Normal")}{(OtherModeSave(port, block) ? " (greyed out)" : "")}");
+            }
+        Console.WriteLine($"[coop-online] file screen ({(_net.FreeSelect ? "Free Select" : "Normal")} room): {(saves.Count == 0 ? "no saves" : string.Join("; ", saves))}");
+    }
+
+    // Before the menu's update: Cross on a save of the other mode is a no.
+    void FileSelectBefore(CpuContext c, IMemory m, uint step)
+    {
+        if (!FilteringSaves || step != EngFileList) return;
+        ushort tapped = m.ReadU16(PadsAddr + 4);
+        int at = (int)m.ReadU32(FileCursorAddr);
+        if ((tapped & PadCross) != 0 && OtherModeSave(at / 15, at % 15))
+        {
+            m.WriteU16(PadsAddr + 4, (ushort)(tapped & ~PadCross));
+            Call(c, m, FnPlaySfx, SfxError);
+        }
+    }
+
+    // After it: the file screen's own "new game" (an empty block) starts the room's new
+    // game together; on a save of the other mode, why it's greyed out.
+    void FileSelectAfter(CpuContext c, IMemory m, uint stepBefore)
+    {
+        if (!FilteringSaves) return;
+        uint step = m.ReadU32(GameEngineStepAddr);
+        if (stepBefore == EngFileList && step == EngNewGameName)
+        {
+            if (_net.PlayerCount >= 2 && PicksFitMode()) StartNewGameFromTitle(c, m);
+            else { m.WriteU32(GameEngineStepAddr, EngFileList); Call(c, m, FnPlaySfx, SfxError); }
+            return;
+        }
+        if (step == EngFileList && stepBefore != EngFileList) LogFileList(m);
+        int at = (int)m.ReadU32(FileCursorAddr);
+        if (step == EngFileList && OtherModeSave(at / 15, at % 15))
+        {
+            DrawSmall(c, m, _net.FreeSelect ? "A Normal Mode save:" : "A Free Select save:", 0x70, 0xB8);
+            DrawSmall(c, m, _net.FreeSelect ? "this room is Free Select" : "this room is Normal Mode", 0x70, 0xC8);
+        }
     }
 
     // (NewGame.cs) the host's new game: the guest starts one too
@@ -95,6 +235,7 @@ public partial class OnlineCoop
     byte[]?[]? _saveParts;
     byte _saveRecvId;
     byte[]? _hostSave;
+    bool _hostSaveLate;
     bool _guestNewGame;
     int _menuFrames;
 
@@ -115,6 +256,7 @@ public partial class OnlineCoop
         _saveParts = null;
         if (raw.Length != SaveSize) { Console.WriteLine($"[coop-online] the host's save arrived damaged ({raw.Length} bytes)"); return; }
         _hostSave = raw.ToArray();
+        _hostSaveLate = HostPlaying;   // (sent from a game that's going, not from the title screen)
         Console.WriteLine($"[coop-online] {From} loaded a save: loading it here too");
     }
 
@@ -137,6 +279,7 @@ public partial class OnlineCoop
             if ((int)Call(c, m, FnApplySaveDataSel, PixBuf) < 0) { Console.WriteLine("[coop-online] couldn't load the host's save"); return; }
             m.WriteU32(SaveLoadedAddr, 1);
             ApplyOwnCharacter(m);
+            if (_hostSaveLate) _lateArrivalAt = 0;   // (joining a game that's going: to the host once we're in)
             m.WriteU32(CardPortAddr, 0);
             m.WriteU32(CardBlockAddr, unchecked((uint)-1));   // (saving later makes a new file on our own card)
             Call(c, m, FnPlaySfx, 0x80);                        // SET_UNK_80, as a card load does

@@ -147,15 +147,16 @@ public sealed class SaturnSelect
     public static void BeginDraw(IMemory m) => GpuPrims.SetOrderingTable(m.ReadU32(CurrentBufferPtr) + OtOfs, OtSize);
 
     // The whole screen: the portraits, then the page over them with `choice` glowing
-    // (`timer` steps the glow); `level` fades it all (0x80 = full); a dimmed Maria if she
-    // can't be picked. `backdrop`: black behind it (else whatever the menu shows).
-    public void DrawScreen(int choice, int timer, byte level, bool mariaDim, bool backdrop = true)
+    // (`timer` steps the glow); `level` fades it all (0x80 = full); a dimmed Maria (or
+    // Richter) if they can't be picked. `backdrop`: black behind it (else whatever the
+    // menu shows).
+    public void DrawScreen(int choice, int timer, byte level, bool mariaDim, bool backdrop = true, bool richterDim = false)
     {
         float sx = 384f / W, sy = 240f / H;   // the Saturn's 320x224 over the PS1 menu's 384x240
         if (backdrop) Rect(0, 0, 384, 240, 0);
         if (level == 0) return;
         for (int k = 0; k < 3; k++)
-            DrawPortraitIn(k, 0, 0, sx, sy, k == 2 && mariaDim ? (byte)(level / 3) : level);
+            DrawPortraitIn(k, 0, 0, sx, sy, k == 2 && mariaDim || k == 1 && richterDim ? (byte)(level / 3) : level);
         int page = PageTexture(choice, timer / 2 % 20);
         if (page >= 0) Image(page, 0, 0, W * sx, H * sy, level);
     }

@@ -15,12 +15,15 @@ using System.Text;
 // see the same port the game traffic will use.
 public sealed partial class NetSession
 {
-    public sealed record LobbyGame(string Id, string Game, string Host, string Info);
+    // Free: Free Select (else Normal Mode); Locked: private (a password to join)
+    public sealed record LobbyGame(string Id, string Game, string Host, string Info, bool Free, bool Locked);
     public IReadOnlyList<LobbyGame> LobbyGames { get; private set; } = Array.Empty<LobbyGame>();
     public string LobbyStatus { get; private set; } = "";
     public string LobbyGameId { get; private set; } = "";   // the game we host in the lobby
     public string LobbyInfo = "";                             // shown in the list next to our game (set by the mod)
     public bool LobbyOpen => _lobby != null;
+    public string KitVersion = "";   // this kit's version (the mod's version.txt; "" in a dev build)
+    public string LatestKit = "";    // a newer kit's version, if the lobby says there is one
     public long LobbyListFrame { get; private set; } = -1;
     public bool ForceRelay;   // testing: skip the direct path (COOP_FORCE_RELAY=1)
 
@@ -43,9 +46,10 @@ public sealed partial class NetSession
         RefreshLobby();
     }
 
-    public void RefreshLobby() => SendLobby("list");
+    // (only games of our protocol version; not our own)
+    public void RefreshLobby() => SendLobby("list", ("ver", ProtocolVersion.ToString()), ("install", _installId.ToString("X8")), ("x", Chaos ? "1" : "0"), ("kit", KitVersion));
 
-    public void HostLobby(string server, string gameName)
+    public void HostLobby(string server, string gameName, string password)
     {
         Close();
         _lobby = ParseEndpoint(server);
@@ -53,6 +57,7 @@ public sealed partial class NetSession
         _isHost = true;
         Status = State.Hosting;
         LobbyGameId = NewCode();
+        Key = PasswordKey(LobbyGameId, password);
         _lobbyGameName = gameName;
         // the relay fallback: the server passes a joiner's packets on to us if they can't reach us
         _relay = _lobby;
@@ -63,9 +68,10 @@ public sealed partial class NetSession
         LobbyStatus = "listing your game...";
     }
 
-    public void JoinLobby(string id)
+    public void JoinLobby(string id, string password)
     {
         if (_lobby == null || _udp == null) return;
+        Key = PasswordKey(id, password);
         _links.Clear();
         BeginJoin();
         _hostEp = null;
@@ -82,13 +88,7 @@ public sealed partial class NetSession
         if (_lobby == null) return;
         if (_isHost)
         {
-            bool full = PlayerCount >= MaxPlayers;
-            if (!full && _frame % 120 == 0) SendHost();   // still here (and back on the list when someone leaves)
-            if (full && _listed)
-            {
-                SendLobby("unhost", ("id", LobbyGameId));   // full
-                _listed = false;
-            }
+            if (_frame % 120 == 0) SendHost();   // still here (a full game says so: the list leaves it out)
             _punchTo.RemoveAll(p => p.Until < _frame);
             if (_frame % 10 == 0)
                 foreach (var (to, _) in _punchTo) SendRaw(PunchPacket(), to, "");
@@ -129,8 +129,10 @@ public sealed partial class NetSession
                 var games = new List<LobbyGame>();
                 for (int i = 1; i < lines.Length; i++)
                 {
+                    if (lines[i].StartsWith("latest=")) { LatestKit = lines[i][7..].Split('\t')[0].Trim(); continue; }
                     var c = lines[i].Split('\t');
-                    if (c.Length >= 4 && c[0] != LobbyGameId) games.Add(new LobbyGame(c[0], c[1], c[2], c[3]));
+                    if (c.Length >= 4 && c[0] != LobbyGameId)
+                        games.Add(new LobbyGame(c[0], c[1], c[2], c[3], c.Length < 5 || c[4] != "normal", c.Length >= 6 && c[5] == "1"));
                 }
                 LobbyGames = games;
                 LobbyListFrame = _frame;
@@ -140,6 +142,11 @@ public sealed partial class NetSession
             case "hosted":
                 _listed = true;
                 if (Status == State.Hosting) LobbyStatus = "your game is listed: waiting for someone to join";
+                break;
+            case "badkey":
+                if (!_isHost && Status == State.Joining) { Status = State.Off; _joinId = ""; _joinTargets = null; }
+                Refused = "wrong password";
+                LobbyStatus = "wrong password";
                 break;
             case "nogame":
                 if (!_isHost && Status == State.Joining) { Status = State.Off; _joinId = ""; _joinTargets = null; }
@@ -151,7 +158,7 @@ public sealed partial class NetSession
                 var addrs = new List<IPEndPoint>();
                 foreach (var a in new[] { Get("addr"), Get("lan") })
                     if (TryEndpoint(a, out var ep) && !addrs.Exists(x => x.Equals(ep))) addrs.Add(ep);
-                if (_isHost && PlayerCount < MaxPlayers)
+                if (_isHost && (PlayerCount < MaxPlayers || ChaosSeat(Get("x") == "1")))
                 {
                     // open our side toward them while they knock on ours
                     foreach (var ep in addrs) { _punchTo.Add((ep, _frame + 600)); SendRaw(PunchPacket(), ep, ""); }
@@ -171,7 +178,9 @@ public sealed partial class NetSession
 
     void LobbyClosing()
     {
-        if (_lobby != null && _isHost && _listed) SendLobby("unhost", ("id", LobbyGameId));
+        // (three times: one lost packet shouldn't leave the game listed)
+        if (_lobby != null && _isHost && LobbyGameId.Length > 0)
+            for (int i = 0; i < 3; i++) SendLobby("unhost", ("id", LobbyGameId));
         _lobby = null; _listed = false;
         LobbyGameId = ""; LobbyStatus = "";
         _joinId = ""; _joinTargets = null; _punchTo.Clear();
@@ -181,11 +190,16 @@ public sealed partial class NetSession
 
     void SendHost()
     {
-        if (!_isHost || LobbyGameId.Length == 0 || PlayerCount >= MaxPlayers) return;
-        string info = $"{PlayerCount}/{MaxPlayers}" + (LobbyInfo.Length > 0 ? $"  {LobbyInfo}" : "");
-        SendLobby("host", ("id", LobbyGameId), ("name", LocalName), ("game", _lobbyGameName), ("info", info), ("lan", LanAddress()));
+        if (!_isHost || LobbyGameId.Length == 0) return;
+        string info = $"{Math.Min(PlayerCount, MaxPlayers)}/{MaxPlayers}" + (LobbyInfo.Length > 0 ? $"  {LobbyInfo}" : "");
+        SendLobby("host", ("id", LobbyGameId), ("name", LocalName), ("game", _lobbyGameName), ("info", info), ("lan", LanAddress()),
+            ("ver", ProtocolVersion.ToString()), ("mode", FreeSelect ? "free" : "normal"), ("lock", Key), ("install", _installId.ToString("X8")),
+            ("players", PlayerCount.ToString()), ("playing", Playing ? "1" : "0"), ("full", PlayerCount >= MaxPlayers ? "1" : "0"));
     }
-    void SendJoin() => SendLobby("join", ("id", _joinId), ("name", LocalName), ("lan", LanAddress()));
+    void SendJoin() => SendLobby("join", ("id", _joinId), ("name", LocalName), ("lan", LanAddress()), ("key", Key), ("install", _installId.ToString("X8")), ("x", Chaos ? "1" : "0"));
+
+    // The host's game has started (for the lobby's list and log)
+    public bool Playing;
 
     void SendLobby(string op, params (string Key, string Value)[] fields)
     {

@@ -106,13 +106,17 @@ public partial class OnlineCoop : CoopCore
         _net.MaxPlayers = Math.Clamp(MaxPlayers, 2, HostCap);
         LobbyServer = Environment.GetEnvironmentVariable("COOP_LOBBY") ?? "";
         _net.ForceRelay = Environment.GetEnvironmentVariable("COOP_FORCE_RELAY") == "1";
+        // the kit's version (written by make-friend-package.sh; none in a dev build)
+        try { if (File.Exists(KitVersionFile)) _net.KitVersion = File.ReadAllText(KitVersionFile).Trim(); } catch { }
+        // (tests: the room's mode when a bot hosts; Free Select unless COOP_MODE=normal)
+        _net.FreeSelect = Environment.GetEnvironmentVariable("COOP_MODE") != "normal";
         try { if (LobbyServer.Length == 0 && File.Exists(LobbyFile)) LobbyServer = File.ReadAllLines(LobbyFile)[0].Trim(); } catch { }
 
         // For testing two instances on one machine: COOP_ONLINE=host:7777 or join:127.0.0.1:7777
         // (or lobbyhost:server:port / lobbyjoin:server:port, which joins the first game listed)
         var auto = Environment.GetEnvironmentVariable("COOP_ONLINE");
         var name = Environment.GetEnvironmentVariable("COOP_NAME");
-        if (!string.IsNullOrEmpty(name)) PlayerName = name;
+        if (!string.IsNullOrEmpty(name)) { _chaos = IsChaosName(name); PlayerName = _chaos ? ChaosName : name; }
         GameName = $"{PlayerName}'s game";
         if (!string.IsNullOrEmpty(auto))
         {
@@ -169,6 +173,7 @@ public partial class OnlineCoop : CoopCore
     void PrepareSession()
     {
         _net.LocalName = PlayerName;
+        _net.Chaos = _chaos;
         _net.MaxPlayers = Math.Clamp(MaxPlayers, 2, HostCap);
         var m = RecompOne.Runtime.Runtime.Mem;
         // in a game: who we are in it; otherwise the pick (not the last game's character)
@@ -207,15 +212,16 @@ public partial class OnlineCoop : CoopCore
     }
 
     const string LobbyFile = "mods/coop-online/lobby.txt";
+    const string KitVersionFile = "mods/coop-online/version.txt";
 
-    void HostLobby()
+    void HostLobby(string password = "")
     {
         if (LobbyServer.Trim().Length == 0) { Console.WriteLine("[coop-online] no lobby server set"); return; }
         try
         {
             PrepareSession();
-            _net.HostLobby(LobbyServer.Trim(), GameName.Trim().Length > 0 ? GameName.Trim() : $"{PlayerName}'s game");
-            Console.WriteLine($"[coop-online] hosting \"{GameName}\" in the lobby at {LobbyServer} (id {_net.LobbyGameId})");
+            _net.HostLobby(LobbyServer.Trim(), GameName.Trim().Length > 0 ? GameName.Trim() : $"{PlayerName}'s game", password);
+            Console.WriteLine($"[coop-online] hosting \"{GameName}\" in the lobby at {LobbyServer} (id {_net.LobbyGameId}): {(_net.FreeSelect ? "Free Select" : "Normal Mode")}, {(password.Length > 0 ? "private" : "public")}");
         }
         catch (Exception e) { Console.WriteLine($"[coop-online] lobby host failed: {e.Message}"); }
     }
@@ -227,10 +233,10 @@ public partial class OnlineCoop : CoopCore
         catch (Exception e) { Console.WriteLine($"[coop-online] lobby failed: {e.Message}"); }
     }
 
-    void JoinLobbyGame(NetSession.LobbyGame g)
+    void JoinLobbyGame(NetSession.LobbyGame g, string password = "")
     {
         PrepareSession();
-        _net.JoinLobby(g.Id);
+        _net.JoinLobby(g.Id, password);
         Console.WriteLine($"[coop-online] joining \"{g.Game}\" ({g.Host}) through the lobby");
     }
 
@@ -238,7 +244,13 @@ public partial class OnlineCoop : CoopCore
     void TickLobbyUi(IMemory m)
     {
         while (_uiActions.TryDequeue(out var a)) a();
-        _net.LobbyInfo = Game.InGame ? $"Lv {m.ReadU32(LevelAddr)}" : "on the title screen";
+        _net.LobbyInfo = Game.InGame ? $"Lv {m.ReadU32(LevelAddr)}" : "title screen";
+        _net.Playing = Game.InGame;
+        // (a test bot in the room of a game that's going joins in by itself)
+        if (_bot && GuestPaired && HostPlaying && !Game.InGame && m.ReadU32(GameEngineStepAddr) == EngNetplay && _vsyncs - _lateJoinAskedAt > 600) RequestLateJoin();
+        // a Normal Mode room: Alucards only (the pick we came in with may not be one)
+        if (_net.Status is NetSession.State.Hosting or NetSession.State.Connected && !_net.FreeSelect && !Game.InGame && !CoopCharacters.IsAlucard(MyPick().Item1))
+            SetPick(CoopCharacter.Alucard, MyPick().Item2);
         if (_net.LobbyOpen && _net.Status == NetSession.State.Off && _vsyncs - _lastLobbyRefresh > (_autoJoinFirst ? 60 : 180))
         {
             _lastLobbyRefresh = _vsyncs;
@@ -354,6 +366,7 @@ public partial class OnlineCoop : CoopCore
         CheckPrims(m, "frame end (after the friend's update and drawing)");
         if (_resyncKey) { _resyncKey = false; if (_net.Status == NetSession.State.Connected) RequestResync(); }
         if (Game.InGame) TickRoom(m);
+        TickLateArrival(m);
         TickTeleport(m);
         UpdateNameTag(m);
         TickSyncLog(m);
@@ -374,8 +387,10 @@ public partial class OnlineCoop : CoopCore
     void DropAllFriends() { foreach (var f in _friends) if (f.Body.Active) f.Body.WantDrop = true; }
 
     // Character mode counts everyone in the session, not just who's in this room.
-    protected override bool CharacterMode =>
-        base.CharacterMode || _net.Peers.Any(l => !CoopCharacters.IsAlucard((CoopCharacter)l.Character));
+    // Online it's the room's mode: Free Select plays by Richter mode's rules (even if
+    // everyone is an Alucard), Normal Mode is the story.
+    protected override bool CharacterMode => _net.Status == NetSession.State.Connected ? _net.FreeSelect
+        : base.CharacterMode || _net.Peers.Any(l => !CoopCharacters.IsAlucard((CoopCharacter)l.Character));
 
     // ---------------------------------------------------------------- our own character
 
@@ -400,7 +415,7 @@ public partial class OnlineCoop : CoopCore
     // In game (P1 live): remember what this save's player is.
     void RememberPick(IMemory m)
     {
-        if (_bot || !Game.InGame || m.ReadU8(CoopCharacters.SaveNameAddr + 10) != CoopCharacters.TagV2) return;
+        if (_bot || _ownCharacterPending || !Game.InGame || m.ReadU8(CoopCharacters.SaveNameAddr + 10) != CoopCharacters.TagV2) return;
         var pick = (_p1Char, _p1Palette);
         if (_myPick == pick) return;
         _myPick = pick;
@@ -441,13 +456,16 @@ public partial class OnlineCoop : CoopCore
     // The host's save is in: make it ours (character, colours, and the game mode for it),
     // once its loading starts (NewGame.cs): the title screen still draws with whatever
     // the last game left, and switching the mode under it there breaks its drawing.
+    // (the pick as it is now: once the game's in, RememberPick would take the save's own
+    // character - whoever made it - as our pick before the load gets to us)
     bool _ownCharacterPending;
-    void ApplyOwnCharacter(IMemory m) => _ownCharacterPending = true;
+    (CoopCharacter, int) _ownCharacterPick;
+    void ApplyOwnCharacter(IMemory m) { _ownCharacterPick = MyPick(); _ownCharacterPending = true; }
 
     void ApplyOwnCharacterNow(IMemory m)
     {
         _ownCharacterPending = false;
-        var (ch, pal) = MyPick();
+        var (ch, pal) = _ownCharacterPick;
         if (!CanPlay(ch, out _)) ch = CoopCharacters.IsAlucard(ch) ? CoopCharacter.Alucard : CoopCharacter.Richter;
         if (!CoopPalettes.Enabled) pal = 0;
         CoopCharacters.ToSave(m, ch, pal);
